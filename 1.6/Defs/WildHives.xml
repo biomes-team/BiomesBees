@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef ParentName="TreeBase">
+        <defName>BiomesBees_GroundBeeHive</defName>
+        <label>wild bee hive</label>
+        <description>todo.</description>
+        <graphicData>
+            <texPath>BMT_Bees/Things/Building/NaturalHive/NaturalHive</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <!--<shadowData>
+                <volume>(0.15, 0.3, 0.15)</volume>
+                <offset>(0,0,-0.38)</offset>
+            </shadowData>-->
+        </graphicData>
+        <ingestible>
+            <preferability>NeverForNutrition</preferability>
+        </ingestible>
+        <plant Inherit="False" />
+        <blockWind>false</blockWind>
+    </ThingDef>
+
+</Defs>
