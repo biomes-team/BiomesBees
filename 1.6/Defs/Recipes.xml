@@ -84,5 +84,40 @@
 			<BMT_Honey>36</BMT_Honey>
 		</products>
 	</RecipeDef>
+	
+	<RecipeDef>
+    <defName>BMT_MakeMead</defName>
+    <label>make mead</label>
+    <description>Make mead from honey.</description>
+    <jobString>Making mead.</jobString>
+    <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+    <workSkill>Cooking</workSkill>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Brewing</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <workAmount>1000</workAmount>
+    <targetCountAdjustment>1</targetCountAdjustment>
+		<recipeUsers>
+			<li>Brewery</li>
+		</recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>BMT_Honey</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>BMT_Honey</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BMT_Mead>5</BMT_Mead>
+    </products>
+  </RecipeDef>
 
 </Defs>

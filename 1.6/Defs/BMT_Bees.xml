@@ -3,18 +3,18 @@
 
   <!--================================================ -->
   
-    <ThingDef ParentName="AnimalThingBase">
+    <ThingDef ParentName="BaseInsect">
 	<defName>BMT_Bees</defName>
 	<!-- too long. out of name field -->
 	<!-- <label>pustule hornet queen</label> -->
 	<label>bee swarm</label>
-	<description>Todo.</description>
+	<description>A swarm of bees. This species produces honeycomb in their hive that can be harvested and turned into wax and honey. It would be unwise to make the swarm angry as it's quite hard to kill a bunch of angry bees.</description>
 	<uiIconScale>1.5</uiIconScale>
 	<statBases>
 	  <MoveSpeed>3.0</MoveSpeed>
 	  <MarketValue>150</MarketValue>
-	  <ComfyTemperatureMin>-60</ComfyTemperatureMin>
-	  <ComfyTemperatureMax>70</ComfyTemperatureMax>
+	  <ComfyTemperatureMin>0</ComfyTemperatureMin>
+	  <ComfyTemperatureMax>40</ComfyTemperatureMax>
 	  <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">-0.5</ToxicEnvironmentResistance>
 	  <MaxFlightTime>100</MaxFlightTime>
 	  <FlightCooldown>50</FlightCooldown>
@@ -59,6 +59,7 @@
 	</tools>
 	<race>
 	  <hasGenders>false</hasGenders>
+	  <hasCorpse>false</hasCorpse>
 	  <canBePredatorPrey>false</canBePredatorPrey>
 	  <body>BMT_BeetleLikeWithStinger</body>
 	  <baseBodySize>0.1</baseBodySize>
