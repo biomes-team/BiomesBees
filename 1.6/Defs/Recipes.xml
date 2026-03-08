@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef>
+		<defName>BMT_HoneycombProcessing</defName>
+		<label>make honey and wax from honeycomb</label>
+		<description>Make delicious honey and useful wax from honeycomb.</description>
+		<jobString>Processing honeycomb.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workSkill>Cooking</workSkill>
+		<effectWorking>Cook</effectWorking>
+		<workAmount>600</workAmount>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<recipeUsers>
+			<li>Campfire</li>
+			<li>ElectricStove</li>
+			<li>FueledStove</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>BMT_Honeycomb</li>
+					</thingDefs>
+				</filter>
+				<count>4</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>BMT_Honeycomb</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<thingDefs>
+				<li>BMT_Honeycomb</li>
+			</thingDefs>
+		</defaultIngredientFilter>
+		<products>
+			<BMT_Waxblock>24</BMT_Waxblock>
+			<BMT_Honey>12</BMT_Honey>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>BMT_HoneycombBulkProcessing</defName>
+		<label>make honey and wax from honeycomb x3</label>
+		<description>Make delicious honey and useful wax from honeycomb in bulk.</description>
+		<jobString>Processing honeycomb.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workSkill>Cooking</workSkill>
+		<effectWorking>Cook</effectWorking>
+		<workAmount>2200</workAmount>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<recipeUsers>
+			<li>Campfire</li>
+			<li>ElectricStove</li>
+			<li>FueledStove</li>
+		</recipeUsers>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>BMT_Honeycomb</li>
+					</thingDefs>
+				</filter>
+				<count>12</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>BMT_Honeycomb</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<thingDefs>
+				<li>BMT_Honeycomb</li>
+			</thingDefs>
+		</defaultIngredientFilter>
+		<products>
+			<BMT_Waxblock>72</BMT_Waxblock>
+			<BMT_Honey>36</BMT_Honey>
+		</products>
+	</RecipeDef>
+
+</Defs>

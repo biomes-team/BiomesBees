@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--================================================ -->
+  
+  <HediffDef>
+    <defName>BMT_BeeSwarming</defName>
+    <label>bee swarming</label>
+    <description>This hediff should never be visible. It is used solely to make bees look like a shifting swarm.</description>
+    <descriptionShort>This is a hediff to make a visual effect.</descriptionShort>
+    <initialSeverity>1</initialSeverity>
+    <skinColorTint>(0.37, 0.15, 0.1)</skinColorTint>
+    <skinColorTintStrength>0.4</skinColorTintStrength>
+    <forceRenderTreeRecache>true</forceRenderTreeRecache>
+    <inspectString>It's a swarm of bees.</inspectString>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Spastic">
+        <texPaths>
+          <li>BMT_Bees/Things/Animal/Bees/BeeSwarm_a</li>
+          <li>BMT_Bees/Things/Animal/Bees/BeeSwarm_b</li>
+          <li>BMT_Bees/Things/Animal/Bees/BeeSwarm_c</li>
+        </texPaths>
+        <parentTagDef>Body</parentTagDef>
+        <overrideMeshSize>1</overrideMeshSize>
+        <drawSize>1.3</drawSize>
+        <rotationRange>-30~60</rotationRange>
+        <durationTicksRange>10~35</durationTicksRange>
+        <nextSpasmTicksRange>10~50</nextSpasmTicksRange>
+        <drawData>
+          <scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+          <defaultData>
+            <layer>49</layer>
+          </defaultData>
+          <dataNorth>
+            <rotationOffset>310</rotationOffset>
+            <flip>true</flip>
+            <layer>0</layer>
+          </dataNorth>
+          <dataEast>
+            <rotationOffset>270</rotationOffset>
+            <flip>true</flip>
+          </dataEast>
+          <dataSouth>
+            <rotationOffset>220</rotationOffset>
+          </dataSouth>
+          <dataWest>
+            <rotationOffset>270</rotationOffset>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <stages>
+      <li>
+       <becomeVisible>false</becomeVisible>
+       <disablesNeeds>
+          <li>Rest</li>
+		  <li>Food</li>
+        </disablesNeeds>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

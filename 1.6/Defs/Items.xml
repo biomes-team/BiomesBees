@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <ThingDef ParentName="OrganicProductBase">
+    <defName>BMT_Honeycomb</defName>
+    <label>honeycomb</label>
+    <description>Honeycomb from a beehive or apiary. While edible, it is better when processed separately into honey and wax.</description>
+    <graphicData>
+      <texPath>BMT_Bees/Things/Item/Honeycomb</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <statBases>
+      <MarketValue>6.0</MarketValue> <!-- Can be used like meat in recipes -->
+      <Mass>0.045</Mass>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Flammability>0.2</Flammability>
+      <Nutrition>0.1</Nutrition>
+      <FoodPoisonChanceFixedHuman>0.0</FoodPoisonChanceFixedHuman>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>15</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <ingestible>
+      <preferability>DesperateOnly</preferability>
+      <foodType>AnimalProduct</foodType>
+      <babiesCanIngest>false</babiesCanIngest>
+    </ingestible>
+    <thingCategories>
+      <li>AnimalProductRaw</li>
+    </thingCategories>
+    <allowedArchonexusCount>150</allowedArchonexusCount>
+  </ThingDef>
+  
+  	<ThingDef ParentName="ResourceBase">
+		<defName>BMT_Waxblock</defName>
+		<label>wax block</label>
+		<description>A block of wax made from processed honeycomb. It can be used to make art, such as wax sculptures.</description>
+		<graphicData>
+			<texPath>BMT_Bees/Things/Item/Beewax</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<soundInteract>Standard_Pickup</soundInteract>
+		<soundDrop>Standard_Pickup</soundDrop>
+		<statBases>
+			<MarketValue>0.7</MarketValue>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>0.5</Mass> 
+			<Flammability>1</Flammability>
+			<ConstructionSpeedFactor>0.15</ConstructionSpeedFactor>
+			<StuffPower_Insulation_Cold>1</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>10</StuffPower_Insulation_Heat>
+			<SharpDamageMultiplier>0.37</SharpDamageMultiplier>
+			<BluntDamageMultiplier>0.82</BluntDamageMultiplier>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<stackLimit>500</stackLimit>
+		<smallVolume>true</smallVolume>
+		<stuffProps>
+			<stuffAdjective>waxy</stuffAdjective>
+			<categories>
+				<li>Stony</li>
+			</categories>
+			<commonality>0.0</commonality>
+			<soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
+			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+			<statFactors>
+				<MaxHitPoints>100</MaxHitPoints>
+				<Beauty>3</Beauty>
+				<Flammability>1</Flammability>
+				<WorkToMake>0.85</WorkToMake>
+				<WorkToBuild>1</WorkToBuild>
+				<DoorOpenSpeed>1</DoorOpenSpeed>
+				<BedRestEffectiveness>0.8</BedRestEffectiveness>
+				<Comfort>0.8</Comfort>
+				<MeleeWeapon_CooldownMultiplier>0.75</MeleeWeapon_CooldownMultiplier>
+			</statFactors>
+		<isAirtight>true</isAirtight>
+		<color>(245,175,97)</color>
+		</stuffProps>
+		<smeltable>false</smeltable>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+	</ThingDef>
+	
+	<ThingDef ParentName="OrganicProductBase">
+    <defName>BMT_Honey</defName>
+    <label>honey</label>
+    <description>Honey is produced by a small variety of bees. It is smooth, gooey, sweet, and fulfills the recreation need of those that consume it. Virtually any creature can eat it due to its unique properties. It is unwise to give it to babies, however.</description>
+    <possessionCount>10</possessionCount>
+    <graphicData>
+      <texPath>BMT_Bees/Things/Item/Honey</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <statBases>
+      <MarketValue>7.0</MarketValue>
+      <Mass>0.025</Mass>
+      <Nutrition>0.05</Nutrition>
+      <FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+    </statBases>
+    <ingestible>
+      <foodType>AnimalProduct</foodType>
+      <preferability>MealFine</preferability>
+      <joy>0.070</joy>
+      <joyKind>Gluttonous</joyKind>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+      <lowPriorityCaravanFood>true</lowPriorityCaravanFood>
+      <babiesCanIngest>true</babiesCanIngest>
+    </ingestible>
+    <thingCategories>
+      <li>AnimalProductRaw</li>
+    </thingCategories>
+    <stackLimit>500</stackLimit>
+    <smallVolume>true</smallVolume>
+    <allowedArchonexusCount>150</allowedArchonexusCount>
+  </ThingDef>
+  
+  <ThingDef ParentName="ResourceBase">
+    <defName>BMT_QueenBee</defName>
+    <label>queen bee</label>
+    <description>A queen bee encased safely in a jar. It can be used to build a new apiary.</description>
+    <graphicData>
+      <texPath>BMT_Bees/Things/Item/QueenBee/QueenBee</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>10</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>100</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>1.0</Mass>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Ultra</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>BMT_BeltSmoker</defName>
+    <label>smoker</label>
+    <description>A bee smoker worn to the side, used to calm bees for harvesting their precious honeycomb. While it helps, it does not gaurantee not being stung when harvesting.</description>
+    <thingClass>Apparel</thingClass>
+    <graphicData>
+      <texPath>BMT_Bees/Things/Item/Smoker/SmokerItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Never</tickerType>
+    <burnableByRecipe>true</burnableByRecipe>
+    <techLevel>Medieval</techLevel>
+    <statBases>
+      <Mass>3</Mass>
+      <WorkToMake>2000</WorkToMake>
+      <Flammability>0.1</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+      <WoodLog>5</WoodLog>
+    </costList>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
+      <researchPrerequisite>BMT_Beekeeping</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+        <li>CraftingSpot</li>
+      </recipeUsers>
+      <useIngredientsForColor>false</useIngredientsForColor>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <displayPriority>300</displayPriority>
+    </recipeMaker>
+    <thingCategories>
+      <li>ApparelUtility</li>
+    </thingCategories>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <wornGraphicPath>BMT_Bees/Things/Item/Smoker/Smoker</wornGraphicPath>
+      <layers>
+        <li>Belt</li>
+      </layers>
+      <tags>
+        <li>BeltDefense</li>
+      </tags>
+    </apparel>
+    <tradeTags>
+      <li>BasicClothing</li>
+    </tradeTags>
+  </ThingDef>
+  
+    <ThingDef ParentName="HatMakeableBase">
+    <defName>BMT_BeekeeperMask</defName>
+    <label>beekeeper mask</label>
+    <description>A specialized piece of headgear that helps protect the user from bee stings and toxic environments. It might make the wearer look like they belong in a cult.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>BMT_Bees/Things/Apparel/BeekeeperMaskItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.9</drawSize>
+    </graphicData>
+    <uiIconScale>1.15</uiIconScale>
+    <stuffCategories>
+      <li>Fabric</li>
+    </stuffCategories>
+    <costStuffCount>20</costStuffCount>
+    <statBases>
+      <WorkToMake>1400</WorkToMake>
+      <MaxHitPoints>80</MaxHitPoints>
+      <Mass>0.1</Mass>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.05</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.05</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <ToxicResistance>0.2</ToxicResistance>
+      <ToxicEnvironmentResistance>0.35</ToxicEnvironmentResistance>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>BMT_Bees/Things/Apparel/BeekeeperMask</wornGraphicPath>
+      <renderSkipFlags>
+        <li>None</li>
+      </renderSkipFlags>
+      <drawData>
+        <dataNorth>
+          <layer>-3</layer>
+        </dataNorth>
+      </drawData>
+      <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <layers>
+        <li>Overhead</li>
+      </layers>      
+	  <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </apparel>
+    <recipeMaker>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+      </recipeUsers>
+      <displayPriority>160</displayPriority>
+    </recipeMaker>
+    <tradeTags>
+      <li>BasicClothing</li>
+    </tradeTags>
+  </ThingDef>
+</Defs>

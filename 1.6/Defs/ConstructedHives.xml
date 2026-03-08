@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>BMT_MedievalApiary</defName>
+    <label>simple apiary</label>
+    <description>A simple apiary for bees. It produces harvestable honeycomb over time when there are flowers, but only during warmer temperatures.</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>BMT_Bees/Things/Building/MedievalApiary/MedievalApiary</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+	  <drawSize>2</drawSize>
+      <damageData>
+        <rect>(0.05,0.1,0.9,0.9)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.75, 0.35, 0.33)</volume>
+      </shadowData>
+    </graphicData>
+	<uiIconScale>0.75</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.45</fillPercent>
+    <pathCost>42</pathCost>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>600</WorkToBuild>
+      <Mass>10</Mass>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <costList>
+	  <BMT_QueenBee>1</BMT_QueenBee>
+    </costList>
+	<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <BMT_QueenBee>1</BMT_QueenBee>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_TemperatureRuinable">
+        <minSafeTemperature>4</minSafeTemperature>
+        <maxSafeTemperature>32</maxSafeTemperature>
+        <progressPerDegreePerTick>0.00001</progressPerDegreePerTick>
+      </li>
+	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
+					<!-- Pawn to spawn. -->
+		<pawnDef>BMT_Bees</pawnDef> 
+					<!--
+					When this thing spawns, it will automatically spawn 1 pawn.
+					Then it will periodically spawn more until reaching 4.
+					-->
+		<pawnCount>1~4</pawnCount>
+					<!-- Will try to spawn another pawn after this time interval. --> 
+		<pawnSpawnIntervalDays>0.1~0.25</pawnSpawnIntervalDays>
+					<!-- Sound to play when a new pawn is created. -->
+		<spawnSound>Hive_Spawn</spawnSound>
+	  </li>
+      <li Class="CompProperties_Spawner">
+        <requiresPower>false</requiresPower>
+        <thingToSpawn>BMT_Honeycomb</thingToSpawn>
+        <spawnCount>25</spawnCount>
+        <spawnIntervalRange><min>60000</min><max>120000</max></spawnIntervalRange>
+        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+        <showMessageIfOwned>true</showMessageIfOwned>
+      </li>
+    </comps>
+    <tickerType>Rare</tickerType>
+    <rotatable>true</rotatable>
+    <designationCategory>Production</designationCategory>
+    <uiOrder>2710</uiOrder>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <building>
+      <buildingTags>
+        <li>Production</li>
+      </buildingTags>
+      <destroySound>BuildingDestroyed_Wood_Small</destroySound>
+    </building>
+    <researchPrerequisites>
+      <li>BMT_Beekeeping</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+    <ThingDef ParentName="BuildingBase">
+    <defName>BMT_IndustrialApiary</defName>
+    <label>industrial apiary</label>
+    <description>An industrial-era apiary whose bees produces harvestable honeycomb over time when there are flowers nearby. It can produce small amounts year round thanks to its inbuilt heating and air conditioning</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>BMT_Bees/Things/Building/IndustrialApiary/IndustrialApiary</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <color>(90,69,24)</color>
+	  <drawSize>2</drawSize>
+      <damageData>
+        <rect>(0.05,0.1,0.9,0.9)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.75, 0.35, 0.33)</volume>
+      </shadowData>
+    </graphicData>
+	<uiIconScale>0.75</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.45</fillPercent>
+    <pathCost>42</pathCost>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>900</WorkToBuild>
+      <Mass>10</Mass>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <costList>
+      <Steel>10</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+	  <BMT_QueenBee>1</BMT_QueenBee>
+    </costList>
+	<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <Steel>4</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <BMT_QueenBee>1</BMT_QueenBee>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_TemperatureRuinable">
+        <minSafeTemperature>4</minSafeTemperature>
+        <maxSafeTemperature>32</maxSafeTemperature>
+        <progressPerDegreePerTick>0.00001</progressPerDegreePerTick>
+      </li>
+	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
+					<!-- Pawn to spawn. -->
+		<pawnDef>BMT_Bees</pawnDef> 
+					<!--
+					When this thing spawns, it will automatically spawn 1 pawn.
+					Then it will periodically spawn more until reaching 4.
+					-->
+		<pawnCount>2~6</pawnCount>
+					<!-- Will try to spawn another pawn after this time interval. --> 
+		<pawnSpawnIntervalDays>0.1~0.25</pawnSpawnIntervalDays>
+					<!-- Sound to play when a new pawn is created. -->
+		<spawnSound>Hive_Spawn</spawnSound>
+	  </li>
+      <li Class="CompProperties_Spawner">
+        <requiresPower>false</requiresPower>
+        <thingToSpawn>BMT_Honeycomb</thingToSpawn>
+        <spawnCount>50</spawnCount>
+        <spawnIntervalRange><min>60000</min><max>120000</max></spawnIntervalRange>
+        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+        <showMessageIfOwned>true</showMessageIfOwned>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <tickerType>Rare</tickerType>
+    <rotatable>true</rotatable>
+    <designationCategory>Production</designationCategory>
+    <uiOrder>2710</uiOrder>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <building>
+      <buildingTags>
+        <li>Production</li>
+      </buildingTags>
+      <destroySound>BuildingDestroyed_Wood_Small</destroySound>
+    </building>
+    <researchPrerequisites>
+      <li>BMT_Beekeeping</li>
+      <li>Electricity</li>
+      <li>AirConditioning</li>	  
+    </researchPrerequisites>
+  </ThingDef>
+  
+    <ThingDef ParentName="BuildingBase">
+    <defName>BMT_UltratechApiary</defName>
+    <label>ultratech apiary</label>
+    <description>An self-powered ultratech apiary that allows bees to produce honeycomb in any temperature. With auto-harvesters built in, it makes the work of beekeeping far easier. It grows flowers within its chamber, so it does not require plants around itself to produce honeycomb.</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>BMT_Bees/Things/Building/UltratechApiary/UltratechApiary</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+	  <drawSize>2</drawSize>
+      <damageData>
+        <rect>(0.05,0.1,0.9,0.9)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.75, 0.35, 0.33)</volume>
+      </shadowData>
+    </graphicData>
+	<uiIconScale>0.75</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.45</fillPercent>
+    <pathCost>42</pathCost>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>1200</WorkToBuild>
+      <Mass>10</Mass>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+	<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <Steel>10</Steel>
+	  <Plasteel>2</Plasteel>  
+	  <Uranium>1</Uranium>  
+      <ComponentSpacer>1</ComponentSpacer>
+	  <BMT_QueenBee>1</BMT_QueenBee>
+    </killedLeavings>
+    <costList>
+      <Steel>50</Steel>
+	  <Plasteel>10</Plasteel>  
+	  <Uranium>5</Uranium>  
+      <ComponentSpacer>2</ComponentSpacer>
+	  <BMT_QueenBee>1</BMT_QueenBee>
+    </costList>
+    <comps>
+	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
+					<!-- Pawn to spawn. -->
+		<pawnDef>BMT_Bees</pawnDef> 
+					<!--
+					When this thing spawns, it will automatically spawn 1 pawn.
+					Then it will periodically spawn more until reaching 4.
+					-->
+		<pawnCount>3~8</pawnCount>
+					<!-- Will try to spawn another pawn after this time interval. --> 
+		<pawnSpawnIntervalDays>0.1~0.25</pawnSpawnIntervalDays>
+					<!-- Sound to play when a new pawn is created. -->
+		<spawnSound>Hive_Spawn</spawnSound>
+	  </li>
+      <li Class="CompProperties_Spawner">
+        <requiresPower>false</requiresPower>
+        <thingToSpawn>BMT_Honeycomb</thingToSpawn>
+        <spawnCount>75</spawnCount>
+        <spawnIntervalRange><min>60000</min><max>120000</max></spawnIntervalRange>
+        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+        <showMessageIfOwned>true</showMessageIfOwned>
+      </li>
+    </comps>
+    <tickerType>Rare</tickerType>
+    <rotatable>true</rotatable>
+    <designationCategory>Production</designationCategory>
+    <uiOrder>2710</uiOrder>
+    <constructEffect>ConstructMetal</constructEffect>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <building>
+      <buildingTags>
+        <li>Production</li>
+      </buildingTags>
+      <destroySound>BuildingDestroyed_Wood_Small</destroySound>
+    </building>
+    <researchPrerequisites>
+      <li>BMT_Beekeeping</li>
+      <li>Fabrication</li>
+      <li>Electricity</li>
+      <li>AirConditioning</li>		  
+    </researchPrerequisites>
+  </ThingDef>
+</Defs>

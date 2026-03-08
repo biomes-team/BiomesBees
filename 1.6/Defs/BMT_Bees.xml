@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--================================================ -->
+  
+    <ThingDef ParentName="AnimalThingBase">
+	<defName>BMT_Bees</defName>
+	<!-- too long. out of name field -->
+	<!-- <label>pustule hornet queen</label> -->
+	<label>bee swarm</label>
+	<description>Todo.</description>
+	<uiIconScale>1.5</uiIconScale>
+	<statBases>
+	  <MoveSpeed>3.0</MoveSpeed>
+	  <MarketValue>150</MarketValue>
+	  <ComfyTemperatureMin>-60</ComfyTemperatureMin>
+	  <ComfyTemperatureMax>70</ComfyTemperatureMax>
+	  <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">-0.5</ToxicEnvironmentResistance>
+	  <MaxFlightTime>100</MaxFlightTime>
+	  <FlightCooldown>50</FlightCooldown>
+	  <MeleeDodgeChance>0.75</MeleeDodgeChance>
+	  <Wildness>1</Wildness>
+	</statBases>
+	<tools>
+	  <li>
+		<capacities>
+		  <li>Bite</li>
+		</capacities>
+		<power>1</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+	  </li>
+	  <li>
+		<label>head</label>
+		<capacities>
+		  <li>Blunt</li>
+		</capacities>
+		<power>1</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+		<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+		<chanceFactor>0.2</chanceFactor>
+	  </li>
+	  		<li>
+				<label>stinger</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>1</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>BMT_StingerGroup</linkedBodyPartsGroup>
+				<extraMeleeDamages>
+					<li>
+						<def>ScratchToxic</def>
+						<amount>15</amount>
+					</li>
+				</extraMeleeDamages>
+			</li>
+	</tools>
+	<race>
+	  <hasGenders>false</hasGenders>
+	  <canBePredatorPrey>false</canBePredatorPrey>
+	  <body>BMT_BeetleLikeWithStinger</body>
+	  <baseBodySize>0.1</baseBodySize>
+	  <baseHungerRate>0.1</baseHungerRate>
+	  <baseHealthScale>0.1</baseHealthScale>
+	  <predator>false</predator>
+	  <useMeatFrom>Megaspider</useMeatFrom>
+	  <foodType>VegetarianRoughAnimal</foodType>
+	  <leatherDef>BMT_FragileChitin</leatherDef>
+	  <trainability>None</trainability>
+	  <!-- <mateMtbHours>8</mateMtbHours> -->
+	  <!-- <gestationPeriodDays>5.661</gestationPeriodDays> -->
+	  <headPosPerRotation>
+		<li>(0.0, 0, 0.07)</li>
+		<li>(0.19, 0, 0)</li>
+		<li>(0.0, 0, -0.07)</li>
+		<li>(-0.19, 0, 0)</li>
+	  </headPosPerRotation>
+	  <lifeExpectancy>4</lifeExpectancy>
+	  <lifeStageAges>
+		<li>
+		  <def>AnimalBaby</def>
+		  <minAge>0</minAge>
+		</li>
+		<li>
+		  <def>AnimalJuvenile</def>
+		  <minAge>0.1</minAge>
+		</li>
+		<li>
+		  <def>AnimalAdult</def>
+		  <minAge>0.2222</minAge>
+			<soundWounded>Pawn_Megascarab_Wounded</soundWounded>
+			<soundDeath>Pawn_Megascarab_Death</soundDeath>
+			<soundCall>Pawn_Megascarab_Call</soundCall>
+			<soundAngry>Pawn_Megascarab_Angry</soundAngry>
+		</li>
+	  </lifeStageAges>
+	  <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+	  <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+	  <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+	</race>
+	<comps>
+    <li Class="BiomesCore.CompProperties_PackDefense">
+        <baseChance>0.9</baseChance>
+        <attackerMaxDistance>30</attackerMaxDistance>
+        <joinDefenseRange>20</joinDefenseRange>
+        <joinMaxPain>0.3</joinMaxPain>
+        <maxNumMeleeAttacks>3</maxNumMeleeAttacks>
+        <expiryInterval>500</expiryInterval>
+        <attackDoorIfTargetLost>false</attackDoorIfTargetLost>
+        <canBashFences>false</canBashFences>
+        <predatorConfidencePenalty>100</predatorConfidencePenalty>
+    </li>
+	</comps>
+	<!-- <tradeTags> -->
+	  <!-- <li>BMT_PollutedAnimalUncommon</li> -->
+	  <!-- <li>BMT_PollutedAnimalFighter</li> -->
+	<!-- </tradeTags> -->
+		<modExtensions>
+			<li Class="BiomesCore.DefModExtensions.Biomes_AnimalControl" />
+		</modExtensions>
+  </ThingDef>
+  
+ 
+
+  <!--================================================ -->
+
+  <PawnKindDef ParentName="AnimalKindBase">
+	<defName>BMT_Bees</defName>
+	<label>bee swarm</label>
+	<race>BMT_Bees</race>
+	<combatPower>10</combatPower>
+    <startingHediffs>
+      <li>
+        <def>BMT_BeeSwarming</def>
+      </li>
+    </startingHediffs>
+			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
+			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
+			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
+			<flyingAnimationDrawSize>1.7</flyingAnimationDrawSize>
+			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
+			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
+	<lifeStages>
+	  <li>
+		<bodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
+		  <drawSize>1</drawSize>
+		</bodyGraphicData>
+		<dessicatedBodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
+		  <drawSize>1</drawSize>
+		</dessicatedBodyGraphicData>
+	  </li>
+	  <li>
+		<bodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
+		  <drawSize>1</drawSize>
+		</bodyGraphicData>
+		<dessicatedBodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
+		  <drawSize>1</drawSize>
+		</dessicatedBodyGraphicData>
+	  </li>
+	  <li>
+		<bodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
+		  <drawSize>1</drawSize>
+		  <shadowData>
+			<volume>(0.32, 0.35, 0.32)</volume>
+			<offset>(0,0,0)</offset>
+		  </shadowData>
+		</bodyGraphicData>
+		<dessicatedBodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
+		  <drawSize>1</drawSize>
+		</dessicatedBodyGraphicData>
+	  </li>
+	</lifeStages>
+  </PawnKindDef>
+
+</Defs>
