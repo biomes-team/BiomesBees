@@ -37,9 +37,9 @@
 	  <hasCorpse>false</hasCorpse>
 	  <canBePredatorPrey>false</canBePredatorPrey>
 	  <body>BMT_SwarmBody</body>
-	  <baseBodySize>0.1</baseBodySize>
+	  <baseBodySize>0.2</baseBodySize>
 	  <baseHungerRate>0.1</baseHungerRate>
-	  <baseHealthScale>0.1</baseHealthScale>
+	  <baseHealthScale>0.3</baseHealthScale>
 	  <predator>false</predator>
 	  <useMeatFrom>Megaspider</useMeatFrom>
 	  <foodType>VegetarianRoughAnimal</foodType>
