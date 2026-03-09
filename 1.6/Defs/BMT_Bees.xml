@@ -18,50 +18,25 @@
 	  <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">-0.5</ToxicEnvironmentResistance>
 	  <MaxFlightTime>100</MaxFlightTime>
 	  <FlightCooldown>50</FlightCooldown>
-	  <MeleeDodgeChance>0.75</MeleeDodgeChance>
+	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
 	  <Wildness>1</Wildness>
 	</statBases>
 	<tools>
-	  <li>
-		<capacities>
-		  <li>Bite</li>
-		</capacities>
-		<power>1</power>
-		<cooldownTime>2</cooldownTime>
-		<linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
-	  </li>
-	  <li>
-		<label>head</label>
-		<capacities>
-		  <li>Blunt</li>
-		</capacities>
-		<power>1</power>
-		<cooldownTime>2</cooldownTime>
-		<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-		<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-		<chanceFactor>0.2</chanceFactor>
-	  </li>
 	  		<li>
-				<label>stinger</label>
+				<label>swarm stingers</label>
 				<capacities>
-					<li>Scratch</li>
+					<li>BMT_SuperiorToxicSting</li>
 				</capacities>
-				<power>1</power>
+				<power>3</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>BMT_StingerGroup</linkedBodyPartsGroup>
-				<extraMeleeDamages>
-					<li>
-						<def>ScratchToxic</def>
-						<amount>15</amount>
-					</li>
-				</extraMeleeDamages>
 			</li>
 	</tools>
 	<race>
 	  <hasGenders>false</hasGenders>
 	  <hasCorpse>false</hasCorpse>
 	  <canBePredatorPrey>false</canBePredatorPrey>
-	  <body>BMT_BeetleLikeWithStinger</body>
+	  <body>BMT_SwarmBody</body>
 	  <baseBodySize>0.1</baseBodySize>
 	  <baseHungerRate>0.1</baseHungerRate>
 	  <baseHealthScale>0.1</baseHealthScale>

@@ -2,7 +2,7 @@
 <Defs>
 
     <ThingDef ParentName="TreeBase">
-        <defName>BiomesBees_GroundBeeHive</defName>
+        <defName>BMT_WildBeehive</defName>
         <label>wild beehive</label>
         <description>A wild beehive built within the stump of a tree. A queen bee can be taken from within, but an angry swarm will emerge once harvested.</description>
         <graphicData>
@@ -13,6 +13,7 @@
                 <offset>(0,0,-0.38)</offset>
             </shadowData>-->
         </graphicData>
+		<thingClass>BMT.BiomesPlant</thingClass>
         <ingestible>
             <preferability>NeverForNutrition</preferability>
         </ingestible>
@@ -26,13 +27,15 @@
 			<maxGrowthTemperature>40</maxGrowthTemperature>
 			<mustBeWildToSow>true</mustBeWildToSow>
 			<harvestWork>200</harvestWork>
-			<harvestYield>10</harvestYield>
+			<harvestYield>1</harvestYield>
 			<harvestTag>Standard</harvestTag>
 			<harvestAfterGrowth>0.1</harvestAfterGrowth>
-			<harvestedThingDef>BMT_Honeycomb</harvestedThingDef>
-			<fertilitySensitivity>0.5</fertilitySensitivity>
+			<harvestedThingDef>BMT_QueenBee</harvestedThingDef>
+			<fertilitySensitivity>0</fertilitySensitivity>
 			<interferesWithRoof>false</interferesWithRoof>
-			<growDays>5</growDays>
+			<growDays>10</growDays>
+			<soundHarvesting>Harvest_Tree</soundHarvesting>
+			<soundHarvestFinish>Harvest_Tree_Finish</soundHarvestFinish>
 		</plant>
         <blockWind>false</blockWind>
 		<receivesSignals>true</receivesSignals>
@@ -57,12 +60,22 @@
 			<!-- Limit for all insects on the map, for all hives. -->
 			<maxPawnCount>5</maxPawnCount>
 			<pawnSpawnIntervalDays>2~3</pawnSpawnIntervalDays>
-			<defendRadius>5</defendRadius>
+			<defendRadius>2</defendRadius>
 			<!-- The faction to which the insect will belong. The faction is mandatory, since without it the AI most likely will not work. -->
 			<faction>BMT_WildBees</faction>
 			<!-- In theory, a custom faction is not needed. And the hive can easily work with the vanilla faction. -->
 		</li>
 		</comps>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.AdditionalHarvestDrops">
+                <defs>
+                    <li>BMT_Honeycomb</li>
+                </defs>
+                <yields>
+                    <li>10</li>
+                </yields>
+            </li>
+        </modExtensions>
     </ThingDef>
 
 </Defs>

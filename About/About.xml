@@ -20,8 +20,9 @@
 		<li>Ludeon.RimWorld.Ideology</li>
 		<li>Ludeon.RimWorld.Biotech</li>
 		<li>brrainz.harmony</li>
+		<li>BiomesTeam.BiomesCore</li>
 	</loadAfter>
-	<description>Adds bees and bee related stuff!
+	<description>A simple and cozy mod that adds beekeeping to the Rim. It adds bees and associated items, including wax for candles and delicious mead. Queen Bees can be found from wild hives
 	
 	Safe to add, not safe to remove.
 	Requires Harmony.
