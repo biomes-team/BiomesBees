@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef ParentName="TreeBase">
+        <defName>BMT_WildBeehive</defName>
+        <label>wild beehive</label>
+        <description>A wild beehive built within the stump of a tree. A queen bee can be taken from within, but an angry swarm will emerge once harvested.</description>
+        <graphicData>
+            <texPath>BMT_Bees/Things/Building/NaturalHive/NaturalHive</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <!--<shadowData>
+                <volume>(0.15, 0.3, 0.15)</volume>
+                <offset>(0,0,-0.38)</offset>
+            </shadowData>-->
+        </graphicData>
+		<thingClass>BMT.BiomesPlant</thingClass>
+        <ingestible>
+            <preferability>NeverForNutrition</preferability>
+        </ingestible>
+		<plant Inherit="False" >
+			<growMinGlow>0</growMinGlow>
+			<growOptimalGlow>0</growOptimalGlow>
+			<interferesWithRoof>false</interferesWithRoof>
+			<pollution>Any</pollution>
+			<topWindExposure>0.0</topWindExposure>
+			<minGrowthTemperature>0</minGrowthTemperature>		
+			<maxGrowthTemperature>40</maxGrowthTemperature>
+			<mustBeWildToSow>true</mustBeWildToSow>
+			<harvestWork>200</harvestWork>
+			<harvestYield>1</harvestYield>
+			<harvestTag>Standard</harvestTag>
+			<harvestAfterGrowth>0.1</harvestAfterGrowth>
+			<harvestedThingDef>BMT_QueenBee</harvestedThingDef>
+			<fertilitySensitivity>0</fertilitySensitivity>
+			<interferesWithRoof>false</interferesWithRoof>
+			<growDays>10</growDays>
+			<soundHarvesting>Harvest_Tree</soundHarvesting>
+			<soundHarvestFinish>Harvest_Tree_Finish</soundHarvestFinish>
+		</plant>
+        <blockWind>false</blockWind>
+		<receivesSignals>true</receivesSignals>
+		<comps>
+			<li Class="CompProperties_CanBeDormant">
+				<startsDormant>false</startsDormant>
+				<canWakeUpFogged>false</canWakeUpFogged>
+			</li>
+			<!-- <li Class="BiomesCore.CompProperties_CantSpawnOnTempMap"/> -->
+			<li Class="CompProperties_SelfhealHitpoints">
+				<ticksPerHeal>6000</ticksPerHeal>
+			</li>
+		<li Class="BiomesCore.CompProperties_HiveSpawner">
+			<spawnablePawnKinds>
+				<!-- Any number of PawnKindDefs. A random one is selected upon spawn. -->
+				<li>BMT_Bees</li>
+			</spawnablePawnKinds>
+			<pawnKindSpawnAfterKill>BMT_Bees</pawnKindSpawnAfterKill>
+			<spawnSound>Hive_Spawn</spawnSound>
+			<!-- If greater than 0, then when the hive first spawns, the hive will immediately spawn the specified number of insects. -->
+			<initialPawnCount>2~3</initialPawnCount>
+			<!-- Limit for all insects on the map, for all hives. -->
+			<maxPawnCount>5</maxPawnCount>
+			<pawnSpawnIntervalDays>2~3</pawnSpawnIntervalDays>
+			<defendRadius>2</defendRadius>
+			<!-- The faction to which the insect will belong. The faction is mandatory, since without it the AI most likely will not work. -->
+			<faction>BMT_WildBees</faction>
+			<!-- In theory, a custom faction is not needed. And the hive can easily work with the vanilla faction. -->
+		</li>
+		</comps>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.AdditionalHarvestDrops">
+                <defs>
+                    <li>BMT_Honeycomb</li>
+                </defs>
+                <yields>
+                    <li>10</li>
+                </yields>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+</Defs>

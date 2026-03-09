@@ -51,7 +51,7 @@
       <li Class="CompProperties_TemperatureRuinable">
         <minSafeTemperature>4</minSafeTemperature>
         <maxSafeTemperature>32</maxSafeTemperature>
-        <progressPerDegreePerTick>0.00001</progressPerDegreePerTick>
+        <progressPerDegreePerTick>0.001</progressPerDegreePerTick>
       </li>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
