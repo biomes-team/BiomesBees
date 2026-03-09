@@ -29,8 +29,9 @@
 				</capacities>
 				<power>3</power>
 				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>BMT_StingerGroup</linkedBodyPartsGroup>
+				<linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
 			</li>
+
 	</tools>
 	<race>
 	  <hasGenders>false</hasGenders>
