@@ -4,7 +4,7 @@
   <ThingDef ParentName="OrganicProductBase">
     <defName>BMT_Honeycomb</defName>
     <label>honeycomb</label>
-    <description>Honeycomb from a beehive or apiary. While edible, it is better when processed separately into honey and wax.</description>
+    <description>Honeycomb from a beehive or apiary. While edible, it is better when processed separately into honey and wax. While longlasting, it does not last as long as pure honey.</description>
     <graphicData>
       <texPath>BMT_Bees/Things/Item/Honeycomb</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -20,7 +20,7 @@
     </statBases>
     <comps>
       <li Class="CompProperties_Rottable">
-        <daysToRotStart>15</daysToRotStart>
+        <daysToRotStart>30</daysToRotStart>
         <rotDestroys>true</rotDestroys>
       </li>
     </comps>
@@ -91,7 +91,7 @@
 	<ThingDef ParentName="OrganicProductBase">
     <defName>BMT_Honey</defName>
     <label>honey</label>
-    <description>Honey is produced by a small variety of bees. It is smooth, gooey, sweet, and fulfills the recreation need of those that consume it. Virtually any creature can eat it due to its unique properties. It is unwise to give it to babies, however.</description>
+    <description>Honey is produced by a small variety of bees. It is smooth, gooey, sweet, and fulfills the recreation need of those that consume it. Virtually any creature can eat it due to its unique properties and it lasts a long time before going bad. It is unwise to give it to babies, however.</description>
     <possessionCount>10</possessionCount>
     <graphicData>
       <texPath>BMT_Bees/Things/Item/Honey</texPath>
@@ -104,6 +104,12 @@
       <Nutrition>0.05</Nutrition>
       <FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
     </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>150</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
     <ingestible>
       <foodType>AnimalProduct</foodType>
       <preferability>MealFine</preferability>
@@ -118,7 +124,6 @@
       <li>AnimalProductRaw</li>
     </thingCategories>
     <stackLimit>250</stackLimit>
-    <smallVolume>true</smallVolume>
     <allowedArchonexusCount>150</allowedArchonexusCount>
   </ThingDef>
   
