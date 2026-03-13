@@ -55,7 +55,13 @@
     <!-- Details with wiki here: https://github.com/Zetrith/Prepatcher -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Building_BeeHive.cs" />
+    <Compile Include="CompProperties_BeesHive.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="BiomesCore">
+      <HintPath>..\..\BiomesCore\1.6\Assemblies\BiomesCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
