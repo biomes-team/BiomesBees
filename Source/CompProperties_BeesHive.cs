@@ -26,6 +26,9 @@ namespace BiomesBees
 		public FactionDef angryBeeFaction;
 		public int pawnSpawnRadius = 2;
 
+		public int safeHarvestLevel = 16;
+		public float xpPerTick = 1f;
+		public float basicFailChance = 0.1f;
 		public float defendRadius = 7f;
 		public float wanderRadius = 6f;
 
@@ -79,7 +82,22 @@ namespace BiomesBees
 			return plant.def.plant.purpose == PlantPurpose.Beauty;
 		}
 
-		public void SpawnItems(Pawn harvester)
+		public void Harvest(Pawn harvester, int tick)
+		{
+			float? skillFactor = harvester.skills?.GetSkill(SkillDefOf.Animals)?.Level;
+			float failChance = Props.basicFailChance / (skillFactor.HasValue && skillFactor.Value > 0 ? skillFactor.Value : 1f);
+			if ((skillFactor == null || skillFactor.Value < Props.safeHarvestLevel) && Rand.Chance(failChance))
+			{
+				HarvestFail();
+			}
+			else
+			{
+				HarvestHoney(harvester);
+			}
+			harvester.skills?.Learn(SkillDefOf.Animals, Props.xpPerTick * tick);
+		}
+
+		private void HarvestHoney(Pawn harvester)
 		{
 			Thing thing = ThingMaker.MakeThing(Props.productDef);
 			thing.stackCount = (int)beeHoney;
@@ -94,7 +112,7 @@ namespace BiomesBees
 			//}
 		}
 
-		public void HarvestFail()
+		private void HarvestFail()
 		{
 			int tries = new IntRange(1, 3).RandomInRange;
 			for (int i = 0; i < tries; i++)
