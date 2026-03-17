@@ -56,7 +56,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompProperties_BeesHive.cs" />
+    <Compile Include="JobDefOf_Bees.cs" />
     <Compile Include="JobDriver_HarvestHoney.cs" />
+    <Compile Include="MapComponent_CacheMaster.cs" />
+    <Compile Include="WorkGiver_HarvestHoney.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="BiomesCore">

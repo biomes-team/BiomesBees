@@ -19,6 +19,7 @@ namespace BiomesBees
 
 		public int flowerRadius = 5;
 		public int honeyTick = 5000;
+		public float bestHarvestAmount = 45;
 		public float honeyLimit = 50;
 		public ThingDef productDef;
 		public string uniqueTag = "BeeHive";
@@ -38,6 +39,16 @@ namespace BiomesBees
 		{
 			compClass = typeof(CompBeesHive);
 		}
+
+		public override void ResolveReferences(ThingDef parentDef)
+		{
+			base.ResolveReferences(parentDef);
+			if (bestHarvestAmount > honeyLimit)
+			{
+				bestHarvestAmount = honeyLimit;
+			}
+		}
+
 	}
 
 	public class CompBeesHive : ThingComp
@@ -57,6 +68,14 @@ namespace BiomesBees
 			}
 			nextTick = Props.honeyTick;
 			MakeHoney();
+		}
+
+		public bool CanAutoHarvest
+		{
+			get
+			{
+				return beeHoney >= Props.bestHarvestAmount;
+			}
 		}
 
 		private void MakeHoney()
@@ -148,6 +167,25 @@ namespace BiomesBees
 					Props.spawnSound.PlayOneShot(parent);
 				}
 			}
+		}
+
+		public override void PostSpawnSetup(bool respawningAfterLoad)
+		{
+			//if (respawningAfterLoad)
+			//{
+			//}
+			// Always recache after spawn. Include save-load/reload.
+			WorkGiver_HarvestHoney.ResetCache();
+		}
+
+		public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
+		{
+			WorkGiver_HarvestHoney.ResetCache();
+		}
+
+		public override void PostDestroy(DestroyMode mode, Map previousMap)
+		{
+			WorkGiver_HarvestHoney.ResetCache();
 		}
 
 		public override void PostExposeData()
