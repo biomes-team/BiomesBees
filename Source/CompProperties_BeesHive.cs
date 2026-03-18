@@ -17,8 +17,9 @@ namespace BiomesBees
 	public class CompProperties_BeesHive : CompProperties
 	{
 
-		public int flowerRadius = 5;
+		public float flowerRadius = 5;
 		public int honeyTick = 5000;
+		public float honeyPerFlower = 0.1f;
 		public float bestHarvestAmount = 45;
 		public float honeyLimit = 50;
 		public ThingDef productDef;
@@ -26,6 +27,10 @@ namespace BiomesBees
 		public List<PawnKindDef> angryBeesDefs;
 		public FactionDef angryBeeFaction;
 		public int pawnSpawnRadius = 2;
+
+		public List<ThingDef> whitelist = new();
+		public List<ThingDef> blacklist = new();
+		public List<PlantPurpose> plantPurpose; // PlantPurpose.Beauty
 
 		public int safeHarvestLevel = 16;
 		public float xpPerTick = 1f;
@@ -67,7 +72,7 @@ namespace BiomesBees
 				return;
 			}
 			nextTick = Props.honeyTick;
-			MakeHoney();
+			MakeHoney(beeHoney + (GetForCell(parent.PositionHeld, Props.flowerRadius) * Props.honeyPerFlower));
 		}
 
 		public bool CanAutoHarvest
@@ -78,9 +83,9 @@ namespace BiomesBees
 			}
 		}
 
-		private void MakeHoney()
+		private void MakeHoney(float newHoney)
 		{
-			beeHoney = Mathf.Clamp(beeHoney + GetForCell(parent.PositionHeld, Props.flowerRadius), 0, Props.honeyLimit);
+			beeHoney = Mathf.Clamp(newHoney, 0, Props.honeyLimit);
 		}
 
 		private float GetForCell(IntVec3 cell, float radius)
@@ -98,7 +103,22 @@ namespace BiomesBees
 
 		public bool IsFlower(Plant plant)
 		{
-			return plant.def.plant.purpose == PlantPurpose.Beauty;
+			return IsFlower(plant.def);
+		}
+
+		public bool IsFlower(ThingDef def)
+		{
+			//return plant.def.plant.purpose == PlantPurpose.Beauty;
+			if (Props.whitelist.Contains(def))
+			{
+				return true;
+			}
+			if (Props.blacklist.Contains(def))
+			{
+				return false;
+			}
+			//return (def.plant.purpose & Props.plantPurpose) != 0;
+			return Props.plantPurpose.Contains(def.plant.purpose);
 		}
 
 		public void Harvest(Pawn harvester, int tick)
@@ -166,6 +186,45 @@ namespace BiomesBees
 				{
 					Props.spawnSound.PlayOneShot(parent);
 				}
+			}
+		}
+
+		public override IEnumerable<Gizmo> CompGetGizmosExtra()
+		{
+			if (DebugSettings.ShowDevGizmos)
+			{
+				yield return new Command_Action
+				{
+					defaultLabel = "DEV: Honey +10",
+					action = delegate
+					{
+						MakeHoney(10f);
+					}
+				};
+				yield return new Command_Action
+				{
+					defaultLabel = "DEV: Log acceptable defs",
+					action = delegate
+					{
+						string log = "Flowers:";
+						foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefsListForReading)
+						{
+							if (thingDef.plant != null && IsFlower(thingDef))
+							{
+								log += "\n" + thingDef.defName + " : " + thingDef.label;
+							}
+						}
+						Log.Error(log);
+					}
+				};
+				yield return new Command_Action
+				{
+					defaultLabel = "DEV: HarvestFail 1 bee",
+					action = delegate
+					{
+						HarvestFail();
+					}
+				};
 			}
 		}
 
