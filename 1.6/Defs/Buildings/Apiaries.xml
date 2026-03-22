@@ -322,7 +322,7 @@
       <ComponentSpacer>2</ComponentSpacer>
 	  <BMT_QueenBee>1</BMT_QueenBee>
     </costList>
-	<specialDisplayRadius>5.5</specialDisplayRadius>
+	<!-- <specialDisplayRadius>5.5</specialDisplayRadius> -->
     <comps>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
@@ -339,6 +339,11 @@
 	  </li>
 
 	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<!-- statDef factor -->
+		<!-- <failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef> -->
+		<!-- ultratech stuff -->
+		<flowerlessProduction>true</flowerlessProduction>
+		<honeyProductionWithoutFlowers>0.2</honeyProductionWithoutFlowers>
 		<!-- search radius. float -->
 		<flowerRadius>5.5</flowerRadius>
 		<!-- Honey per flower -->

@@ -16,6 +16,9 @@ namespace BiomesBees
 
 	public class CompProperties_BeesHive : CompProperties
 	{
+		public bool flowerlessProduction = false;
+		public StatDef failChanceStatDef;
+		public float honeyProductionWithoutFlowers = 0.5f;
 
 		public float flowerRadius = 5;
 		public int honeyTick = 5000;
@@ -98,7 +101,7 @@ namespace BiomesBees
 			}
 			_ = WorkGiver_HarvestHoney.Hives;
 			nextTick = Props.honeyTick;
-			MakeHoney(beeHoney + (GetForCell(parent.PositionHeld, Props.flowerRadius) * Props.honeyPerFlower));
+			MakeHoney(beeHoney + (!Props.flowerlessProduction ? (GetForCell(parent.PositionHeld, Props.flowerRadius) * Props.honeyPerFlower) : Props.honeyProductionWithoutFlowers));
 			return true;
 		}
 
@@ -152,6 +155,10 @@ namespace BiomesBees
 		{
 			float? skillFactor = harvester.skills?.GetSkill(SkillDefOf.Animals)?.Level;
 			float failChance = Props.basicFailChance / (skillFactor.HasValue && skillFactor.Value > 0 ? skillFactor.Value : 1f);
+			if (Props.failChanceStatDef != null)
+			{
+				failChance *= harvester.GetStatValue(Props.failChanceStatDef);
+			}
 			if ((skillFactor == null || skillFactor.Value < Props.safeHarvestLevel) && Rand.Chance(failChance))
 			{
 				HarvestFail();
