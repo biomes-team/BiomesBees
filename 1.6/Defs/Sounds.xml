@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<Defs>
+
+	<SoundDef>
+		<defName>BMT_Bees_Call</defName>
+		<context>MapOnly</context>
+		<eventNames/>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>BMT_Bees/Call</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>
+					<min>15.49</min>
+					<max>17.80</max>
+				</volumeRange>
+				<pitchRange>
+					<min>0.90</min>
+					<max>1.15</max>
+				</pitchRange>
+				<distRange>
+					<min>0</min>
+					<max>45.00</max>
+				</distRange>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>BMT_Bees_Angry</defName>
+		<context>MapOnly</context>
+		<eventNames/>
+		<maxVoices>2</maxVoices>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>BMT_Bees/Angry</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>
+					<min>28</min>
+					<max>28</max>
+				</volumeRange>
+				<pitchRange>
+					<min>0.95</min>
+					<max>1.15</max>
+				</pitchRange>
+				<distRange>
+					<min>0</min>
+					<max>70</max>
+				</distRange>
+				<sustainLoop>False</sustainLoop>
+				<repeatMode>NeverTwice</repeatMode>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>BMT_Bees_Wounded</defName>
+		<context>MapOnly</context>
+		<eventNames/>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>BMT_Bees/Wounded</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>
+					<min>15</min>
+					<max>15</max>
+				</volumeRange>
+				<pitchRange>
+					<min>0.9311765</min>
+					<max>1.091765</max>
+				</pitchRange>
+				<distRange>
+					<min>0</min>
+					<max>70</max>
+				</distRange>
+				<repeatMode>NeverTwice</repeatMode>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>BMT_Bees_Death</defName>
+		<context>MapOnly</context>
+		<eventNames/>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>BMT_Bees/Death</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>
+					<min>20</min>
+					<max>20</max>
+				</volumeRange>
+				<pitchRange>
+					<min>0.93</min>
+					<max>1.11</max>
+				</pitchRange>
+				<distRange>
+					<min>0</min>
+					<max>70</max>
+				</distRange>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+  <SoundDef>
+    <defName>BMT_ApiaryAmbient</defName>  
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <sustainStartSound>BMT_ApiaryStart</sustainStartSound>  
+    <sustainStopSound>BMT_ApiaryEnd</sustainStopSound>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>BMT_HivesApiaries/BMT_ApiaryAmbient</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>7~7</volumeRange>      
+        <pitchRange>1~1.015</pitchRange>      
+        <distRange>0~30</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+   <SoundDef>
+    <defName>BMT_ApiaryStart</defName>  
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>BMT_HivesApiaries/BMT_ApiaryStart</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>7~7</volumeRange>     
+        <distRange>0~50.27907</distRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>BMT_ApiaryEnd</defName>  
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>BMT_HivesApiaries/BMT_ApiaryEnd</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>7~7</volumeRange>      
+        <distRange>0~50.27907</distRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

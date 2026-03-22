@@ -49,6 +49,10 @@
     </killedLeavings>
 	<specialDisplayRadius>5.5</specialDisplayRadius>
     <comps>
+      <li Class="CompProperties_AmbientSound">
+        <sound>BMT_ApiaryAmbient</sound>
+        <disabledOnUnpowered>false</disabledOnUnpowered>
+      </li>
       <li Class="CompProperties_Spawner">
         <requiresPower>false</requiresPower>
         <thingToSpawn>BMT_QueenBee</thingToSpawn>
@@ -192,6 +196,10 @@
     </killedLeavings>
 	<specialDisplayRadius>5.5</specialDisplayRadius>
     <comps>
+      <li Class="CompProperties_AmbientSound">
+        <sound>BMT_ApiaryAmbient</sound>
+        <disabledOnUnpowered>false</disabledOnUnpowered>
+      </li>
       <li Class="CompProperties_Spawner">
         <requiresPower>false</requiresPower>
         <thingToSpawn>BMT_QueenBee</thingToSpawn>
@@ -213,14 +221,6 @@
 					<!-- Sound to play when a new pawn is created. -->
 		<spawnSound>Hive_Spawn</spawnSound>
 	  </li>
- <!--     <li Class="CompProperties_Spawner">
-        <requiresPower>false</requiresPower>
-        <thingToSpawn>BMT_Honeycomb</thingToSpawn>
-        <spawnCount>50</spawnCount>
-        <spawnIntervalRange><min>60000</min><max>120000</max></spawnIntervalRange>
-        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
-        <showMessageIfOwned>true</showMessageIfOwned>
-      </li> -->
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
 	  <li Class="BiomesBees.CompProperties_BeesHive">
@@ -298,7 +298,7 @@
     <ThingDef ParentName="BuildingBase">
     <defName>BMT_UltratechApiary</defName>
     <label>ultratech apiary</label>
-    <description>An self-powered ultratech apiary that allows bees to produce honeycomb in any temperature. With auto-harvesters built in, it makes the work of beekeeping far easier. It grows flowers within its chamber, so it does not require plants around itself to produce honeycomb.</description>
+    <description>An self-powered ultratech apiary that allows bees to produce honeycomb in any temperature. It grows flowers within its chamber, so it does not require plants around itself to produce honeycomb.</description>
     <thingClass>Building</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
@@ -344,6 +344,10 @@
     </costList>
 	<!-- <specialDisplayRadius>5.5</specialDisplayRadius> -->
     <comps>
+      <li Class="CompProperties_AmbientSound">
+        <sound>BMT_ApiaryAmbient</sound>
+        <disabledOnUnpowered>false</disabledOnUnpowered>
+      </li>
       <li Class="CompProperties_Spawner">
         <requiresPower>false</requiresPower>
         <thingToSpawn>BMT_QueenBee</thingToSpawn>

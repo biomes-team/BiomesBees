@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>BMT_WildBeehive</defName>
+        <label>wild beehive</label>
+        <description>A wild beehive built within the stump of a tree. A queen bee can be taken from within, but an angry swarm will emerge once harvested.</description>
+        <graphicData>
+            <texPath>BMT_Bees/Things/Building/NaturalHive/NaturalHive</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+      <drawRotated>false</drawRotated>
+		<damageData>
+			<rect>(0.05,0.1,0.9,0.9)</rect>
+		</damageData>
+		<shadowData>
+			<volume>(0.75, 0.35, 0.33)</volume>
+		</shadowData>
+		</graphicData>
+    <thingClass>Building</thingClass>
+	<uiIconScale>0.75</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.45</fillPercent>
+    <pathCost>42</pathCost>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>600</WorkToBuild>
+      <Mass>10</Mass>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+	<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <BMT_QueenBee>1</BMT_QueenBee>
+    </killedLeavings>
+	<specialDisplayRadius>5.5</specialDisplayRadius>
+    <comps>
+      <li Class="CompProperties_AmbientSound">
+        <sound>BMT_ApiaryAmbient</sound>
+        <disabledOnUnpowered>false</disabledOnUnpowered>
+      </li>
+      <li Class="CompProperties_Spawner">
+        <requiresPower>false</requiresPower>
+        <thingToSpawn>BMT_QueenBee</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange><min>2,700,000</min><max>3,600,000</max></spawnIntervalRange> <!-- This is roughly every 3/4 to one year or so -->
+        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+        <showMessageIfOwned>true</showMessageIfOwned>
+      </li>
+	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
+					<!-- Pawn to spawn. -->
+		<pawnDef>BMT_Bees</pawnDef> 
+					<!--
+					When this thing spawns, it will automatically spawn 1 pawn.
+					Then it will periodically spawn more until reaching 4.
+					-->
+		<pawnCount>1~4</pawnCount>
+					<!-- Will try to spawn another pawn after this time interval. --> 
+		<pawnSpawnIntervalDays>0.1~0.25</pawnSpawnIntervalDays>
+					<!-- Sound to play when a new pawn is created. -->
+		<spawnSound>Hive_Spawn</spawnSound>
+	  </li>
+	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<!-- statDef factor -->
+		<failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef>
+		<!-- search radius. float -->
+		<flowerRadius>5.5</flowerRadius>
+		<!-- Honey per flower -->
+		<honeyPerFlower>0.025</honeyPerFlower>
+		<!-- apiary tick freq. After apiary_tick honey is produced. Formula: flowers_in_radius * honeyPerFlower -->
+		<honeyTick>6000</honeyTick>
+		<!-- Product. Any ThingDef -->
+		<productDef>BMT_Honeycomb</productDef>
+		<!-- Amount when auto-work can be triggered. Job can spawn honey or angry bees -->
+		<bestHarvestAmount>45</bestHarvestAmount>
+		<!-- Max honey (or human meat) in apiary -->
+		<honeyLimit>50</honeyLimit>
+		<!-- Uniqe tag. Used for saves. Each CompProperties_BeesHive in single def req. uniqe uniqueTag -->
+		<uniqueTag>HoneyMaker5000</uniqueTag>
+
+		<!-- Any enemy faction -->
+		<angryBeeFaction>BMT_AngryWildBees</angryBeeFaction>
+		<!-- Any PawnkindDef -->
+		<angryBeesDefs>
+		  <li>BMT_Bees</li>
+		</angryBeesDefs>
+
+		<!-- Whitelisted ThingDefs. First check -->
+		<whitelist>
+		  <li>Corpse_Human</li>
+		</whitelist>
+		<!-- Blacklisted ThingDefs. Second check -->
+		<blacklist>
+		  <li>Corpse_Mech_CentipedeGunner</li>
+		</blacklist>
+		<!-- Third check. Always requred -->
+		<!-- Plants tags: Food, Health, Beauty, Misc  -->
+		<plantPurpose>
+		  <li>Beauty</li>
+		</plantPurpose>
+
+		<!-- xp per work tick. Work tick currently =720 -->
+		<xpPerTick>1</xpPerTick>
+		<!-- Harvest job fail chance. Fail summon angry bees. Formula: basicFailChance * harvester_animals_skill_level -->
+		<basicFailChance>0.1</basicFailChance>
+		<!-- Harvest never fails if skill >= safeHarvestLevel -->
+		<safeHarvestLevel>16</safeHarvestLevel>
+
+		<!-- same as hive spawner -->
+		<pawnSpawnRadius>2</pawnSpawnRadius>
+		<defendRadius>7</defendRadius>
+		<wanderRadius>6</wanderRadius>
+		<!-- Sound to play when a new pawn is created. -->
+		<spawnSound>Hive_Spawn</spawnSound>
+	  </li>
+    </comps>
+    <tickerType>Rare</tickerType>
+    <rotatable>true</rotatable>
+    <designationCategory>Production</designationCategory>
+    <uiOrder>2710</uiOrder>
+    <building>
+      <buildingTags>
+        <li>Production</li>
+      </buildingTags>
+      <destroySound>BuildingDestroyed_Wood_Small</destroySound>
+    </building>
+  </ThingDef>
+
+</Defs>
