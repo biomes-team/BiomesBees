@@ -183,7 +183,7 @@
     <costStuffCount>50</costStuffCount>
     <costList>
       <Steel>10</Steel>
-      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentIndustrial>2</ComponentIndustrial>
 	  <BMT_QueenBee>1</BMT_QueenBee>
     </costList>
 	<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
