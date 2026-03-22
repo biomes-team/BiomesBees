@@ -49,10 +49,15 @@
 				<ticksPerHeal>6000</ticksPerHeal>
 			</li>
 	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<!-- statDef factor -->
+		<!-- <failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef> -->
+		<!-- ultratech stuff -->
+		<flowerlessProduction>true</flowerlessProduction>
+		<honeyProductionWithoutFlowers>0.1</honeyProductionWithoutFlowers>
 		<!-- search radius. float -->
-		<flowerRadius>200.5</flowerRadius>
+		<flowerRadius>10.5</flowerRadius>
 		<!-- Honey per flower -->
-		<honeyPerFlower>0.1</honeyPerFlower>
+		<honeyPerFlower>0.01</honeyPerFlower>
 		<!-- apiary tick freq. After apiary_tick honey is produced. Formula: flowers_in_radius * honeyPerFlower -->
 		<honeyTick>6000</honeyTick>
 		<!-- Product. Any ThingDef -->
@@ -65,7 +70,7 @@
 		<uniqueTag>HoneyMaker5000</uniqueTag>
 
 		<!-- Any enemy faction -->
-		<angryBeeFaction>BMT_WildBees</angryBeeFaction>
+		<angryBeeFaction>BMT_AngryWildBees</angryBeeFaction>
 		<!-- Any PawnkindDef -->
 		<angryBeesDefs>
 		  <li>BMT_Bees</li>

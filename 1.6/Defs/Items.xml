@@ -130,7 +130,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>BMT_QueenBee</defName>
     <label>queen bee</label>
-    <description>A queen bee encased safely in a jar. It can be used to build a new apiary.</description>
+    <description>A queen bee encased safely in a jar. She can be used to build a new apiary.</description>
     <graphicData>
       <texPath>BMT_Bees/Things/Item/QueenBee/QueenBee</texPath>
       <graphicClass>Graphic_Single</graphicClass>

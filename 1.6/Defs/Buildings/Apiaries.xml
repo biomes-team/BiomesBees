@@ -49,6 +49,14 @@
     </killedLeavings>
 	<specialDisplayRadius>5.5</specialDisplayRadius>
     <comps>
+      <li Class="CompProperties_Spawner">
+        <requiresPower>false</requiresPower>
+        <thingToSpawn>BMT_QueenBee</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange><min>2,700,000</min><max>3,600,000</max></spawnIntervalRange> <!-- This is roughly ever 3/4 to one year or so -->
+        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+        <showMessageIfOwned>true</showMessageIfOwned>
+      </li>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
 		<pawnDef>BMT_Bees</pawnDef> 
@@ -184,6 +192,14 @@
     </killedLeavings>
 	<specialDisplayRadius>5.5</specialDisplayRadius>
     <comps>
+      <li Class="CompProperties_Spawner">
+        <requiresPower>false</requiresPower>
+        <thingToSpawn>BMT_QueenBee</thingToSpawn>
+        <spawnCount>2</spawnCount>
+        <spawnIntervalRange><min>1,800,000</min><max>2,700,000</max></spawnIntervalRange> <!-- This is roughly once every half a year to 3/4 of a year or so -->
+        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+        <showMessageIfOwned>true</showMessageIfOwned>
+      </li>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
 		<pawnDef>BMT_Bees</pawnDef> 
@@ -328,6 +344,14 @@
     </costList>
 	<!-- <specialDisplayRadius>5.5</specialDisplayRadius> -->
     <comps>
+      <li Class="CompProperties_Spawner">
+        <requiresPower>false</requiresPower>
+        <thingToSpawn>BMT_QueenBee</thingToSpawn>
+        <spawnCount>3</spawnCount>
+        <spawnIntervalRange><min>900,000</min><max>1,800,000</max></spawnIntervalRange> <!-- This is roughly once every quadrum to 1/2 a year or so -->
+        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+        <showMessageIfOwned>true</showMessageIfOwned>
+      </li>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
 		<pawnDef>BMT_Bees</pawnDef> 
@@ -347,11 +371,11 @@
 		<failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef>
 		<!-- ultratech stuff -->
 		<flowerlessProduction>true</flowerlessProduction>
-		<honeyProductionWithoutFlowers>0.2</honeyProductionWithoutFlowers>
+		<honeyProductionWithoutFlowers>0.1</honeyProductionWithoutFlowers>
 		<!-- search radius. float -->
 		<flowerRadius>5.5</flowerRadius>
 		<!-- Honey per flower -->
-		<honeyPerFlower>0.1</honeyPerFlower>
+		<honeyPerFlower>0.2</honeyPerFlower>
 		<!-- apiary tick freq. After apiary_tick honey is produced. Formula: flowers_in_radius * honeyPerFlower -->
 		<honeyTick>6000</honeyTick>
 		<!-- Product. Any ThingDef -->
