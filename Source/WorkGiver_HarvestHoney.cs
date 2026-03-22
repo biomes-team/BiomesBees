@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 using Verse.AI;
 
 namespace BiomesBees
 {
-	public abstract class WorkGiver_HarvestHoney : WorkGiver_Scanner
+	public class WorkGiver_HarvestHoney : WorkGiver_Scanner
 	{
 
 		private static List<Thing> cachedHives;
@@ -43,7 +44,12 @@ namespace BiomesBees
 			disabled = false;
 		}
 
-		public override PathEndMode PathEndMode => PathEndMode.InteractionCell;
+		public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
+		{
+			return Hives.Where((thing) => thing.Map == pawn.Map);
+		}
+
+		public override PathEndMode PathEndMode => PathEndMode.Touch;
 
 		public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
 		{
@@ -55,7 +61,7 @@ namespace BiomesBees
 			{
 				return false;
 			}
-			if (!pawn.CanReserveAndReach(t, PathEndMode.InteractionCell, Danger.Deadly, 1, -1, null, forced))
+			if (!pawn.CanReserveAndReach(t, PathEndMode.Touch, Danger.Deadly, 1, -1, null, forced))
 			{
 				return false;
 			}

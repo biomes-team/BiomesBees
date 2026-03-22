@@ -64,15 +64,42 @@ namespace BiomesBees
 		private int nextTick = -1;
 		private float beeHoney = 0;
 
+		//public override void CompTickLong()
+		//{
+		//	DoTick();
+		//}
+
+		//public override void CompTickInterval(int delta)
+		//{
+		//	DoTick(delta);
+		//}
+
+		public override void CompTick()
+		{
+			DoTick(1);
+		}
+
+		public override void CompTickRare()
+		{
+			DoTick(720);
+		}
+
 		public override void CompTickLong()
 		{
-			nextTick -= 1500;
+			DoTick(1500);
+		}
+
+		private bool DoTick(int delta)
+		{
+			nextTick -= delta;
 			if (nextTick > 0)
 			{
-				return;
+				return false;
 			}
+			_ = WorkGiver_HarvestHoney.Hives;
 			nextTick = Props.honeyTick;
 			MakeHoney(beeHoney + (GetForCell(parent.PositionHeld, Props.flowerRadius) * Props.honeyPerFlower));
+			return true;
 		}
 
 		public bool CanAutoHarvest
@@ -149,6 +176,7 @@ namespace BiomesBees
 			//{
 			//	Messages.Message(Props.spawnMessage.Translate(productDef.LabelCap), thing, MessageTypeDefOf.PositiveEvent);
 			//}
+			beeHoney = 0;
 		}
 
 		private void HarvestFail()
@@ -198,7 +226,7 @@ namespace BiomesBees
 					defaultLabel = "DEV: Honey +10",
 					action = delegate
 					{
-						MakeHoney(10f);
+						MakeHoney(beeHoney + 10f);
 					}
 				};
 				yield return new Command_Action
@@ -213,6 +241,19 @@ namespace BiomesBees
 							{
 								log += "\n" + thingDef.defName + " : " + thingDef.label;
 							}
+						}
+						Log.Error(log);
+					}
+				};
+				yield return new Command_Action
+				{
+					defaultLabel = "DEV: Log hives",
+					action = delegate
+					{
+						string log = "Hives:";
+						foreach (Thing thing in WorkGiver_HarvestHoney.Hives)
+						{
+							log += "\n" + thing.def.defName + " : " + thing.def.label;
 						}
 						Log.Error(log);
 					}
@@ -235,6 +276,10 @@ namespace BiomesBees
 			//}
 			// Always recache after spawn. Include save-load/reload.
 			WorkGiver_HarvestHoney.ResetCache();
+			if (respawningAfterLoad)
+			{
+				nextTick = Props.honeyTick;
+			}
 		}
 
 		public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
@@ -245,6 +290,10 @@ namespace BiomesBees
 		public override void PostDestroy(DestroyMode mode, Map previousMap)
 		{
 			WorkGiver_HarvestHoney.ResetCache();
+		}
+		public override string CompInspectStringExtra()
+		{
+			return "BMT_CollectedHoney".Translate(Props.productDef.label, beeHoney.ToString());
 		}
 
 		public override void PostExposeData()
