@@ -47,6 +47,7 @@
     <killedLeavings>
       <BMT_QueenBee>1</BMT_QueenBee>
     </killedLeavings>
+	<specialDisplayRadius>5.5</specialDisplayRadius>
     <comps>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
@@ -179,6 +180,7 @@
       <ComponentIndustrial>2</ComponentIndustrial>
       <BMT_QueenBee>1</BMT_QueenBee>
     </killedLeavings>
+	<specialDisplayRadius>5.5</specialDisplayRadius>
     <comps>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
@@ -320,6 +322,7 @@
       <ComponentSpacer>2</ComponentSpacer>
 	  <BMT_QueenBee>1</BMT_QueenBee>
     </costList>
+	<specialDisplayRadius>5.5</specialDisplayRadius>
     <comps>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
