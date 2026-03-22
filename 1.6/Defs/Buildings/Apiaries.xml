@@ -48,11 +48,6 @@
       <BMT_QueenBee>1</BMT_QueenBee>
     </killedLeavings>
     <comps>
-      <li Class="CompProperties_TemperatureRuinable">
-        <minSafeTemperature>4</minSafeTemperature>
-        <maxSafeTemperature>32</maxSafeTemperature>
-        <progressPerDegreePerTick>0.001</progressPerDegreePerTick>
-      </li>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
 		<pawnDef>BMT_Bees</pawnDef> 
@@ -66,23 +61,15 @@
 					<!-- Sound to play when a new pawn is created. -->
 		<spawnSound>Hive_Spawn</spawnSound>
 	  </li>
-      <li Class="CompProperties_Spawner">
-        <requiresPower>false</requiresPower>
-        <thingToSpawn>BMT_Honeycomb</thingToSpawn>
-        <spawnCount>25</spawnCount>
-        <spawnIntervalRange><min>60000</min><max>120000</max></spawnIntervalRange>
-        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
-        <showMessageIfOwned>true</showMessageIfOwned>
-      </li>
 	  <li Class="BiomesBees.CompProperties_BeesHive">
 		<!-- search radius. float -->
 		<flowerRadius>5.5</flowerRadius>
 		<!-- Honey per flower -->
-		<honeyPerFlower>0.1</honeyPerFlower>
+		<honeyPerFlower>0.025</honeyPerFlower>
 		<!-- apiary tick freq. After apiary_tick honey is produced. Formula: flowers_in_radius * honeyPerFlower -->
 		<honeyTick>6000</honeyTick>
 		<!-- Product. Any ThingDef -->
-		<productDef>Meat_Human</productDef>
+		<productDef>BMT_Honeycomb</productDef>
 		<!-- Amount when auto-work can be triggered. Job can spawn honey or angry bees -->
 		<bestHarvestAmount>45</bestHarvestAmount>
 		<!-- Max honey (or human meat) in apiary -->
@@ -91,10 +78,10 @@
 		<uniqueTag>HoneyMaker5000</uniqueTag>
 
 		<!-- Any enemy faction -->
-		<angryBeeFaction>Mechanoid</angryBeeFaction>
+		<angryBeeFaction>BMT_AngryWildBees</angryBeeFaction>
 		<!-- Any PawnkindDef -->
 		<angryBeesDefs>
-		  <li>Mech_CentipedeGunner</li>
+		  <li>BMT_Bees</li>
 		</angryBeesDefs>
 
 		<!-- Whitelisted ThingDefs. First check -->
@@ -193,11 +180,6 @@
       <BMT_QueenBee>1</BMT_QueenBee>
     </killedLeavings>
     <comps>
-      <li Class="CompProperties_TemperatureRuinable">
-        <minSafeTemperature>4</minSafeTemperature>
-        <maxSafeTemperature>32</maxSafeTemperature>
-        <progressPerDegreePerTick>0.00001</progressPerDegreePerTick>
-      </li>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
 		<pawnDef>BMT_Bees</pawnDef> 
@@ -211,25 +193,25 @@
 					<!-- Sound to play when a new pawn is created. -->
 		<spawnSound>Hive_Spawn</spawnSound>
 	  </li>
-      <li Class="CompProperties_Spawner">
+ <!--     <li Class="CompProperties_Spawner">
         <requiresPower>false</requiresPower>
         <thingToSpawn>BMT_Honeycomb</thingToSpawn>
         <spawnCount>50</spawnCount>
         <spawnIntervalRange><min>60000</min><max>120000</max></spawnIntervalRange>
         <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
         <showMessageIfOwned>true</showMessageIfOwned>
-      </li>
+      </li> -->
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
 	  <li Class="BiomesBees.CompProperties_BeesHive">
 		<!-- search radius. float -->
 		<flowerRadius>5.5</flowerRadius>
 		<!-- Honey per flower -->
-		<honeyPerFlower>0.1</honeyPerFlower>
+		<honeyPerFlower>0.05</honeyPerFlower>
 		<!-- apiary tick freq. After apiary_tick honey is produced. Formula: flowers_in_radius * honeyPerFlower -->
 		<honeyTick>6000</honeyTick>
 		<!-- Product. Any ThingDef -->
-		<productDef>Meat_Human</productDef>
+		<productDef>BMT_Honeycomb</productDef>
 		<!-- Amount when auto-work can be triggered. Job can spawn honey or angry bees -->
 		<bestHarvestAmount>45</bestHarvestAmount>
 		<!-- Max honey (or human meat) in apiary -->
@@ -238,10 +220,10 @@
 		<uniqueTag>HoneyMaker5000</uniqueTag>
 
 		<!-- Any enemy faction -->
-		<angryBeeFaction>Mechanoid</angryBeeFaction>
+		<angryBeeFaction>BMT_AngryWildBees</angryBeeFaction>
 		<!-- Any PawnkindDef -->
 		<angryBeesDefs>
-		  <li>Mech_CentipedeGunner</li>
+		  <li>BMT_Bees</li>
 		</angryBeesDefs>
 
 		<!-- Whitelisted ThingDefs. First check -->
@@ -352,14 +334,7 @@
 					<!-- Sound to play when a new pawn is created. -->
 		<spawnSound>Hive_Spawn</spawnSound>
 	  </li>
-      <li Class="CompProperties_Spawner">
-        <requiresPower>false</requiresPower>
-        <thingToSpawn>BMT_Honeycomb</thingToSpawn>
-        <spawnCount>75</spawnCount>
-        <spawnIntervalRange><min>60000</min><max>120000</max></spawnIntervalRange>
-        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
-        <showMessageIfOwned>true</showMessageIfOwned>
-      </li>
+
 	  <li Class="BiomesBees.CompProperties_BeesHive">
 		<!-- search radius. float -->
 		<flowerRadius>5.5</flowerRadius>
@@ -368,7 +343,7 @@
 		<!-- apiary tick freq. After apiary_tick honey is produced. Formula: flowers_in_radius * honeyPerFlower -->
 		<honeyTick>6000</honeyTick>
 		<!-- Product. Any ThingDef -->
-		<productDef>Meat_Human</productDef>
+		<productDef>BMT_Honeycomb</productDef>
 		<!-- Amount when auto-work can be triggered. Job can spawn honey or angry bees -->
 		<bestHarvestAmount>45</bestHarvestAmount>
 		<!-- Max honey (or human meat) in apiary -->
@@ -377,10 +352,10 @@
 		<uniqueTag>HoneyMaker5000</uniqueTag>
 
 		<!-- Any enemy faction -->
-		<angryBeeFaction>Mechanoid</angryBeeFaction>
+		<angryBeeFaction>BMT_AngryWildBees</angryBeeFaction>
 		<!-- Any PawnkindDef -->
 		<angryBeesDefs>
-		  <li>Mech_CentipedeGunner</li>
+		  <li>BMT_Bees</li>
 		</angryBeesDefs>
 
 		<!-- Whitelisted ThingDefs. First check -->

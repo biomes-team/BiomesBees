@@ -48,23 +48,57 @@
 			<li Class="CompProperties_SelfhealHitpoints">
 				<ticksPerHeal>6000</ticksPerHeal>
 			</li>
-		<li Class="BiomesCore.CompProperties_HiveSpawner">
-			<spawnablePawnKinds>
-				<!-- Any number of PawnKindDefs. A random one is selected upon spawn. -->
-				<li>BMT_Bees</li>
-			</spawnablePawnKinds>
-			<pawnKindSpawnAfterKill>BMT_Bees</pawnKindSpawnAfterKill>
-			<spawnSound>Hive_Spawn</spawnSound>
-			<!-- If greater than 0, then when the hive first spawns, the hive will immediately spawn the specified number of insects. -->
-			<initialPawnCount>2~3</initialPawnCount>
-			<!-- Limit for all insects on the map, for all hives. -->
-			<maxPawnCount>5</maxPawnCount>
-			<pawnSpawnIntervalDays>2~3</pawnSpawnIntervalDays>
-			<defendRadius>2</defendRadius>
-			<!-- The faction to which the insect will belong. The faction is mandatory, since without it the AI most likely will not work. -->
-			<faction>BMT_WildBees</faction>
-			<!-- In theory, a custom faction is not needed. And the hive can easily work with the vanilla faction. -->
-		</li>
+	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<!-- search radius. float -->
+		<flowerRadius>200.5</flowerRadius>
+		<!-- Honey per flower -->
+		<honeyPerFlower>0.1</honeyPerFlower>
+		<!-- apiary tick freq. After apiary_tick honey is produced. Formula: flowers_in_radius * honeyPerFlower -->
+		<honeyTick>6000</honeyTick>
+		<!-- Product. Any ThingDef -->
+		<productDef>BMT_Honeycomb</productDef>
+		<!-- Amount when auto-work can be triggered. Job can spawn honey or angry bees -->
+		<bestHarvestAmount>45</bestHarvestAmount>
+		<!-- Max honey (or human meat) in apiary -->
+		<honeyLimit>50</honeyLimit>
+		<!-- Uniqe tag. Used for saves. Each CompProperties_BeesHive in single def req. uniqe uniqueTag -->
+		<uniqueTag>HoneyMaker5000</uniqueTag>
+
+		<!-- Any enemy faction -->
+		<angryBeeFaction>BMT_WildBees</angryBeeFaction>
+		<!-- Any PawnkindDef -->
+		<angryBeesDefs>
+		  <li>BMT_Bees</li>
+		</angryBeesDefs>
+
+		<!-- Whitelisted ThingDefs. First check -->
+		<whitelist>
+		  <li>Corpse_Human</li>
+		</whitelist>
+		<!-- Blacklisted ThingDefs. Second check -->
+		<blacklist>
+		  <li>Corpse_Mech_CentipedeGunner</li>
+		</blacklist>
+		<!-- Third check. Always requred -->
+		<!-- Plants tags: Food, Health, Beauty, Misc  -->
+		<plantPurpose>
+		  <li>Beauty</li>
+		</plantPurpose>
+
+		<!-- xp per work tick. Work tick currently =720 -->
+		<xpPerTick>1</xpPerTick>
+		<!-- Harvest job fail chance. Fail summon angry bees. Formula: basicFailChance * harvester_animals_skill_level -->
+		<basicFailChance>0.1</basicFailChance>
+		<!-- Harvest never fails if skill >= safeHarvestLevel -->
+		<safeHarvestLevel>16</safeHarvestLevel>
+
+		<!-- same as hive spawner -->
+		<pawnSpawnRadius>2</pawnSpawnRadius>
+		<defendRadius>7</defendRadius>
+		<wanderRadius>6</wanderRadius>
+		<!-- Sound to play when a new pawn is created. -->
+		<spawnSound>Hive_Spawn</spawnSound>
+	  </li>
 		</comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.AdditionalHarvestDrops">
