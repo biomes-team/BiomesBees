@@ -219,6 +219,9 @@
     <tradeTags>
       <li>BasicClothing</li>
     </tradeTags>
+    <equippedStatOffsets>
+      <BMT_HoneyHarvestFailChance>-0.4</BMT_HoneyHarvestFailChance>
+    </equippedStatOffsets>
   </ThingDef>
   
     <ThingDef ParentName="HatMakeableBase">
@@ -284,6 +287,9 @@
     <tradeTags>
       <li>BasicClothing</li>
     </tradeTags>
+    <equippedStatOffsets>
+      <BMT_HoneyHarvestFailChance>-0.4</BMT_HoneyHarvestFailChance>
+    </equippedStatOffsets>
   </ThingDef>
   
   	<ThingDef ParentName="DrugBase">

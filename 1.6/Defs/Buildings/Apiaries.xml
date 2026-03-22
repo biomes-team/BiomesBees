@@ -63,6 +63,8 @@
 		<spawnSound>Hive_Spawn</spawnSound>
 	  </li>
 	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<!-- statDef factor -->
+		<failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef>
 		<!-- search radius. float -->
 		<flowerRadius>5.5</flowerRadius>
 		<!-- Honey per flower -->
@@ -206,6 +208,8 @@
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
 	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<!-- statDef factor -->
+		<failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef>
 		<!-- search radius. float -->
 		<flowerRadius>5.5</flowerRadius>
 		<!-- Honey per flower -->
@@ -340,7 +344,7 @@
 
 	  <li Class="BiomesBees.CompProperties_BeesHive">
 		<!-- statDef factor -->
-		<!-- <failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef> -->
+		<failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef>
 		<!-- ultratech stuff -->
 		<flowerlessProduction>true</flowerlessProduction>
 		<honeyProductionWithoutFlowers>0.2</honeyProductionWithoutFlowers>
@@ -383,9 +387,9 @@
 		<!-- xp per work tick. Work tick currently =720 -->
 		<xpPerTick>1</xpPerTick>
 		<!-- Harvest job fail chance. Fail summon angry bees. Formula: basicFailChance * harvester_animals_skill_level -->
-		<basicFailChance>0.1</basicFailChance>
+		<basicFailChance>0.08</basicFailChance>
 		<!-- Harvest never fails if skill >= safeHarvestLevel -->
-		<safeHarvestLevel>16</safeHarvestLevel>
+		<safeHarvestLevel>12</safeHarvestLevel>
 
 		<!-- same as hive spawner -->
 		<pawnSpawnRadius>2</pawnSpawnRadius>
