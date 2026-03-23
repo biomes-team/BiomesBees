@@ -4,7 +4,7 @@
   <ThingDef ParentName="OrganicProductBase">
     <defName>BMT_Honeycomb</defName>
     <label>honeycomb</label>
-    <description>Honeycomb from a beehive or apiary. While edible, it is better when processed separately into honey and wax. While longlasting, it does not last as long as pure honey.</description>
+    <description>Honeycomb from a beehive or apiary. While edible, it is better when processed separately into honey and wax. This can be done at cooking sites. While longlasting, it does not last as long as pure honey.</description>
     <graphicData>
       <texPath>BMT_Bees/Things/Item/Honeycomb</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
