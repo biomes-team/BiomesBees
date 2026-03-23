@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 using Verse.AI.Group;
 using Verse.Noise;
 using Verse.Sound;
@@ -19,6 +20,9 @@ namespace BiomesBees
 		public bool flowerlessProduction = false;
 		public StatDef failChanceStatDef;
 		public float honeyProductionWithoutFlowers = 0.5f;
+
+		[NoTranslate]
+		public string sowFlowersIconPath = "UI/Designators/CutPlants";
 
 		public float flowerRadius = 5;
 		public int honeyTick = 5000;
@@ -92,6 +96,7 @@ namespace BiomesBees
 			DoTick(1500);
 		}
 
+		float flowersCount = 0;
 		private bool DoTick(int delta)
 		{
 			nextTick -= delta;
@@ -101,7 +106,7 @@ namespace BiomesBees
 			}
 			_ = WorkGiver_HarvestHoney.Hives;
 			nextTick = Props.honeyTick;
-			MakeHoney(beeHoney + (!Props.flowerlessProduction ? (GetForCell(parent.PositionHeld, Props.flowerRadius) * Props.honeyPerFlower) : Props.honeyProductionWithoutFlowers));
+			MakeHoney(beeHoney + (!Props.flowerlessProduction ? (flowersCount = GetForCell(parent.PositionHeld, Props.flowerRadius)) * Props.honeyPerFlower : Props.honeyProductionWithoutFlowers));
 			return true;
 		}
 
@@ -224,8 +229,45 @@ namespace BiomesBees
 			}
 		}
 
+		public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
+		{
+			if (beeHoney <= 0 || selPawn.Faction != Faction.OfPlayer)
+			{
+				yield break;
+			}
+			if (!selPawn.CanReserveAndReach(parent, PathEndMode.Touch, Danger.Deadly))
+			{
+				yield break;
+			}
+			yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("BMT_Harvest".Translate(), delegate
+			{
+				Job job = JobMaker.MakeJob(JobDefOf_Bees.BMT_HarvestHoneyFromHive, parent);
+				selPawn.jobs.TryTakeOrderedJob(job, requestQueueing: false);
+			}), selPawn, parent);
+		}
+
+		private static CachedTexture cachedPlantZoneTexture;
+		private CachedTexture PlantZone
+		{
+			get
+			{
+				if (cachedPlantZoneTexture == null)
+				{
+					cachedPlantZoneTexture = new(Props.sowFlowersIconPath);
+				}
+				return cachedPlantZoneTexture;
+			}
+		}
+
 		public override IEnumerable<Gizmo> CompGetGizmosExtra()
 		{
+			//yield return new Command_Action
+			//{
+			//	defaultLabel = "GrowingZone".Translate(),
+			//	defaultDesc = "BMT_CreateGrowingZone".Translate(),
+			//	icon = PlantZone.Texture,
+			//	action = CreateFowersZone
+			//};
 			if (DebugSettings.ShowDevGizmos)
 			{
 				yield return new Command_Action
@@ -275,6 +317,53 @@ namespace BiomesBees
 				};
 			}
 		}
+		private IEnumerable<IntVec3> RadialCells => GenRadial.RadialCellsAround(parent.Position, Props.flowerRadius, useCenter: true);
+		private void CreateFowersZone()
+		{
+			List<Thing> selectedTrees = Find.Selector.SelectedObjects.OfType<Thing>().Where((thing) => thing.TryGetComp<CompBeesHive>() != null).ToList();
+			if (parent.Map.zoneManager.ZoneAt(parent.Position) != null)
+			{
+				Zone zone = parent.Map.zoneManager.ZoneAt(parent.Position);
+				Zone_Growing existing = zone as Zone_Growing;
+				if (existing == null)
+				{
+					return;
+				}
+				parent.Map.floodFiller.FloodFill(parent.Position, (IntVec3 c) => selectedTrees.Any((Thing tree) => tree.TryGetComp<CompBeesHive>().RadialCells.Contains(c)) && (parent.Map.zoneManager.ZoneAt(c) == null || parent.Map.zoneManager.ZoneAt(c) == existing) && (bool)Designator_ZoneAdd.IsZoneableCell(c, parent.Map), delegate (IntVec3 c)
+				{
+					if (!existing.ContainsCell(c))
+					{
+						existing.AddCell(c);
+					}
+				});
+				return;
+			}
+			Zone_Growing stockpile = new Zone_Growing(parent.Map.zoneManager);
+			stockpile.SetPlantDefToGrow(DefDatabase<ThingDef>.AllDefsListForReading.Where((t) => t.plant != null && IsFlower(t)).ToList().RandomElement());
+			parent.Map.zoneManager.RegisterZone(stockpile);
+			Zone_Growing existingStockpile = null;
+			parent.Map.floodFiller.FloodFill(parent.Position, delegate (IntVec3 c)
+			{
+				if (parent.Map.zoneManager.ZoneAt(c) is Zone_Growing zone_Stockpile)
+				{
+					existingStockpile = zone_Stockpile;
+				}
+				return selectedTrees.Any((Thing tree) => tree.TryGetComp<CompBeesHive>().RadialCells.Contains(c)) && parent.Map.zoneManager.ZoneAt(c) == null && (bool)Designator_ZoneAdd.IsZoneableCell(c, parent.Map);
+			}, delegate (IntVec3 c)
+			{
+				stockpile.AddCell(c);
+			});
+			if (existingStockpile == null)
+			{
+				return;
+			}
+			List<IntVec3> list = stockpile.Cells.ToList();
+			stockpile.Delete();
+			foreach (IntVec3 item in list)
+			{
+				existingStockpile.AddCell(item);
+			}
+		}
 
 		public override void PostSpawnSetup(bool respawningAfterLoad)
 		{
@@ -300,6 +389,10 @@ namespace BiomesBees
 		}
 		public override string CompInspectStringExtra()
 		{
+			if (!Props.flowerlessProduction || flowersCount > 0)
+			{
+				return "BMT_CollectedHoneyWithFlowers".Translate(Props.productDef.label, flowersCount, beeHoney.ToString());
+			}
 			return "BMT_CollectedHoney".Translate(Props.productDef.label, beeHoney.ToString());
 		}
 
@@ -308,6 +401,7 @@ namespace BiomesBees
 			base.PostExposeData();
 			Scribe_Values.Look(ref nextTick, "nextTick" + "_" + Props.uniqueTag);
 			Scribe_Values.Look(ref beeHoney, "beeHoney" + "_" + Props.uniqueTag);
+			Scribe_Values.Look(ref flowersCount, "flowersCount");
 		}
 
 	}
