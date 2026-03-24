@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -268,6 +269,16 @@ namespace BiomesBees
 			//	icon = PlantZone.Texture,
 			//	action = CreateFowersZone
 			//};
+			if (DesignatorUtility.FindAllowedDesignator<Designator_ZoneAdd_Growing>() != null)
+			{
+				Command_Action command_Action = new Command_Action();
+				command_Action.action = MakeMatchingGrowZone;
+				command_Action.hotKey = KeyBindingDefOf.Misc2;
+				command_Action.defaultDesc = "BMT_CreateGrowingZone".Translate();
+				command_Action.icon = ContentFinder<Texture2D>.Get("UI/Designators/ZoneCreate_Growing");
+				command_Action.defaultLabel = "GrowingZone".Translate();
+				yield return command_Action;
+			}
 			if (DebugSettings.ShowDevGizmos)
 			{
 				yield return new Command_Action
@@ -317,53 +328,60 @@ namespace BiomesBees
 				};
 			}
 		}
-		private IEnumerable<IntVec3> RadialCells => GenRadial.RadialCellsAround(parent.Position, Props.flowerRadius, useCenter: true);
-		private void CreateFowersZone()
+
+		public IEnumerable<IntVec3> GrowableCells => GenRadial.RadialCellsAround(parent.Position, parent.def.specialDisplayRadius, useCenter: true);
+		private void MakeMatchingGrowZone()
 		{
-			List<Thing> selectedTrees = Find.Selector.SelectedObjects.OfType<Thing>().Where((thing) => thing.TryGetComp<CompBeesHive>() != null).ToList();
-			if (parent.Map.zoneManager.ZoneAt(parent.Position) != null)
-			{
-				Zone zone = parent.Map.zoneManager.ZoneAt(parent.Position);
-				Zone_Growing existing = zone as Zone_Growing;
-				if (existing == null)
-				{
-					return;
-				}
-				parent.Map.floodFiller.FloodFill(parent.Position, (IntVec3 c) => selectedTrees.Any((Thing tree) => tree.TryGetComp<CompBeesHive>().RadialCells.Contains(c)) && (parent.Map.zoneManager.ZoneAt(c) == null || parent.Map.zoneManager.ZoneAt(c) == existing) && (bool)Designator_ZoneAdd.IsZoneableCell(c, parent.Map), delegate (IntVec3 c)
-				{
-					if (!existing.ContainsCell(c))
-					{
-						existing.AddCell(c);
-					}
-				});
-				return;
-			}
-			Zone_Growing stockpile = new Zone_Growing(parent.Map.zoneManager);
-			stockpile.SetPlantDefToGrow(DefDatabase<ThingDef>.AllDefsListForReading.Where((t) => t.plant != null && IsFlower(t)).ToList().RandomElement());
-			parent.Map.zoneManager.RegisterZone(stockpile);
-			Zone_Growing existingStockpile = null;
-			parent.Map.floodFiller.FloodFill(parent.Position, delegate (IntVec3 c)
-			{
-				if (parent.Map.zoneManager.ZoneAt(c) is Zone_Growing zone_Stockpile)
-				{
-					existingStockpile = zone_Stockpile;
-				}
-				return selectedTrees.Any((Thing tree) => tree.TryGetComp<CompBeesHive>().RadialCells.Contains(c)) && parent.Map.zoneManager.ZoneAt(c) == null && (bool)Designator_ZoneAdd.IsZoneableCell(c, parent.Map);
-			}, delegate (IntVec3 c)
-			{
-				stockpile.AddCell(c);
-			});
-			if (existingStockpile == null)
-			{
-				return;
-			}
-			List<IntVec3> list = stockpile.Cells.ToList();
-			stockpile.Delete();
-			foreach (IntVec3 item in list)
-			{
-				existingStockpile.AddCell(item);
-			}
+			Designator_ZoneAdd_Growing designator = DesignatorUtility.FindAllowedDesignator<Designator_ZoneAdd_Growing>();
+			designator.DesignateMultiCell(GrowableCells.Where((IntVec3 tempCell) => designator.CanDesignateCell(tempCell).Accepted));
 		}
+		//private IEnumerable<IntVec3> RadialCells => GenRadial.RadialCellsAround(parent.Position, Props.flowerRadius, useCenter: true);
+		//private void CreateFowersZone()
+		//{
+		//	List<Thing> selectedTrees = Find.Selector.SelectedObjects.OfType<Thing>().Where((thing) => thing.TryGetComp<CompBeesHive>() != null).ToList();
+		//	if (parent.Map.zoneManager.ZoneAt(parent.Position) != null)
+		//	{
+		//		Zone zone = parent.Map.zoneManager.ZoneAt(parent.Position);
+		//		Zone_Growing existing = zone as Zone_Growing;
+		//		if (existing == null)
+		//		{
+		//			return;
+		//		}
+		//		parent.Map.floodFiller.FloodFill(parent.Position, (IntVec3 c) => selectedTrees.Any((Thing tree) => tree.TryGetComp<CompBeesHive>().RadialCells.Contains(c)) && (parent.Map.zoneManager.ZoneAt(c) == null || parent.Map.zoneManager.ZoneAt(c) == existing) && (bool)Designator_ZoneAdd.IsZoneableCell(c, parent.Map), delegate (IntVec3 c)
+		//		{
+		//			if (!existing.ContainsCell(c))
+		//			{
+		//				existing.AddCell(c);
+		//			}
+		//		});
+		//		return;
+		//	}
+		//	Zone_Growing stockpile = new Zone_Growing(parent.Map.zoneManager);
+		//	stockpile.SetPlantDefToGrow(DefDatabase<ThingDef>.AllDefsListForReading.Where((t) => t.plant != null && IsFlower(t)).ToList().RandomElement());
+		//	parent.Map.zoneManager.RegisterZone(stockpile);
+		//	Zone_Growing existingStockpile = null;
+		//	parent.Map.floodFiller.FloodFill(parent.Position, delegate (IntVec3 c)
+		//	{
+		//		if (parent.Map.zoneManager.ZoneAt(c) is Zone_Growing zone_Stockpile)
+		//		{
+		//			existingStockpile = zone_Stockpile;
+		//		}
+		//		return selectedTrees.Any((Thing tree) => tree.TryGetComp<CompBeesHive>().RadialCells.Contains(c)) && parent.Map.zoneManager.ZoneAt(c) == null && (bool)Designator_ZoneAdd.IsZoneableCell(c, parent.Map);
+		//	}, delegate (IntVec3 c)
+		//	{
+		//		stockpile.AddCell(c);
+		//	});
+		//	if (existingStockpile == null)
+		//	{
+		//		return;
+		//	}
+		//	List<IntVec3> list = stockpile.Cells.ToList();
+		//	stockpile.Delete();
+		//	foreach (IntVec3 item in list)
+		//	{
+		//		existingStockpile.AddCell(item);
+		//	}
+		//}
 
 		public override void PostSpawnSetup(bool respawningAfterLoad)
 		{
