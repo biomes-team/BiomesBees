@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<TerrainDef ParentName="FloorBase">
+		<defName>BMT_WaxFloor</defName>
+		<label>beeswax floor</label>
+		<description>Flooring made from beeswax. It is quite beautiful but hard to clean.</description>
+		<texturePath>BMT_Bees/Terrains/Beeswax</texturePath>
+		<pollutionOverlayTexturePath>Terrain/Surfaces/RoughStonePollutionOverlay</pollutionOverlayTexturePath>
+		<pollutionShaderType MayRequire="Ludeon.RimWorld.Biotech">TerrainFadeRoughLinearAdd</pollutionShaderType>
+		<pollutionColor>(1, 1, 1, 0.43)</pollutionColor>
+		<pollutionOverlayScale>(0.66, 0.66)</pollutionOverlayScale>
+		<isPaintable>false</isPaintable>
+		<edgeType>Fade</edgeType>
+		<renderPrecedence>335</renderPrecedence>
+		<pathCost>0</pathCost>
+		<statBases>
+			<WorkToBuild>1100</WorkToBuild>
+			<Beauty>4</Beauty>
+			<BeautyOutdoors>4</BeautyOutdoors>
+			<CleaningTimeFactor>1.25</CleaningTimeFactor>
+			<Cleanliness>0</Cleanliness>
+		</statBases>
+		<costList>
+			<BMT_Waxblock>5</BMT_Waxblock>
+		</costList>
+		<affordances>
+			<li>Light</li>
+			<li>Medium</li>
+			<li>Heavy</li>
+		</affordances>
+		<fertility>0</fertility>
+		<filthAcceptanceMask>
+			<li>None</li>
+		</filthAcceptanceMask>
+		<takeFootprints>false</takeFootprints>
+		<tags>
+			<li>FineFloor</li>
+		</tags>
+		<constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+	</TerrainDef>
+	
+</Defs>

@@ -53,8 +53,8 @@
 			<ConstructionSpeedFactor>0.15</ConstructionSpeedFactor>
 			<StuffPower_Insulation_Cold>1</StuffPower_Insulation_Cold>
 			<StuffPower_Insulation_Heat>10</StuffPower_Insulation_Heat>
-			<SharpDamageMultiplier>0.37</SharpDamageMultiplier>
-			<BluntDamageMultiplier>0.82</BluntDamageMultiplier>
+			<SharpDamageMultiplier>0.1</SharpDamageMultiplier>
+			<BluntDamageMultiplier>0.25</BluntDamageMultiplier>
 		</statBases>
 		<thingCategories>
 			<li>ResourcesRaw</li>
@@ -82,7 +82,7 @@
 				<MeleeWeapon_CooldownMultiplier>0.75</MeleeWeapon_CooldownMultiplier>
 			</statFactors>
 		<isAirtight>true</isAirtight>
-		<color>(245,175,97)</color>
+		<color>(222,136,69)</color>
 		</stuffProps>
 		<smeltable>false</smeltable>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
