@@ -71,7 +71,7 @@
 			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
 			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
 			<statFactors>
-				<MaxHitPoints>100</MaxHitPoints>
+				<MaxHitPoints>0.20</MaxHitPoints>
 				<Beauty>3</Beauty>
 				<Flammability>1</Flammability>
 				<WorkToMake>0.85</WorkToMake>
