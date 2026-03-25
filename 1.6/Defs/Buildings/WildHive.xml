@@ -27,7 +27,6 @@
       <li>BuildingsProduction</li>
     </thingCategories>
     <statBases>
-      <WorkToBuild>600</WorkToBuild>
       <Mass>10</Mass>
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>1.0</Flammability>
@@ -119,7 +118,6 @@
     </comps>
     <tickerType>Rare</tickerType>
     <rotatable>true</rotatable>
-    <designationCategory>Production</designationCategory>
     <uiOrder>2710</uiOrder>
     <building>
       <buildingTags>
