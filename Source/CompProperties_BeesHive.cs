@@ -185,6 +185,10 @@ namespace BiomesBees
 			{
 				failChance *= harvester.GetStatValue(Props.failChanceStatDef);
 			}
+			if (!CanAutoHarvest)
+			{
+				failChance *= (Props.bestHarvestAmount / beeHoney);
+			}
 			if ((skillFactor == null || skillFactor.Value < Props.safeHarvestLevel) && Rand.Chance(failChance))
 			{
 				HarvestFail();
