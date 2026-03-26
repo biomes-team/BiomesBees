@@ -16,16 +16,11 @@
 			<volume>(0.75, 0.35, 0.33)</volume>
 		</shadowData>
 		</graphicData>
-    <thingClass>Building</thingClass>
 	<uiIconScale>0.75</uiIconScale>
-    <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <fillPercent>0.45</fillPercent>
     <pathCost>42</pathCost>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
     <statBases>
       <Mass>10</Mass>
       <MaxHitPoints>100</MaxHitPoints>
@@ -68,7 +63,7 @@
 		<!-- search radius. float -->
 		<flowerRadius>5.5</flowerRadius>
 		<!-- Honey per flower -->
-		<honeyPerFlower>0.025</honeyPerFlower>
+		<honeyPerFlower>0.003125</honeyPerFlower>
 		<!-- apiary tick freq. After apiary_tick honey is produced. Formula: flowers_in_radius * honeyPerFlower -->
 		<honeyTick>6000</honeyTick>
 		<!-- Product. Any ThingDef -->
@@ -115,11 +110,19 @@
 		<!-- Sound to play when a new pawn is created. -->
 		<spawnSound>Hive_Spawn</spawnSound>
 	  </li>
+      <li Class="CompProperties_SpawnPawnOnDestroyed">
+        <compClass>CompSpawnLarva</compClass>
+        <pawnKind>BMT_AngryBees</pawnKind>
+      </li>
     </comps>
     <tickerType>Rare</tickerType>
     <rotatable>true</rotatable>
     <uiOrder>2710</uiOrder>
     <building>
+      <claimable>false</claimable>
+      <isInert>true</isInert>
+      <deconstructible>false</deconstructible>
+      <alwaysDeconstructible>false</alwaysDeconstructible>
       <buildingTags>
         <li>Production</li>
       </buildingTags>

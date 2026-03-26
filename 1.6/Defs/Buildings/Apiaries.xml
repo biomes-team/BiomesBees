@@ -80,7 +80,7 @@
 		<!-- search radius. float -->
 		<flowerRadius>5.5</flowerRadius>
 		<!-- Honey per flower -->
-		<honeyPerFlower>0.025</honeyPerFlower>
+		<honeyPerFlower>0.00625</honeyPerFlower>
 		<!-- apiary tick freq. After apiary_tick honey is produced. Formula: flowers_in_radius * honeyPerFlower -->
 		<honeyTick>6000</honeyTick>
 		<!-- Product. Any ThingDef -->
@@ -233,7 +233,7 @@
 		<!-- search radius. float -->
 		<flowerRadius>5.5</flowerRadius>
 		<!-- Honey per flower -->
-		<honeyPerFlower>0.05</honeyPerFlower>
+		<honeyPerFlower>0.009375</honeyPerFlower>
 		<!-- apiary tick freq. After apiary_tick honey is produced. Formula: flowers_in_radius * honeyPerFlower -->
 		<honeyTick>6000</honeyTick>
 		<!-- Product. Any ThingDef -->
@@ -379,11 +379,11 @@
 		<failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef>
 		<!-- ultratech stuff -->
 		<flowerlessProduction>true</flowerlessProduction>
-		<honeyProductionWithoutFlowers>0.1</honeyProductionWithoutFlowers>
+		<honeyProductionWithoutFlowers>0.009375</honeyProductionWithoutFlowers>
 		<!-- search radius. float -->
 		<flowerRadius>5.5</flowerRadius>
 		<!-- Honey per flower -->
-		<honeyPerFlower>0.2</honeyPerFlower>
+		<honeyPerFlower>0.0125</honeyPerFlower>
 		<!-- apiary tick freq. After apiary_tick honey is produced. Formula: flowers_in_radius * honeyPerFlower -->
 		<honeyTick>6000</honeyTick>
 		<!-- Product. Any ThingDef -->

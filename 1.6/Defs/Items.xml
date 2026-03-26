@@ -118,7 +118,7 @@
       <ingestEffect>EatVegetarian</ingestEffect>
       <ingestSound>Meal_Eat</ingestSound>
       <lowPriorityCaravanFood>true</lowPriorityCaravanFood>
-      <babiesCanIngest>true</babiesCanIngest>
+      <babiesCanIngest>false</babiesCanIngest>
     </ingestible>
     <thingCategories>
       <li>AnimalProductRaw</li>
