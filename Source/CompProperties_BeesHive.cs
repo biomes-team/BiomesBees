@@ -25,6 +25,8 @@ namespace BiomesBees
 		[NoTranslate]
 		public string sowFlowersIconPath = "UI/Designators/CutPlants";
 
+		public float powerlessFactor = 0.5f;
+
 		public float flowerRadius = 5;
 		public int honeyTick = 5000;
 		public float honeyPerFlower = 0.1f;
@@ -82,6 +84,19 @@ namespace BiomesBees
 		//	DoTick(delta);
 		//}
 
+		private bool PowerOn
+		{
+			get
+			{
+				CompPowerTrader compPowerTrader = parent.GetComp<CompPowerTrader>();
+				if (compPowerTrader == null)
+				{
+					return true;
+				}
+				return compPowerTrader.PowerOn;
+			}
+		}
+
 		public override void CompTick()
 		{
 			DoTick(1);
@@ -107,7 +122,12 @@ namespace BiomesBees
 			}
 			_ = WorkGiver_HarvestHoney.Hives;
 			nextTick = Props.honeyTick;
-			MakeHoney(beeHoney + (!Props.flowerlessProduction ? (flowersCount = GetForCell(parent.PositionHeld, Props.flowerRadius)) * Props.honeyPerFlower : Props.honeyProductionWithoutFlowers));
+			float newHoney = (!Props.flowerlessProduction ? (flowersCount = GetForCell(parent.PositionHeld, Props.flowerRadius)) * Props.honeyPerFlower : Props.honeyProductionWithoutFlowers);
+			if (!PowerOn)
+			{
+				newHoney *= Props.powerlessFactor;
+			}
+			MakeHoney(beeHoney + newHoney);
 			return true;
 		}
 
@@ -247,18 +267,18 @@ namespace BiomesBees
 			}), selPawn, parent);
 		}
 
-		private static CachedTexture cachedPlantZoneTexture;
-		private CachedTexture PlantZone
-		{
-			get
-			{
-				if (cachedPlantZoneTexture == null)
-				{
-					cachedPlantZoneTexture = new(Props.sowFlowersIconPath);
-				}
-				return cachedPlantZoneTexture;
-			}
-		}
+		//private static CachedTexture cachedPlantZoneTexture;
+		//private CachedTexture PlantZone
+		//{
+		//	get
+		//	{
+		//		if (cachedPlantZoneTexture == null)
+		//		{
+		//			cachedPlantZoneTexture = new(Props.sowFlowersIconPath);
+		//		}
+		//		return cachedPlantZoneTexture;
+		//	}
+		//}
 
 		public override IEnumerable<Gizmo> CompGetGizmosExtra()
 		{
@@ -400,6 +420,11 @@ namespace BiomesBees
 		{
 			WorkGiver_HarvestHoney.ResetCache();
 		}
+
+		//public override void Notify_Killed(Map prevMap, DamageInfo? dinfo = null)
+		//{
+			
+		//}
 
 		public override void PostDestroy(DestroyMode mode, Map previousMap)
 		{

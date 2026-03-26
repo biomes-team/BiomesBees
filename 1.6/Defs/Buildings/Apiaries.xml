@@ -75,6 +75,8 @@
 		<spawnSound>Hive_Spawn</spawnSound>
 	  </li>
 	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<!-- CompProperties_Power support. If the power is off, this factor is applied -->
+		<powerlessFactor>1</powerlessFactor>
 		<!-- statDef factor -->
 		<failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef>
 		<!-- search radius. float -->
@@ -228,6 +230,8 @@
 	  </li>
       <li Class="CompProperties_Breakdownable"/>
 	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<!-- CompProperties_Power support. If the power is off, this factor is applied -->
+		<powerlessFactor>0.2</powerlessFactor>
 		<!-- statDef factor -->
 		<failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef>
 		<!-- search radius. float -->
@@ -375,6 +379,8 @@
 	  </li>
 
 	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<!-- CompProperties_Power support. If the power is off, this factor is applied -->
+		<powerlessFactor>1</powerlessFactor>
 		<!-- statDef factor -->
 		<failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef>
 		<!-- ultratech stuff -->
