@@ -63,7 +63,7 @@
       </li>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
-		<pawnDef>BMT_Bees</pawnDef> 
+		<pawnDef>BMT_ColonyBees</pawnDef> 
 					<!--
 					When this thing spawns, it will automatically spawn 1 pawn.
 					Then it will periodically spawn more until reaching 4.
@@ -212,7 +212,7 @@
       </li>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
-		<pawnDef>BMT_Bees</pawnDef> 
+		<pawnDef>BMT_ColonyBees</pawnDef> 
 					<!--
 					When this thing spawns, it will automatically spawn 1 pawn.
 					Then it will periodically spawn more until reaching 4.
@@ -366,7 +366,7 @@
       </li>
 	  <li Class="BiomesCore.ThingComponents.CompProperties_CompAnimalsAroundThing">
 					<!-- Pawn to spawn. -->
-		<pawnDef>BMT_Bees</pawnDef> 
+		<pawnDef>BMT_ColonyBees</pawnDef> 
 					<!--
 					When this thing spawns, it will automatically spawn 1 pawn.
 					Then it will periodically spawn more until reaching 4.
