@@ -38,8 +38,8 @@
 			</thingDefs>
 		</defaultIngredientFilter>
 		<products>
-			<BMT_Waxblock>24</BMT_Waxblock>
-			<BMT_Honey>12</BMT_Honey>
+			<BMT_Waxblock>12</BMT_Waxblock>
+			<BMT_Honey>8</BMT_Honey>
 		</products>
 	</RecipeDef>
 
