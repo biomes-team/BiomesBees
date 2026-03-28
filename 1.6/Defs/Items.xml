@@ -84,6 +84,9 @@
 		<isAirtight>true</isAirtight>
 		<color>(222,136,69)</color>
 		</stuffProps>
+		<tradeTags>
+		  <li>ExoticMisc</li>
+		</tradeTags>
 		<smeltable>false</smeltable>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 	</ThingDef>
