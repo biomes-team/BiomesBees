@@ -99,7 +99,7 @@
     </graphicData>
     <socialPropernessMatters>true</socialPropernessMatters>
     <statBases>
-      <MarketValue>7.0</MarketValue>
+      <MarketValue>2.5</MarketValue>
       <Mass>0.025</Mass>
       <Nutrition>0.05</Nutrition>
       <FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
