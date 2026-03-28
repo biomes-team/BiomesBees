@@ -46,7 +46,7 @@
 		<soundInteract>Standard_Pickup</soundInteract>
 		<soundDrop>Standard_Pickup</soundDrop>
 		<statBases>
-			<MarketValue>0.7</MarketValue>
+			<MarketValue>1</MarketValue>
 			<MaxHitPoints>100</MaxHitPoints>
 			<Mass>0.5</Mass> 
 			<Flammability>1</Flammability>
@@ -57,7 +57,7 @@
 			<BluntDamageMultiplier>0.25</BluntDamageMultiplier>
 		</statBases>
 		<thingCategories>
-			<li>ResourcesRaw</li>
+			<li>Manufactured</li>
 		</thingCategories>
 		<stackLimit>500</stackLimit>
 		<smallVolume>true</smallVolume>

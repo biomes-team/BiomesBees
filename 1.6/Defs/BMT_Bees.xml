@@ -16,6 +16,7 @@
 	  <ComfyTemperatureMin>0</ComfyTemperatureMin>
 	  <ComfyTemperatureMax>40</ComfyTemperatureMax>
 	  <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">-0.5</ToxicEnvironmentResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0</VacuumResistance>
 	  <MaxFlightTime>100</MaxFlightTime>
 	  <FlightCooldown>10</FlightCooldown>
 	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
@@ -172,6 +173,7 @@
 	  <ComfyTemperatureMin>0</ComfyTemperatureMin>
 	  <ComfyTemperatureMax>40</ComfyTemperatureMax>
 	  <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">-0.5</ToxicEnvironmentResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0</VacuumResistance>
 	  <MaxFlightTime>100</MaxFlightTime>
 	  <FlightCooldown>10</FlightCooldown>
 	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
@@ -326,6 +328,7 @@
 	  <ComfyTemperatureMin>0</ComfyTemperatureMin>
 	  <ComfyTemperatureMax>40</ComfyTemperatureMax>
 	  <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">-0.5</ToxicEnvironmentResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0</VacuumResistance>
 	  <MaxFlightTime>100</MaxFlightTime>
 	  <FlightCooldown>10</FlightCooldown>
 	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
