@@ -5,7 +5,7 @@
     <defName>BMT_MeadBarrel</defName>
     <label>mead fermenting barrel</label>
     <description>A barrel for fermenting honey into delicious mead.</description>
-    <thingClass>Building_FermentingBarrel</thingClass>
+    <thingClass>BiomesBees.Building_HoneyFermentingBarrel</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>BMT_Bees/Things/Building/MeadBarrel/MeadBarrel</texPath>

@@ -55,11 +55,16 @@
     <!-- Details with wiki here: https://github.com/Zetrith/Prepatcher -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building_MushroomWineFermentingBarrel.cs" />
     <Compile Include="CompProperties_BeesHive.cs" />
     <Compile Include="JobDefOf_Bees.cs" />
+    <Compile Include="JobDriver_FillMushroomWineFermentingBarrel.cs" />
     <Compile Include="JobDriver_HarvestHoney.cs" />
+    <Compile Include="JobDriver_TakeHoneyWineOutOfFermentingBarrel.cs" />
     <Compile Include="MapComponent_CacheMaster.cs" />
+    <Compile Include="WorkGiver_FillMushroomWineFermentingBarrel.cs" />
     <Compile Include="WorkGiver_HarvestHoney.cs" />
+    <Compile Include="WorkGiver_TakeHoneyWineOutOfFermentingBarrel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="BiomesCore">
