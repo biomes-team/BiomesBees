@@ -20,7 +20,7 @@
 	  <MaxFlightTime>100</MaxFlightTime>
 	  <FlightCooldown>10</FlightCooldown>
 	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
-	  <Wildness>1</Wildness>
+	  <Wildness>0.5</Wildness>
 	</statBases>
 	<tools>
 	  		<li>
@@ -177,7 +177,7 @@
 	  <MaxFlightTime>100</MaxFlightTime>
 	  <FlightCooldown>10</FlightCooldown>
 	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
-	  <Wildness>1</Wildness>
+	  <Wildness>0.5</Wildness>
 	</statBases>
 	<tools>
 	  		<li>
