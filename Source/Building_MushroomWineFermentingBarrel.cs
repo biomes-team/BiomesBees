@@ -218,7 +218,7 @@ public class Building_HoneyFermentingBarrel : Building, IThingHolder
 			return null;
 		}
 
-		var thing = ThingMaker.MakeThing(JobDefOf_Bees.BMT_Honey);
+		var thing = ThingMaker.MakeThing(JobDefOf_Bees.BMT_Mead);
 		var @object = thing.TryGetComp<CompIngredients>();
 		if (!ingredients.NullOrEmpty())
 		{
