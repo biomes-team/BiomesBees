@@ -58,6 +58,7 @@
 		<spawnSound>Hive_Spawn</spawnSound>
 	  </li>
 	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<wildHive>true</wildHive>
 		<!-- statDef factor -->
 		<failChanceStatDef>BMT_HoneyHarvestFailChance</failChanceStatDef>
 		<!-- search radius. float -->

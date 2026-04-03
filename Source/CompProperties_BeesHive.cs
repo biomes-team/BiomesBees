@@ -21,6 +21,7 @@ namespace BiomesBees
 		public bool flowerlessProduction = false;
 		public StatDef failChanceStatDef;
 		public float honeyProductionWithoutFlowers = 0.5f;
+		public bool wildHive = false;
 
 		[NoTranslate]
 		public string sowFlowersIconPath = "UI/Designators/CutPlants";
@@ -256,6 +257,10 @@ namespace BiomesBees
 
 		public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
 		{
+			if (parent.Faction != Faction.OfPlayer)
+			{
+				yield break;
+			}
 			if (beeHoney <= 0 || selPawn.Faction != Faction.OfPlayer)
 			{
 				yield break;
@@ -425,10 +430,25 @@ namespace BiomesBees
 			WorkGiver_HarvestHoney.ResetCache();
 		}
 
-		//public override void Notify_Killed(Map prevMap, DamageInfo? dinfo = null)
-		//{
-			
-		//}
+		public override void Notify_Killed(Map prevMap, DamageInfo? dinfo = null)
+		{
+			if (Props.wildHive)
+			{
+				PawnKindDef named = Props.angryBeesDefs.RandomElement();
+				if (named != null)
+				{
+					Faction faction = ((Props.angryBeeFaction != null && FactionUtility.DefaultFactionFrom(Props.angryBeeFaction) != null) ? FactionUtility.DefaultFactionFrom(Props.angryBeeFaction) : null);
+					PawnGenerationRequest request = new PawnGenerationRequest(named, faction, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: false, allowDead: true, allowDowned: false, canGeneratePawnRelations: false, mustBeCapableOfViolence: true, 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: false, allowPregnant: true, allowFood: true, allowAddictions: false);
+					Pawn pawnToCreate = PawnGenerator.GeneratePawn(request);
+					GenSpawn.Spawn(pawnToCreate, CellFinder.RandomClosewalkCellNear(parent.Position, prevMap, Props.pawnSpawnRadius), prevMap);
+					if (Props.spawnSound != null)
+					{
+						Props.spawnSound.PlayOneShot(parent);
+					}
+					pawnToCreate.health.AddHediff(HediffDefOf.Scaria);
+				}
+			}
+		}
 
 		public override void PostDestroy(DestroyMode mode, Map previousMap)
 		{
@@ -436,6 +456,10 @@ namespace BiomesBees
 		}
 		public override string CompInspectStringExtra()
 		{
+			if (parent.Faction != Faction.OfPlayer)
+			{
+				return null;
+			}
 			if (!Props.flowerlessProduction || flowersCount > 0)
 			{
 				return "BMT_CollectedHoneyWithFlowers".Translate(Props.productDef.label, flowersCount, beeHoney.ToString());
