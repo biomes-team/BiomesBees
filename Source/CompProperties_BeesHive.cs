@@ -355,6 +355,14 @@ namespace BiomesBees
 						HarvestFail();
 					}
 				};
+				yield return new Command_Action
+				{
+					defaultLabel = "DEV: SpawnPollinator4000",
+					action = delegate
+					{
+						SpawnPollinator4000();
+					}
+				};
 			}
 		}
 
@@ -448,6 +456,44 @@ namespace BiomesBees
 					pawnToCreate.health.AddHediff(HediffDefOf.Scaria);
 				}
 			}
+		}
+
+		private void SpawnPollinator4000()
+		{
+			PawnKindDef named = Props.angryBeesDefs.RandomElement();
+			if (named != null)
+			{
+				PawnGenerationRequest request = new PawnGenerationRequest(named, null, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: false, allowDead: true, allowDowned: false, canGeneratePawnRelations: false, mustBeCapableOfViolence: true, 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: false, allowPregnant: true, allowFood: true, allowAddictions: false);
+				Pawn pawnToCreate = PawnGenerator.GeneratePawn(request);
+				GenSpawn.Spawn(pawnToCreate, CellFinder.RandomClosewalkCellNear(parent.Position, parent.Map, Props.pawnSpawnRadius), parent.Map);
+				if (pawnToCreate.Faction != null)
+				{
+					pawnToCreate.SetFaction(null);
+				}
+				StartPollinate(pawnToCreate);
+			}
+		}
+
+		public static void StartPollinate(Pawn bee)
+		{
+			Thing plant = GetClosestPlant(bee, false, null);
+			try
+			{
+				bee.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf_Bees.BMT_BeePollinate, plant), JobTag.SatisfyingNeeds, false);
+			}
+			catch (Exception arg)
+			{
+				Log.Error("Failed pollinate job. Reason: " + arg.Message);
+			}
+		}
+
+		private static Plant GetClosestPlant(Pawn bee, bool forced, List<ThingDef> allowedThingDefs)
+		{
+			Danger danger = (forced ? Danger.Deadly : Danger.Some);
+			return (Plant)GenClosest.ClosestThingReachable(bee.Position, bee.Map, ThingRequest.ForGroup(ThingRequestGroup.NonStumpPlant), PathEndMode.InteractionCell, TraverseParms.For(bee, danger), 9999f, delegate (Thing t)
+			{
+				return !t.IsForbidden(bee) && bee.CanReserveAndReach(t, PathEndMode.Touch, Danger.Deadly, 1, -1, null, forced) && (allowedThingDefs == null || allowedThingDefs.Contains(t.def));
+			});
 		}
 
 		public override void PostDestroy(DestroyMode mode, Map previousMap)

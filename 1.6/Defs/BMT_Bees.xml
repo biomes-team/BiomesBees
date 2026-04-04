@@ -47,6 +47,7 @@
 	  <foodType>VegetarianRoughAnimal</foodType>
 	  <leatherDef>BMT_FragileChitin</leatherDef>
 	  <trainability>None</trainability>
+	  <!-- <thinkTreeMain>BMT_WildBee</thinkTreeMain> -->
 	  <!-- <mateMtbHours>8</mateMtbHours> -->
 	  <!-- <gestationPeriodDays>5.661</gestationPeriodDays> -->
 	  <headPosPerRotation>
@@ -203,6 +204,7 @@
 	  <foodType>VegetarianRoughAnimal</foodType>
 	  <leatherDef>BMT_FragileChitin</leatherDef>
 	  <trainability>None</trainability>
+	  <!-- <thinkTreeMain>BMT_WildBee</thinkTreeMain> -->
 	  <!-- <mateMtbHours>8</mateMtbHours> -->
 	  <!-- <gestationPeriodDays>5.661</gestationPeriodDays> -->
 	  <headPosPerRotation>
@@ -358,6 +360,7 @@
 	  <foodType>VegetarianRoughAnimal</foodType>
 	  <leatherDef>BMT_FragileChitin</leatherDef>
 	  <trainability>None</trainability>
+	  <!-- <thinkTreeMain>BMT_WildBee</thinkTreeMain> -->
 	  <!-- <mateMtbHours>8</mateMtbHours> -->
 	  <!-- <gestationPeriodDays>5.661</gestationPeriodDays> -->
 	  <headPosPerRotation>

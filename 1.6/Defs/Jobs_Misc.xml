@@ -21,6 +21,19 @@
 	<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
 
+  <JobDef>
+	<defName>BMT_BeePollinate</defName>
+	<driverClass>BiomesBees.JobDriver_Pollinate</driverClass>
+	<reportString>pollinating TargetA.</reportString>
+	<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+	<defName>BMT_BeeDeSpawn</defName>
+	<driverClass>BiomesBees.JobDriver_DeSpawn</driverClass>
+	<reportString>returning to hive.</reportString>
+	<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 
   <!--=============== Making Honey ==============-->
   <!-- To-Do: Req rework. -->

@@ -58,9 +58,12 @@
     <Compile Include="Building_MushroomWineFermentingBarrel.cs" />
     <Compile Include="CompProperties_BeesHive.cs" />
     <Compile Include="JobDefOf_Bees.cs" />
+    <Compile Include="JobDriver_DeSpawn.cs" />
     <Compile Include="JobDriver_FillMushroomWineFermentingBarrel.cs" />
     <Compile Include="JobDriver_HarvestHoney.cs" />
+    <Compile Include="JobDriver_Pollinate.cs" />
     <Compile Include="JobDriver_TakeHoneyWineOutOfFermentingBarrel.cs" />
+    <Compile Include="JobGiver_BeeDeSpawn.cs" />
     <Compile Include="MapComponent_CacheMaster.cs" />
     <Compile Include="WorkGiver_FillMushroomWineFermentingBarrel.cs" />
     <Compile Include="WorkGiver_HarvestHoney.cs" />
