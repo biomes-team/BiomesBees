@@ -23,6 +23,7 @@
       <WorkToBuild>100</WorkToBuild>
       <Flammability>0</Flammability>
       <Beauty>1</Beauty>
+      <Mass>1</Mass>
       <MeditationFocusStrength>0.0</MeditationFocusStrength>
     </statBases>
     <building>
@@ -44,7 +45,6 @@
     </placeWorkers>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <comps Inherit="False">
-      <li Class="CompProperties_Styleable" />
       <li Class="CompProperties_Glower">
         <glowRadius>7</glowRadius>
         <glowColor>(184,136,83,0)</glowColor>
@@ -97,7 +97,11 @@
       </li>
     </comps>
     <designationCategory>Furniture</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <uiOrder>2800</uiOrder>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
     <designationHotKey>Misc10</designationHotKey>
   </ThingDef>
   
@@ -109,6 +113,7 @@
       <texPath>BMT_Bees/Things/Building/FancyCandles</texPath>
       <graphicClass>Graphic_Random</graphicClass>
       <drawRotated>false</drawRotated>
+	  <shaderType>CutoutComplex</shaderType>
 	  <drawSize>2.5</drawSize>
       <damageData>
         <rect>(0.35,0.35,0.3,0.3)</rect>
@@ -123,6 +128,7 @@
       <WorkToBuild>100</WorkToBuild>
       <Flammability>0</Flammability>
       <Beauty>2</Beauty>
+      <Mass>1</Mass>
       <MeditationFocusStrength>0.0</MeditationFocusStrength>
     </statBases>
     <building>
@@ -147,7 +153,6 @@
     </placeWorkers>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <comps Inherit="False">
-      <li Class="CompProperties_Styleable" />
       <li Class="CompProperties_Glower">
         <glowRadius>7</glowRadius>
         <glowColor>(184,136,83,0)</glowColor>
@@ -200,7 +205,11 @@
       </li>
     </comps>
     <designationCategory>Furniture</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <uiOrder>2800</uiOrder>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
     <designationHotKey>Misc10</designationHotKey>
   </ThingDef>
   
@@ -226,6 +235,7 @@
       <WorkToBuild>100</WorkToBuild>
       <Flammability>0</Flammability>
       <Beauty>3</Beauty>
+      <Mass>1</Mass>
       <MeditationFocusStrength>0.0</MeditationFocusStrength>
     </statBases>
     <building>
@@ -250,7 +260,6 @@
     </placeWorkers>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <comps Inherit="False">
-      <li Class="CompProperties_Styleable" />
       <li Class="CompProperties_Glower">
         <glowRadius>7</glowRadius>
         <glowColor>(184,136,83,0)</glowColor>
@@ -303,7 +312,11 @@
       </li>
     </comps>
     <designationCategory>Furniture</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <uiOrder>2800</uiOrder>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
     <designationHotKey>Misc10</designationHotKey>
   </ThingDef>
   
@@ -329,6 +342,7 @@
       <WorkToBuild>100</WorkToBuild>
       <Flammability>0</Flammability>
       <Beauty>4</Beauty>
+      <Mass>1</Mass>
       <MeditationFocusStrength>0.0</MeditationFocusStrength>
     </statBases>
     <building>
@@ -353,7 +367,6 @@
     </placeWorkers>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <comps Inherit="False">
-      <li Class="CompProperties_Styleable" />
       <li Class="CompProperties_Glower">
         <glowRadius>7</glowRadius>
         <glowColor>(184,136,83,0)</glowColor>
@@ -406,7 +419,11 @@
       </li>
     </comps>
     <designationCategory>Furniture</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <uiOrder>2800</uiOrder>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
     <designationHotKey>Misc10</designationHotKey>
   </ThingDef>
 
