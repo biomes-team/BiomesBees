@@ -38,7 +38,7 @@
   	<ThingDef ParentName="ResourceBase">
 		<defName>BMT_Waxblock</defName>
 		<label>wax block</label>
-		<description>A block of wax made from processed honeycomb. It can be used to make art, such as wax sculptures.</description>
+		<description>A block of wax made from processed honeycomb. It can be used to make art, such as wax sculptures, as well as some buildings.</description>
 		<graphicData>
 			<texPath>BMT_Bees/Things/Item/Beewax</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
