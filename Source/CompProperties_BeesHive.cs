@@ -261,11 +261,15 @@ namespace BiomesBees
 			{
 				yield break;
 			}
-			if (beeHoney <= 0 || selPawn.Faction != Faction.OfPlayer)
+			if (beeHoney <= 0 || selPawn.Faction != Faction.OfPlayer || !selPawn.RaceProps.Humanlike)
 			{
 				yield break;
 			}
 			if (!selPawn.CanReserveAndReach(parent, PathEndMode.Touch, Danger.Deadly))
+			{
+				yield break;
+			}
+			if (!selPawn.workSettings.WorkIsActive(WorkTypeDefOf.Handling))
 			{
 				yield break;
 			}
