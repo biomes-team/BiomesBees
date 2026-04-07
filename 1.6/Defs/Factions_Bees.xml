@@ -12,6 +12,7 @@
     <factionIconPath>World/WorldObjects/Expanding/Insects</factionIconPath>
     <canStageAttacks>false</canStageAttacks>
     <displayInFactionSelection>false</displayInFactionSelection>
+	<raidsForbidden>true</raidsForbidden>
     <colorSpectrum>
       <li>(0.78, 0.79, 0.71)</li>
     </colorSpectrum>
@@ -73,6 +74,7 @@
     <fixedName>Bees</fixedName>
     <factionIconPath>World/WorldObjects/Expanding/Insects</factionIconPath>
     <canStageAttacks>false</canStageAttacks>
+	<raidsForbidden>true</raidsForbidden>
     <displayInFactionSelection>false</displayInFactionSelection>
     <colorSpectrum>
       <li>(0.78, 0.79, 0.71)</li>
