@@ -20,6 +20,7 @@
 	  <MaxFlightTime>100</MaxFlightTime>
 	  <FlightCooldown>10</FlightCooldown>
 	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
+	  <FilthRate>0</FilthRate>
 	  <Wildness>0.5</Wildness>
 	</statBases>
 	<tools>
@@ -178,6 +179,7 @@
 	  <MaxFlightTime>100</MaxFlightTime>
 	  <FlightCooldown>10</FlightCooldown>
 	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
+	  <FilthRate>0</FilthRate>
 	  <Wildness>0.5</Wildness>
 	</statBases>
 	<tools>
@@ -334,6 +336,7 @@
 	  <MaxFlightTime>100</MaxFlightTime>
 	  <FlightCooldown>10</FlightCooldown>
 	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
+	  <FilthRate>0</FilthRate>
 	  <Wildness>1</Wildness>
 	</statBases>
 	<tools>
