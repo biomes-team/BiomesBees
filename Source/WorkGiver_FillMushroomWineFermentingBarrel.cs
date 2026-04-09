@@ -73,7 +73,7 @@ public class WorkGiver_FillHoneyFermentingBarrel : WorkGiver_Scanner
         bool Predicate(Thing x) => !x.IsForbidden(pawn) && pawn.CanReserve(x);
         var position = pawn.Position;
         var map = pawn.Map;
-        var thingReq = ThingRequest.ForDef(JobDefOf_Bees.BMT_Honeycomb);
+        var thingReq = ThingRequest.ForDef(JobDefOf_Bees.BMT_Honey);
         var peMode = PathEndMode.ClosestTouch;
         var traverseParams = TraverseParms.For(pawn);
         var validator = (Predicate<Thing>) Predicate;

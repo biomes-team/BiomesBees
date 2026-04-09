@@ -12,7 +12,7 @@ namespace BiomesBees
 		public static JobDef BMT_FillMeadBarrelJob;
 		public static ThingDef BMT_MeadBarrel;
 		public static ThingDef BMT_Honeycomb;
-		//public static ThingDef BMT_Honey;
+		public static ThingDef BMT_Honey;
 		public static ThingDef BMT_Mead;
 		public static JobDef BMT_BeePollinate;
 		public static JobDef BMT_BeeDeSpawn;
