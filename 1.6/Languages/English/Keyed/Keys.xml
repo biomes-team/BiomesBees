@@ -7,4 +7,7 @@
 
 	<BMT_CreateGrowingZone>Create growing zone.</BMT_CreateGrowingZone>
 
+	<BMT_ContainsHoney>Contains mead</BMT_ContainsHoney>
+	<BMT_ContainsHoneyComb>Contains honey</BMT_ContainsHoneyComb>
+
 </LanguageData>
