@@ -126,35 +126,35 @@
 	  <li>
 		<bodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</dessicatedBodyGraphicData>
 	  </li>
 	  <li>
 		<bodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</dessicatedBodyGraphicData>
 	  </li>
 	  <li>
 		<bodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		  <shadowData>
-			<volume>(0.32, 0.35, 0.32)</volume>
+			<volume>(0, 0, 0)</volume>
 			<offset>(0,0,0)</offset>
 		  </shadowData>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</dessicatedBodyGraphicData>
 	  </li>
 	</lifeStages>
@@ -285,35 +285,35 @@
 	  <li>
 		<bodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</dessicatedBodyGraphicData>
 	  </li>
 	  <li>
 		<bodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</dessicatedBodyGraphicData>
 	  </li>
 	  <li>
 		<bodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		  <shadowData>
-			<volume>(0.32, 0.35, 0.32)</volume>
+			<volume>(0, 0, 0)</volume>
 			<offset>(0,0,0)</offset>
 		  </shadowData>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</dessicatedBodyGraphicData>
 	  </li>
 	</lifeStages>
@@ -442,35 +442,35 @@
 	  <li>
 		<bodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</dessicatedBodyGraphicData>
 	  </li>
 	  <li>
 		<bodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</dessicatedBodyGraphicData>
 	  </li>
 	  <li>
 		<bodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		  <shadowData>
-			<volume>(0.32, 0.35, 0.32)</volume>
+			<volume>(0, 0, 0)</volume>
 			<offset>(0,0,0)</offset>
 		  </shadowData>
 		</bodyGraphicData>
 		<dessicatedBodyGraphicData>
 		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
-		  <drawSize>1</drawSize>
+		  <drawSize>1.5</drawSize>
 		</dessicatedBodyGraphicData>
 	  </li>
 	</lifeStages>
