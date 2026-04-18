@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <BodyDef>
+        <defName>BMT_BeeSwarmBody</defName>
+        <label>swarm center</label>
+        <corePart>
+            <def>BMT_BeeSwarmCore</def>
+            <height>Middle</height>
+            <depth>Outside</depth>
+            <groups>
+                <li>Torso</li>
+            </groups>
+            <parts>
+                <li>
+                    <def>BMT_BeeSwarmOuter</def>
+                    <coverage>0.999</coverage>
+                    <depth>Outside</depth>
+                    <groups>
+                        <li>Torso</li>
+                    </groups>
+                    <parts>
+						<li>
+							<def>BMT_BeeStinger</def>
+							<coverage>0.15</coverage>
+							<groups>
+								<li>BMT_StingerGroup</li>							
+							</groups>
+						</li>					
+                    </parts>
+                </li>
+            </parts>
+        </corePart>
+    </BodyDef>
+
+	<BodyPartGroupDef>
+		<defName>BMT_StingerGroup</defName>
+		<label>stinger</label>
+		<listOrder>233</listOrder>
+	</BodyPartGroupDef>
+	<BodyPartDef>
+		<defName>BMT_BeeStinger</defName>
+		<label>stinger</label>
+		<hitPoints>15</hitPoints>
+		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<skinCovered>false</skinCovered>
+		<solid>true</solid>
+		<alive>false</alive>
+		<bleedRate>0</bleedRate>
+	</BodyPartDef>
+	
+	    <BodyPartDef>
+        <defName>BMT_BeeSwarmCore</defName>
+        <label>central swarm</label>
+        <hitPoints>50</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <frostbiteVulnerability>0.01</frostbiteVulnerability>
+        <tags>
+            <li>MovingLimbCore</li>
+            <li>ManipulationLimbCore</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>BMT_BeeSwarmOuter</defName>
+        <label>outer swarm</label>
+        <hitPoints>25</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <frostbiteVulnerability>0.01</frostbiteVulnerability>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+</Defs>
