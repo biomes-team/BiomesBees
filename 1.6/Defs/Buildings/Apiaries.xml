@@ -73,6 +73,7 @@
 		<pawnSpawnIntervalDays>0.1~0.25</pawnSpawnIntervalDays>
 					<!-- Sound to play when a new pawn is created. -->
 		<spawnSound>Hive_Spawn</spawnSound>
+		<forcePlayerFaction>true</forcePlayerFaction>
 	  </li>
 	  <li Class="BiomesBees.CompProperties_BeesHive">
 		<!-- CompProperties_Power support. If the power is off, this factor is applied -->
@@ -222,6 +223,7 @@
 		<pawnSpawnIntervalDays>0.1~0.25</pawnSpawnIntervalDays>
 					<!-- Sound to play when a new pawn is created. -->
 		<spawnSound>Hive_Spawn</spawnSound>
+		<forcePlayerFaction>true</forcePlayerFaction>
 	  </li>
       <li Class="CompProperties_Flickable"/>
 	  <li Class="CompProperties_Power">
@@ -376,6 +378,7 @@
 		<pawnSpawnIntervalDays>0.1~0.25</pawnSpawnIntervalDays>
 					<!-- Sound to play when a new pawn is created. -->
 		<spawnSound>Hive_Spawn</spawnSound>
+		<forcePlayerFaction>true</forcePlayerFaction>
 	  </li>
 
 	  <li Class="BiomesBees.CompProperties_BeesHive">

@@ -85,6 +85,22 @@ namespace BiomesBees
 		//	DoTick(delta);
 		//}
 
+		public float BeesHiveFactor
+		{
+			get
+			{
+				SimpleCurve curvePoints = new()
+				{
+					new CurvePoint(1f, 1.1f),
+					new CurvePoint(5f, 1.0f),
+					new CurvePoint(10f, 0.8f),
+					new CurvePoint(15f, 0.4f),
+					new CurvePoint(20f, 0.35f)
+				};
+				return curvePoints.Evaluate(HiveUtility.Hives.Where(hive => hive.Map == this.parent.Map).Count());
+			}
+		}
+
 		private bool PowerOn
 		{
 			get
@@ -121,13 +137,14 @@ namespace BiomesBees
 			{
 				return false;
 			}
-			_ = WorkGiver_HarvestHoney.Hives;
+			_ = HiveUtility.Hives;
 			nextTick = Props.honeyTick;
 			float newHoney = (!Props.flowerlessProduction ? (flowersCount = GetForCell(parent.PositionHeld, Props.flowerRadius)) * Props.honeyPerFlower : Props.honeyProductionWithoutFlowers);
 			if (!PowerOn)
 			{
 				newHoney *= Props.powerlessFactor;
 			}
+			newHoney += BeesHiveFactor;
 			MakeHoney(beeHoney + newHoney);
 			return true;
 		}
@@ -344,7 +361,7 @@ namespace BiomesBees
 					action = delegate
 					{
 						string log = "Hives:";
-						foreach (Thing thing in WorkGiver_HarvestHoney.Hives)
+						foreach (Thing thing in HiveUtility.Hives)
 						{
 							log += "\n" + thing.def.defName + " : " + thing.def.label;
 						}
@@ -426,11 +443,7 @@ namespace BiomesBees
 
 		public override void PostSpawnSetup(bool respawningAfterLoad)
 		{
-			//if (respawningAfterLoad)
-			//{
-			//}
-			// Always recache after spawn. Include save-load/reload.
-			WorkGiver_HarvestHoney.ResetCache();
+			HiveUtility.ResetCache();
 			if (respawningAfterLoad)
 			{
 				nextTick = Props.honeyTick;
@@ -439,7 +452,7 @@ namespace BiomesBees
 
 		public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
 		{
-			WorkGiver_HarvestHoney.ResetCache();
+			HiveUtility.ResetCache();
 		}
 
 		public override void Notify_Killed(Map prevMap, DamageInfo? dinfo = null)
@@ -502,7 +515,7 @@ namespace BiomesBees
 
 		public override void PostDestroy(DestroyMode mode, Map previousMap)
 		{
-			WorkGiver_HarvestHoney.ResetCache();
+			HiveUtility.ResetCache();
 		}
 		public override string CompInspectStringExtra()
 		{

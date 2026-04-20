@@ -12,12 +12,12 @@ namespace BiomesBees
 
 		public override void MapGenerated()
 		{
-			WorkGiver_HarvestHoney.ResetCache();
+			HiveUtility.ResetCache();
 		}
 
 		public override void MapRemoved()
 		{
-			WorkGiver_HarvestHoney.ResetCache();
+			HiveUtility.ResetCache();
 		}
 
 	}

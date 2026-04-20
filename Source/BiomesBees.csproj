@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Building_MushroomWineFermentingBarrel.cs" />
     <Compile Include="CompProperties_BeesHive.cs" />
+    <Compile Include="HiveUtility.cs" />
     <Compile Include="JobDefOf_Bees.cs" />
     <Compile Include="JobDriver_DeSpawn.cs" />
     <Compile Include="JobDriver_FillMushroomWineFermentingBarrel.cs" />
