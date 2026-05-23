@@ -23,6 +23,8 @@ namespace BiomesBees
 		public float honeyProductionWithoutFlowers = 0.5f;
 		public bool wildHive = false;
 
+		public float pollinationFactor = 1f;
+
 		[NoTranslate]
 		public string sowFlowersIconPath = "UI/Designators/CutPlants";
 
@@ -162,13 +164,28 @@ namespace BiomesBees
 			beeHoney = Mathf.Clamp(newHoney, 0, Props.honeyLimit);
 		}
 
+		private List<Thing> nearbyPlants = new();
+		public List<Thing> Plants
+		{
+			get
+			{
+				if (nearbyPlants == null)
+				{
+					nearbyPlants = new();
+				}
+				return nearbyPlants;
+			}
+		}
+
 		private float GetForCell(IntVec3 cell, float radius)
 		{
+			nearbyPlants = new();
 			float value = 0f;
 			foreach (Thing item in GenRadial.RadialDistinctThingsAround(cell, parent.MapHeld, radius, useCenter: false))
 			{
 				if (item is Plant plant && IsFlower(plant))
 				{
+					nearbyPlants.Add(plant);
 					value++;
 				}
 			}

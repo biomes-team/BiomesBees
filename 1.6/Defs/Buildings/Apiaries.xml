@@ -76,6 +76,7 @@
 		<forcePlayerFaction>true</forcePlayerFaction>
 	  </li>
 	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<pollinationFactor>1.05</pollinationFactor>
 		<!-- CompProperties_Power support. If the power is off, this factor is applied -->
 		<powerlessFactor>1</powerlessFactor>
 		<!-- statDef factor -->
@@ -232,6 +233,7 @@
 	  </li>
       <li Class="CompProperties_Breakdownable"/>
 	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<pollinationFactor>1.1</pollinationFactor>
 		<!-- CompProperties_Power support. If the power is off, this factor is applied -->
 		<powerlessFactor>0.2</powerlessFactor>
 		<!-- statDef factor -->
@@ -382,6 +384,7 @@
 	  </li>
 
 	  <li Class="BiomesBees.CompProperties_BeesHive">
+		<pollinationFactor>1.0</pollinationFactor>
 		<!-- CompProperties_Power support. If the power is off, this factor is applied -->
 		<powerlessFactor>1</powerlessFactor>
 		<!-- statDef factor -->
