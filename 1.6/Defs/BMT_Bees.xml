@@ -23,6 +23,15 @@
 	  <Wildness>0.5</Wildness>
 	  <LeatherAmount>0</LeatherAmount>
 	</statBases>
+		<comps>
+			<li Class="BiomesCore.CompProperties_HarvestAnimalProduct">
+				<thingDef>BMT_Pollen</thingDef> <!-- Thing to be produced -->
+				<harvestIntervalDays>5</harvestIntervalDays> <!-- Number of days until the resource is produced. -->
+				<baseResourceAmount>5</baseResourceAmount> <!-- Base amount of the resource, will be scaled by animal body size. -->
+				<!-- LanguageData string to use for reporting resource growth to the user when the animal is selected. -->
+				<resourceGrowthReportString>BMT_Pollen</resourceGrowthReportString>
+			</li>
+		</comps>
 	<tools>
 	  		<li>
 				<label>swarm stingers</label>
@@ -182,6 +191,15 @@
 	  <Wildness>0.5</Wildness>
 	  <LeatherAmount>0</LeatherAmount>
 	</statBases>
+		<comps>
+			<li Class="BiomesCore.CompProperties_HarvestAnimalProduct">
+				<thingDef>BMT_Pollen</thingDef> <!-- Thing to be produced -->
+				<harvestIntervalDays>5</harvestIntervalDays> <!-- Number of days until the resource is produced. -->
+				<baseResourceAmount>5</baseResourceAmount> <!-- Base amount of the resource, will be scaled by animal body size. -->
+				<!-- LanguageData string to use for reporting resource growth to the user when the animal is selected. -->
+				<resourceGrowthReportString>BMT_Pollen</resourceGrowthReportString>
+			</li>
+		</comps>
 	<tools>
 	  		<li>
 				<label>swarm stingers</label>
@@ -340,6 +358,15 @@
 	  <Wildness>0.5</Wildness>
 	  <LeatherAmount>0</LeatherAmount>
 	</statBases>
+		<comps>
+			<li Class="BiomesCore.CompProperties_HarvestAnimalProduct">
+				<thingDef>BMT_Pollen</thingDef> <!-- Thing to be produced -->
+				<harvestIntervalDays>5</harvestIntervalDays> <!-- Number of days until the resource is produced. -->
+				<baseResourceAmount>5</baseResourceAmount> <!-- Base amount of the resource, will be scaled by animal body size. -->
+				<!-- LanguageData string to use for reporting resource growth to the user when the animal is selected. -->
+				<resourceGrowthReportString>BMT_Pollen</resourceGrowthReportString>
+			</li>
+		</comps>
 	<tools>
 	  		<li>
 				<label>swarm stingers</label>
