@@ -59,5 +59,128 @@
       </li>
     </stages>
   </HediffDef>
+  
+  <HediffDef>
+    <defName>BMT_PollenBuzz</defName>
+    <label>pollen buzz</label>
+    <description>The effect of snorting pollen in the bloodstream. It gives a very mild high and increases immunity, but makes it slightly harder to breathe. This can lead to occasional mild confusion.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.75</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>	
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+        </statOffsets>
+        <mentalStateGivers>
+          <li>
+            <mentalState>WanderConfused</mentalState>
+            <mtbDays>50</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
 
+  <ThoughtDef>
+    <defName>BMT_PollenBuzz</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>BMT_PollenBuzz</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>pollen buzz</label>
+        <description>That pollen made me feel weirdly good, albeit a little stuffy.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Pollen addiction -->
+  
+  <ChemicalDef>
+    <defName>BMT_Pollen</defName>
+    <label>pollen</label>
+    <addictionHediff>BMT_PollenAddiction</addictionHediff>
+    <toleranceHediff>BMT_PollenTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+    <generateAddictionGenes>false</generateAddictionGenes>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>BMT_Chemical_Pollen</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>pollen</label>
+    <description>Because of an pollen addiction, this person needs to regularly consume pollen to avoid withdrawal symptoms.</description>
+    <listPriority>20</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>BMT_PollenTolerance</defName>
+    <label>pollen tolerance</label>
+    <description>A built-up tolerance to pollen. The more severe this tolerance is, the more pollen it takes to get the same effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.030</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>BMT_Pollen</chemical>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddictionBase">
+    <defName>BMT_PollenAddiction</defName>
+    <label>pollen addiction</label>
+    <description>A chemical addiction to bee pollen. Long-term presence of pollen has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of pollen, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <chemicalNeed>BMT_Chemical_Pollen</chemicalNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.2</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+      </li>
+      <li>
+        <label>withdrawal</label>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>BMT_PollenWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>BMT_PollenAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>pollen withdrawal</label>
+        <description>I feel tired and drained all the time. I never thought I'd want to snort bee pollen so much.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

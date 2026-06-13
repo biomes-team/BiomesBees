@@ -212,6 +212,25 @@
         <li>Waist</li>
       </bodyPartGroups>
       <wornGraphicPath>BMT_Bees/Things/Item/Smoker/Smoker</wornGraphicPath>
+      <wornGraphicData>
+        <renderUtilityAsPack>true</renderUtilityAsPack>
+        <north>
+          <offset>(0.2,-0.1)</offset>
+          <scale>(0.7,0.7)</scale>
+        </north>
+        <south>
+          <offset>(-0.2,-0.1)</offset>
+          <scale>(0.7,0.7)</scale>
+        </south>
+        <east>
+          <offset>(0.2,-0.2)</offset>
+          <scale>(0.7,0.7)</scale>
+        </east>
+        <west>
+          <offset>(-0.2,-0.2)</offset>
+          <scale>(0.7,0.7)</scale>
+        </west>
+      </wornGraphicData>
       <layers>
         <li>Belt</li>
       </layers>
@@ -382,5 +401,75 @@
       </li>
     </tools>
 	</ThingDef>
-  
+	
+  <ThingDef ParentName="DrugBase">
+    <defName>BMT_Pollen</defName>
+    <label>bee pollen</label>
+    <description>A collection of powdery pollen gathered from domestic bees. It gives a minor high when snorted.</description>
+    <descriptionHyperlinks>
+      <HediffDef>BMT_PollenBuzz</HediffDef>
+      <HediffDef>BMT_PollenTolerance</HediffDef>
+      <HediffDef>BMT_PollenAddiction</HediffDef>
+    </descriptionHyperlinks>
+    <tradeability>Sellable</tradeability>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+			<texPath>BMT_Bees/Things/Item/Pollen</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>5</MarketValue>
+      <Mass>0.1</Mass>
+      <DeteriorationRate>4</DeteriorationRate>
+      <Nutrition>0.1</Nutrition>
+    </statBases>
+    <techLevel>Neolithic</techLevel>
+    <ingestible>
+      <baseIngestTicks>80</baseIngestTicks>
+      <chairSearchRadius>4</chairSearchRadius>
+      <preferability>DesperateOnly</preferability>
+      <tasteThought></tasteThought>
+      <foodType>VegetableOrFruit</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.1</joy>
+      <ingestSound>Ingest_Snort</ingestSound>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Snort {0}</ingestCommandString>
+      <ingestReportString>Snorting {0}.</ingestReportString>
+      <useEatingSpeedStat>true</useEatingSpeedStat>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>BMT_PollenBuzz</hediffDef>
+          <severity>0.50</severity>
+          <toleranceChemical>BMT_Pollen</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>BMT_PollenTolerance</hediffDef>
+          <toleranceChemical>BMT_Pollen</toleranceChemical>
+          <severity>0.01</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+      <li Class="CompProperties_Drug">
+        <chemical>BMT_Pollen</chemical>
+        <addictiveness>0.005</addictiveness>
+        <minToleranceToAddict>0.25</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.1</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>30</listOrder>
+      </li>
+    </comps>
+    <allowedArchonexusCount>50</allowedArchonexusCount>
+  </ThingDef>
 </Defs>
