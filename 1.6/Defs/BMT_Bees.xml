@@ -123,7 +123,7 @@
 	<combatPower>10</combatPower>
 			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>3</flyingAnimationFrameCount>
-			<flyingAnimationTicksPerFrame>10</flyingAnimationTicksPerFrame>
+			<flyingAnimationTicksPerFrame>20</flyingAnimationTicksPerFrame>
 			<flyingAnimationDrawSize>1.25</flyingAnimationDrawSize>
 			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
 			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
@@ -287,7 +287,7 @@
     <defaultFactionDef>PlayerColony</defaultFactionDef>
 			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>3</flyingAnimationFrameCount>
-			<flyingAnimationTicksPerFrame>10</flyingAnimationTicksPerFrame>
+			<flyingAnimationTicksPerFrame>20</flyingAnimationTicksPerFrame>
 			<flyingAnimationDrawSize>1.25</flyingAnimationDrawSize>
 			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
 			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
@@ -449,7 +449,7 @@
     <defaultFactionDef>BMT_AngryWildBees</defaultFactionDef>
 			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>3</flyingAnimationFrameCount>
-			<flyingAnimationTicksPerFrame>10</flyingAnimationTicksPerFrame>
+			<flyingAnimationTicksPerFrame>20</flyingAnimationTicksPerFrame>
 			<flyingAnimationDrawSize>1.25</flyingAnimationDrawSize>
 			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
 			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
