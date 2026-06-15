@@ -56,6 +56,7 @@
 	  <useMeatFrom>Megaspider</useMeatFrom>
 	  <foodType>VegetarianRoughAnimal</foodType>
 	  <trainability>None</trainability>
+      <flightStartChanceOnJobStart>1</flightStartChanceOnJobStart>
 	  <!-- <thinkTreeMain>BMT_WildBee</thinkTreeMain> -->
 	  <!-- <mateMtbHours>8</mateMtbHours> -->
 	  <!-- <gestationPeriodDays>5.661</gestationPeriodDays> -->
@@ -120,15 +121,10 @@
 	<label>bee swarm</label>
 	<race>BMT_Bees</race>
 	<combatPower>10</combatPower>
-    <startingHediffs>
-      <li>
-        <def>BMT_BeeSwarming</def>
-      </li>
-    </startingHediffs>
 			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
-			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
-			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
-			<flyingAnimationDrawSize>1.7</flyingAnimationDrawSize>
+			<flyingAnimationFrameCount>3</flyingAnimationFrameCount>
+			<flyingAnimationTicksPerFrame>10</flyingAnimationTicksPerFrame>
+			<flyingAnimationDrawSize>1.25</flyingAnimationDrawSize>
 			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
 			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
 	<lifeStages>
@@ -289,15 +285,10 @@
 	<race>BMT_Bees</race>
 	<combatPower>10</combatPower>
     <defaultFactionDef>PlayerColony</defaultFactionDef>
-    <startingHediffs>
-      <li>
-        <def>BMT_BeeSwarming</def>
-      </li>
-    </startingHediffs>
 			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
-			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
-			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
-			<flyingAnimationDrawSize>1.7</flyingAnimationDrawSize>
+			<flyingAnimationFrameCount>3</flyingAnimationFrameCount>
+			<flyingAnimationTicksPerFrame>10</flyingAnimationTicksPerFrame>
+			<flyingAnimationDrawSize>1.25</flyingAnimationDrawSize>
 			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
 			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
 	<lifeStages>
@@ -456,15 +447,10 @@
 	<race>BMT_Bees</race>
 	<combatPower>10</combatPower>
     <defaultFactionDef>BMT_AngryWildBees</defaultFactionDef>
-    <startingHediffs>
-      <li>
-        <def>BMT_BeeSwarming</def>
-      </li>
-    </startingHediffs>
 			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
-			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
-			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
-			<flyingAnimationDrawSize>1.7</flyingAnimationDrawSize>
+			<flyingAnimationFrameCount>3</flyingAnimationFrameCount>
+			<flyingAnimationTicksPerFrame>10</flyingAnimationTicksPerFrame>
+			<flyingAnimationDrawSize>1.25</flyingAnimationDrawSize>
 			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
 			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
 	<lifeStages>
