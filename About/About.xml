@@ -13,6 +13,12 @@
 		  <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
 		  <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
 		</li> 
+		<li>
+		  <packageId>BiomesTeam.CoreFramework</packageId>
+		  <displayName>Biomes! Framework</displayName>
+		  <steamWorkshopUrl>steam://url/CommunityFilePage/3709492514</steamWorkshopUrl>
+		  <downloadUrl>https://github.com/biomes-team/BiomesFramework/releases</downloadUrl>
+		</li> 
 	</modDependencies>
 	<loadAfter>
 		<li>Ludeon.RimWorld</li>
@@ -20,7 +26,7 @@
 		<li>Ludeon.RimWorld.Ideology</li>
 		<li>Ludeon.RimWorld.Biotech</li>
 		<li>brrainz.harmony</li>
-		<li>BiomesTeam.BiomesCore</li>
+		<li>BiomesTeam.CoreFramework</li>
 	</loadAfter>
 	<description>A simple and cozy mod that adds beekeeping to the Rim. Queen Bees can be found from wild hives in most biomes. Queen bees can be used to build apiaries to produce honeycomb that can then be processed into various beekeeping based resources. You can now get your colonists drunk off mead or feed them entirely off honey!
 	
