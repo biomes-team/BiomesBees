@@ -66,6 +66,7 @@
 			<categories>
 				<li>Stony</li>
 			</categories>
+			<appearance>Bricks</appearance>
 			<commonality>0.0</commonality>
 			<soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
 			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>

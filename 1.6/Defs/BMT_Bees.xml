@@ -29,7 +29,7 @@
 				<harvestIntervalDays>5</harvestIntervalDays> <!-- Number of days until the resource is produced. -->
 				<baseResourceAmount>5</baseResourceAmount> <!-- Base amount of the resource, will be scaled by animal body size. -->
 				<!-- LanguageData string to use for reporting resource growth to the user when the animal is selected. -->
-				<resourceGrowthReportString>BMT_Pollen</resourceGrowthReportString>
+				<resourceGrowthReportString>Pollen</resourceGrowthReportString>
 			</li>
 		</comps>
 	<tools>
@@ -121,6 +121,12 @@
 	<label>bee swarm</label>
 	<race>BMT_Bees</race>
 	<combatPower>10</combatPower>
+    <startingHediffs>
+      <li>
+        <def>BMT_BeeSwarming</def>
+      </li>
+    </startingHediffs>
+	<combatPower>10</combatPower>
 			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>3</flyingAnimationFrameCount>
 			<flyingAnimationTicksPerFrame>20</flyingAnimationTicksPerFrame>
@@ -193,7 +199,7 @@
 				<harvestIntervalDays>5</harvestIntervalDays> <!-- Number of days until the resource is produced. -->
 				<baseResourceAmount>5</baseResourceAmount> <!-- Base amount of the resource, will be scaled by animal body size. -->
 				<!-- LanguageData string to use for reporting resource growth to the user when the animal is selected. -->
-				<resourceGrowthReportString>BMT_Pollen</resourceGrowthReportString>
+				<resourceGrowthReportString>Pollen</resourceGrowthReportString>
 			</li>
 		</comps>
 	<tools>
@@ -284,6 +290,11 @@
 	<label>bee swarm</label>
 	<race>BMT_Bees</race>
 	<combatPower>10</combatPower>
+    <startingHediffs>
+      <li>
+        <def>BMT_BeeSwarming</def>
+      </li>
+    </startingHediffs>
     <defaultFactionDef>PlayerColony</defaultFactionDef>
 			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>3</flyingAnimationFrameCount>
@@ -355,7 +366,7 @@
 				<harvestIntervalDays>5</harvestIntervalDays> <!-- Number of days until the resource is produced. -->
 				<baseResourceAmount>5</baseResourceAmount> <!-- Base amount of the resource, will be scaled by animal body size. -->
 				<!-- LanguageData string to use for reporting resource growth to the user when the animal is selected. -->
-				<resourceGrowthReportString>BMT_Pollen</resourceGrowthReportString>
+				<resourceGrowthReportString>Pollen</resourceGrowthReportString>
 			</li>
 		</comps>
 	<tools>
@@ -446,6 +457,11 @@
 	<label>bee swarm</label>
 	<race>BMT_Bees</race>
 	<combatPower>10</combatPower>
+    <startingHediffs>
+      <li>
+        <def>BMT_BeeSwarming</def>
+      </li>
+    </startingHediffs>
     <defaultFactionDef>BMT_AngryWildBees</defaultFactionDef>
 			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>3</flyingAnimationFrameCount>
