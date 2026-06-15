@@ -22,6 +22,7 @@ namespace BiomesBees
 		public StatDef failChanceStatDef;
 		public float honeyProductionWithoutFlowers = 0.5f;
 		public bool wildHive = false;
+		public bool spawnBeesOnKill = true;
 
 		public float pollinationFactor = 1f;
 
@@ -474,7 +475,7 @@ namespace BiomesBees
 
 		public override void Notify_Killed(Map prevMap, DamageInfo? dinfo = null)
 		{
-			if (Props.wildHive)
+			if (Props.wildHive || Props.spawnBeesOnKill)
 			{
 				PawnKindDef named = Props.angryBeesDefs.RandomElement();
 				if (named != null)
