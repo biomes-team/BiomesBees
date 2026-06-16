@@ -64,7 +64,7 @@
 		<!-- search radius. float -->
 		<flowerRadius>5.5</flowerRadius>
 		<!-- Honey per flower -->
-		<honeyPerFlower>0.003125</honeyPerFlower>
+		<honeyPerFlower>0.001125</honeyPerFlower>
 		<!-- apiary tick freq. After apiary_tick honey is produced. Formula: flowers_in_radius * honeyPerFlower -->
 		<honeyTick>6000</honeyTick>
 		<!-- Product. Any ThingDef -->
