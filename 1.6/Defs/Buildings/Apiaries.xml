@@ -90,9 +90,9 @@
 		<!-- Product. Any ThingDef -->
 		<productDef>BMT_Honeycomb</productDef>
 		<!-- Amount when auto-work can be triggered. Job can spawn honey or angry bees -->
-		<bestHarvestAmount>10</bestHarvestAmount>
+		<bestHarvestAmount>75</bestHarvestAmount>
 		<!-- Max honey (or human meat) in apiary -->
-		<honeyLimit>10</honeyLimit>
+		<honeyLimit>100</honeyLimit>
 		<!-- Uniqe tag. Used for saves. Each CompProperties_BeesHive in single def req. uniqe uniqueTag -->
 		<uniqueTag>HoneyMaker5000</uniqueTag>
 
@@ -247,9 +247,9 @@
 		<!-- Product. Any ThingDef -->
 		<productDef>BMT_Honeycomb</productDef>
 		<!-- Amount when auto-work can be triggered. Job can spawn honey or angry bees -->
-		<bestHarvestAmount>15</bestHarvestAmount>
+		<bestHarvestAmount>150</bestHarvestAmount>
 		<!-- Max honey (or human meat) in apiary -->
-		<honeyLimit>15</honeyLimit>
+		<honeyLimit>200</honeyLimit>
 		<!-- Uniqe tag. Used for saves. Each CompProperties_BeesHive in single def req. uniqe uniqueTag -->
 		<uniqueTag>HoneyMaker5000</uniqueTag>
 
@@ -401,9 +401,9 @@
 		<!-- Product. Any ThingDef -->
 		<productDef>BMT_Honeycomb</productDef>
 		<!-- Amount when auto-work can be triggered. Job can spawn honey or angry bees -->
-		<bestHarvestAmount>20</bestHarvestAmount>
+		<bestHarvestAmount>225</bestHarvestAmount>
 		<!-- Max honey (or human meat) in apiary -->
-		<honeyLimit>20</honeyLimit>
+		<honeyLimit>300</honeyLimit>
 		<!-- Uniqe tag. Used for saves. Each CompProperties_BeesHive in single def req. uniqe uniqueTag -->
 		<uniqueTag>HoneyMaker5000</uniqueTag>
 
