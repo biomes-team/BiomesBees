@@ -85,7 +85,7 @@
 		</products>
 	</RecipeDef>
 	
-	<RecipeDef>
+<!-- 	<RecipeDef>
     <defName>BMT_MakeMead</defName>
     <label>make mead</label>
     <description>Make mead from honey.</description>
@@ -118,6 +118,6 @@
     <products>
       <BMT_Mead>5</BMT_Mead>
     </products>
-  </RecipeDef>
+  </RecipeDef> -->
 
 </Defs>
