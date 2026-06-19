@@ -156,6 +156,10 @@ namespace BiomesBees
 		{
 			get
 			{
+				if (Props.wildHive)
+				{
+					return false;
+				}
 				return beeHoney >= Props.bestHarvestAmount;
 			}
 		}
