@@ -12,7 +12,7 @@ namespace BiomesBees
 	{
 
 		private static IEnumerable<Thing> cachedHives;
-		private static List<CompBeesHive> cachedCompHives;
+		private static HashSet<CompBeesHive> cachedCompHives;
 		public static bool disabled = false;
 		public static IEnumerable<Thing> Hives
 		{
@@ -25,7 +25,7 @@ namespace BiomesBees
 				return cachedHives;
 			}
 		}
-		public static List<CompBeesHive> HivesComps
+		public static HashSet<CompBeesHive> HivesComps
 		{
 			get
 			{
@@ -39,7 +39,7 @@ namespace BiomesBees
 
 		private static void GetHives()
 		{
-			List<CompBeesHive> list = new();
+			HashSet<CompBeesHive> list = new();
 			foreach (Map map in Find.Maps)
 			{
 				foreach (Thing thing in map.spawnedThings)

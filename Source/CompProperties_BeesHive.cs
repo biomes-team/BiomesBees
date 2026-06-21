@@ -132,7 +132,31 @@ namespace BiomesBees
 			DoTick(1500);
 		}
 
-		float flowersCount = 0;
+		public float HoneyPerTick
+		{
+			get
+			{
+				if (Props.flowerlessProduction)
+				{
+					return Props.honeyProductionWithoutFlowers;
+				}
+				return FlowersCount * Props.honeyPerFlower;
+			}
+		}
+
+		private float? flowersCount = 0;
+		public float FlowersCount
+		{
+			get
+			{
+				if (flowersCount == null)
+				{
+					flowersCount = GetForCell(parent.PositionHeld, Props.flowerRadius);
+				}
+				return flowersCount.Value;
+			}
+		}
+
 		private bool DoTick(int delta)
 		{
 			nextTick -= delta;
@@ -140,15 +164,16 @@ namespace BiomesBees
 			{
 				return false;
 			}
+			flowersCount = null;
 			_ = HiveUtility.Hives;
 			nextTick = Props.honeyTick;
-			float newHoney = (!Props.flowerlessProduction ? (flowersCount = GetForCell(parent.PositionHeld, Props.flowerRadius)) * Props.honeyPerFlower : Props.honeyProductionWithoutFlowers);
+			float newHoney = HoneyPerTick;
 			if (!PowerOn)
 			{
 				newHoney *= Props.powerlessFactor;
 			}
-			newHoney += BeesHiveFactor;
-			MakeHoney(beeHoney + newHoney);
+			newHoney *= BeesHiveFactor;
+			MakeHoney(newHoney);
 			return true;
 		}
 
@@ -166,11 +191,11 @@ namespace BiomesBees
 
 		private void MakeHoney(float newHoney)
 		{
-			beeHoney = Mathf.Clamp(newHoney, 0, Props.honeyLimit);
+			beeHoney = Mathf.Clamp(beeHoney + newHoney, 0, Props.honeyLimit);
 		}
 
-		private List<Thing> nearbyPlants = new();
-		public List<Thing> Plants
+		private HashSet<Thing> nearbyPlants = new();
+		public HashSet<Thing> Plants
 		{
 			get
 			{
@@ -358,7 +383,7 @@ namespace BiomesBees
 					defaultLabel = "DEV: Honey +10",
 					action = delegate
 					{
-						MakeHoney(beeHoney + 10f);
+						MakeHoney(10f);
 					}
 				};
 				yield return new Command_Action
@@ -545,9 +570,9 @@ namespace BiomesBees
 			{
 				return null;
 			}
-			if (!Props.flowerlessProduction || flowersCount > 0)
+			if (!Props.flowerlessProduction || FlowersCount > 0)
 			{
-				return "BMT_CollectedHoneyWithFlowers".Translate(Props.productDef.label, flowersCount, beeHoney.ToString());
+				return "BMT_CollectedHoneyWithFlowers".Translate(Props.productDef.label, FlowersCount, beeHoney.ToString());
 			}
 			return "BMT_CollectedHoney".Translate(Props.productDef.label, beeHoney.ToString());
 		}
@@ -557,7 +582,7 @@ namespace BiomesBees
 			base.PostExposeData();
 			Scribe_Values.Look(ref nextTick, "nextTick" + "_" + Props.uniqueTag);
 			Scribe_Values.Look(ref beeHoney, "beeHoney" + "_" + Props.uniqueTag);
-			Scribe_Values.Look(ref flowersCount, "flowersCount");
+			//Scribe_Values.Look(ref flowersCount, "flowersCount");
 		}
 
 	}
