@@ -26,8 +26,8 @@
 		<comps>
 			<li Class="BiomesCore.CompProperties_HarvestAnimalProduct">
 				<thingDef>BMT_Pollen</thingDef> <!-- Thing to be produced -->
-				<harvestIntervalDays>5</harvestIntervalDays> <!-- Number of days until the resource is produced. -->
-				<baseResourceAmount>5</baseResourceAmount> <!-- Base amount of the resource, will be scaled by animal body size. -->
+				<harvestIntervalDays>12.5</harvestIntervalDays> <!-- Number of days until the resource is produced. -->
+				<baseResourceAmount>10</baseResourceAmount> <!-- Base amount of the resource, will be scaled by animal body size. -->
 				<!-- LanguageData string to use for reporting resource growth to the user when the animal is selected. -->
 				<resourceGrowthReportString>Pollen</resourceGrowthReportString>
 			</li>
