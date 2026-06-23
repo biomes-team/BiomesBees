@@ -48,7 +48,7 @@
 		<statBases>
 			<MarketValue>1</MarketValue>
 			<MaxHitPoints>100</MaxHitPoints>
-			<Mass>0.5</Mass> 
+			<Mass>0.005</Mass> 
 			<Flammability>1</Flammability>
 			<ConstructionSpeedFactor>0.15</ConstructionSpeedFactor>
 			<StuffPower_Insulation_Cold>1</StuffPower_Insulation_Cold>
