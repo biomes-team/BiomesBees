@@ -39,7 +39,7 @@
   <!-- To-Do: Req rework. -->
 
   <WorkGiverDef>
-	<defName>BMT_TakeMushroomWineOutOfFermentingBarrel</defName>
+	<defName>BMT_TakeMeadOutOfFermentingBarrel</defName>
 	<label>take honey out of mead barrels</label>
 	<giverClass>BiomesBees.WorkGiver_TakeHoneyWineOutOfFermentingBarrel</giverClass>
 	<workType>Hauling</workType>
@@ -52,7 +52,7 @@
   </WorkGiverDef>
 
   <WorkGiverDef>
-	<defName>BMT_FillMushroomFermentingBarrel</defName>
+	<defName>BMT_FillMeadFermentingBarrel</defName>
 	<label>fill mead barrels</label>
 	<giverClass>BiomesBees.WorkGiver_FillHoneyFermentingBarrel</giverClass>
 	<workType>Hauling</workType>
