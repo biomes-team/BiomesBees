@@ -354,7 +354,7 @@
       <ComponentSpacer>2</ComponentSpacer>
 	  <BMT_QueenBee>1</BMT_QueenBee>
     </costList>
-	<!-- <specialDisplayRadius>5.5</specialDisplayRadius> -->
+	<specialDisplayRadius>5.5</specialDisplayRadius>
     <comps>
       <li Class="CompProperties_AmbientSound">
         <sound>BMT_ApiaryAmbient</sound>
