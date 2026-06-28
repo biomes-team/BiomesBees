@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<BMT_CollectedHoney>Collected {0}: {1}</BMT_CollectedHoney>
+	<BMT_CollectedHoney>Collected {0}: {1}/{2}</BMT_CollectedHoney>
 	<BMT_CollectedHoneyWithFlowers>Collected {0} from {1} plants: {2}</BMT_CollectedHoneyWithFlowers>
 	<BMT_Harvest>Harvest</BMT_Harvest>
 

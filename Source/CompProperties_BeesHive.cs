@@ -574,7 +574,7 @@ namespace BiomesBees
 			{
 				return "BMT_CollectedHoneyWithFlowers".Translate(Props.productDef.label, FlowersCount, beeHoney.ToString());
 			}
-			return "BMT_CollectedHoney".Translate(Props.productDef.label, beeHoney.ToString());
+			return "BMT_CollectedHoney".Translate(Props.productDef.label, beeHoney.ToString(), Props.honeyLimit);
 		}
 
 		public override void PostExposeData()
