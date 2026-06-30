@@ -107,6 +107,10 @@ namespace BiomesBees
 			{
 				return;
 			}
+			if (__result <= 0f)
+			{
+				return;
+			}
 			//Log.Error("1");
 			float factor = 1f;
 			foreach (CompBeesHive compBeesHive in BiomesBees.HiveUtility.HivesComps)
