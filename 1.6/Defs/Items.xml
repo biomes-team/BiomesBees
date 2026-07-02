@@ -440,7 +440,7 @@
       <ingestReportString>Snorting {0}.</ingestReportString>
       <useEatingSpeedStat>true</useEatingSpeedStat>
       <nurseable>true</nurseable>
-      <drugCategory>Social</drugCategory>
+      <drugCategory>Medical</drugCategory>
       <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
