@@ -136,11 +136,12 @@ namespace BiomesBees
 		{
 			get
 			{
+				float value = FlowersCount * Props.honeyPerFlower;
 				if (Props.flowerlessProduction)
 				{
-					return Props.honeyProductionWithoutFlowers;
+					value += Props.honeyProductionWithoutFlowers;
 				}
-				return FlowersCount * Props.honeyPerFlower;
+				return value;
 			}
 		}
 
@@ -572,7 +573,7 @@ namespace BiomesBees
 			}
 			if (!Props.flowerlessProduction || FlowersCount > 0)
 			{
-				return "BMT_CollectedHoneyWithFlowers".Translate(Props.productDef.label, FlowersCount, beeHoney.ToString());
+				return "BMT_CollectedHoneyWithFlowers".Translate(Props.productDef.label, FlowersCount, beeHoney.ToString(), Props.honeyLimit);
 			}
 			return "BMT_CollectedHoney".Translate(Props.productDef.label, beeHoney.ToString(), Props.honeyLimit);
 		}

@@ -2,7 +2,7 @@
 <LanguageData>
 
 	<BMT_CollectedHoney>Collected {0}: {1}/{2}</BMT_CollectedHoney>
-	<BMT_CollectedHoneyWithFlowers>Collected {0} from {1} plants: {2}</BMT_CollectedHoneyWithFlowers>
+	<BMT_CollectedHoneyWithFlowers>Collected {0} from {1} plants: {2}/{3}</BMT_CollectedHoneyWithFlowers>
 	<BMT_Harvest>Harvest</BMT_Harvest>
 
 	<BMT_CreateGrowingZone>Create growing zone.</BMT_CreateGrowingZone>
