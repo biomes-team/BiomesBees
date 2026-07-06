@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TraitDef>
+	<defName>BMT_BeeLover</defName>
+	<commonality>0.1</commonality>
+	<degreeDatas>
+	  <li>
+		<label>bee lover</label>
+		<description>{PAWN_nameDef} truly loves bees. {PAWN_pronoun} receives a significant mood boost if there are beehives in the region.</description>
+	  </li>
+	</degreeDatas>
+  </TraitDef>
+
+  <ThoughtDef>
+	<defName>BMT_BeeLover</defName>
+	<workerClass>BiomesBees.ThoughtWorker_BeeHives</workerClass>
+	<validWhileDespawned>true</validWhileDespawned>
+	<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+	<requiredTraits>
+	  <li>BMT_BeeLover</li>
+	</requiredTraits>
+	<stages>
+	  <li>
+		<label>bee hives</label>
+		<description>I love these little workaholics!</description>
+		<baseMoodEffect>10</baseMoodEffect>
+	  </li>
+	</stages>
+  </ThoughtDef>
+
+  <!-- ===================== -->
+
+  <TraitDef>
+	<defName>BMT_BeeHater</defName>
+	<commonality>0.1</commonality>
+	<degreeDatas>
+	  <li>
+		<label>bee hater</label>
+		<description>{PAWN_nameDef} truly hate bees. {PAWN_possessive} mood is greatly dampened when there are hives in the region.</description>
+	  </li>
+	</degreeDatas>
+  </TraitDef>
+
+  <ThoughtDef>
+	<defName>BMT_BeeHater</defName>
+	<workerClass>BiomesBees.ThoughtWorker_BeeHives</workerClass>
+	<validWhileDespawned>true</validWhileDespawned>
+	<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+	<requiredTraits>
+	  <li>BMT_BeeHater</li>
+	</requiredTraits>
+	<stages>
+	  <li>
+		<label>bee hives</label>
+		<description>These creepy little insects. Even the thought of them gives me goosebumps.</description>
+		<baseMoodEffect>-15</baseMoodEffect>
+	  </li>
+	</stages>
+  </ThoughtDef>
+
+</Defs>
