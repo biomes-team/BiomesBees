@@ -7,7 +7,7 @@
 	<degreeDatas>
 	  <li>
 		<label>bee lover</label>
-		<description>{PAWN_nameDef} truly loves bees. {PAWN_pronoun} receives a significant mood boost if there are beehives in the region.</description>
+		<description>{PAWN_nameDef} truly loves bees. {PAWN_pronoun} receives a significant mood boost if there are beehives or apiaries in the region.</description>
 	  </li>
 	</degreeDatas>
   </TraitDef>
@@ -23,8 +23,8 @@
 	<stages>
 	  <li>
 		<label>bee hives</label>
-		<description>I love these little workaholics!</description>
-		<baseMoodEffect>10</baseMoodEffect>
+		<description>I love these little workaholics. Their honey is great too!</description>
+		<baseMoodEffect>5</baseMoodEffect>
 	  </li>
 	</stages>
   </ThoughtDef>
@@ -37,7 +37,7 @@
 	<degreeDatas>
 	  <li>
 		<label>bee hater</label>
-		<description>{PAWN_nameDef} truly hate bees. {PAWN_possessive} mood is greatly dampened when there are hives in the region.</description>
+		<description>{PAWN_nameDef} truly hate bees. {PAWN_possessive} mood is greatly dampened when there are beehives or apiaries in the region.</description>
 	  </li>
 	</degreeDatas>
   </TraitDef>
@@ -53,8 +53,8 @@
 	<stages>
 	  <li>
 		<label>bee hives</label>
-		<description>These creepy little insects. Even the thought of them gives me goosebumps.</description>
-		<baseMoodEffect>-15</baseMoodEffect>
+		<description>Those buzzy bugs might sting me. I hate the very idea of them being around!</description>
+		<baseMoodEffect>-10</baseMoodEffect>
 	  </li>
 	</stages>
   </ThoughtDef>
