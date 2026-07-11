@@ -518,7 +518,8 @@ namespace BiomesBees
 					{
 						Props.spawnSound.PlayOneShot(parent);
 					}
-					pawnToCreate.health.AddHediff(HediffDefOf.Scaria);
+					//pawnToCreate.health.AddHediff(HediffDefOf.Scaria);
+					pawnToCreate.mindState?.mentalStateHandler?.TryStartMentalState(MentalStateDefOf.Berserk);
 				}
 			}
 		}

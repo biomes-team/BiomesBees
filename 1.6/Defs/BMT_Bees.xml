@@ -40,7 +40,7 @@
 				</capacities>
 				<power>3</power>
 				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
+				<linkedBodyPartsGroup>BMT_StingerGroup</linkedBodyPartsGroup>
 			</li>
 
 	</tools>
@@ -210,7 +210,7 @@
 				</capacities>
 				<power>3</power>
 				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
+				<linkedBodyPartsGroup>BMT_StingerGroup</linkedBodyPartsGroup>
 			</li>
 
 	</tools>
@@ -377,7 +377,7 @@
 				</capacities>
 				<power>3</power>
 				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
+				<linkedBodyPartsGroup>BMT_StingerGroup</linkedBodyPartsGroup>
 			</li>
 
 	</tools>
