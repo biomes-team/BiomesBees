@@ -20,7 +20,7 @@
 	  <FlightCooldown>10</FlightCooldown>
 	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
 	  <FilthRate>0</FilthRate>
-	  <Wildness>0.5</Wildness>
+	  <Wildness>0</Wildness>
 	  <LeatherAmount>0</LeatherAmount>
 	</statBases>
 		<comps>
@@ -190,7 +190,7 @@
 	  <FlightCooldown>10</FlightCooldown>
 	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
 	  <FilthRate>0</FilthRate>
-	  <Wildness>0.5</Wildness>
+	  <Wildness>0</Wildness>
 	  <LeatherAmount>0</LeatherAmount>
 	</statBases>
 		<comps>
@@ -357,7 +357,7 @@
 	  <FlightCooldown>10</FlightCooldown>
 	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
 	  <FilthRate>0</FilthRate>
-	  <Wildness>0.5</Wildness>
+	  <Wildness>0</Wildness>
 	  <LeatherAmount>0</LeatherAmount>
 	</statBases>
 		<comps>
