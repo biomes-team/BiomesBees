@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>BMT_Beekeeping</defName>
+    <label>beekeeping</label>
+    <description>Build an apiary and care for bees. They will produce honeycomb for you and potentially even attack your enemies.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Medieval</techLevel>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>3.50</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->beekeeping</li>
+
+        <li>subject_story->bred a line of bees that made the best honey in the system</li>
+        <li>subject_story->retired to run a public house on a bug world</li>
+        <li>subject_story->specialized in climate-controlled bekeeping techniques</li>
+
+        <li>subject_gerund->constructing apiaries</li>
+        <li>subject_gerund->producing honey</li>
+        
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+</Defs>

@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--================================================ -->
+  
+    <ThingDef ParentName="BaseInsect">
+	<defName>BMT_Bees</defName>
+	<!-- too long. out of name field -->
+	<!-- <label>pustule hornet queen</label> -->
+	<label>bee swarm</label>
+	<description>A swarm of bees. This species produces honeycomb in their hive that can be harvested and turned into wax and honey. It would be unwise to make the swarm angry as it's quite hard to kill a bunch of angry bees.</description>
+	<statBases>
+	  <MoveSpeed>3.0</MoveSpeed>
+	  <MarketValue>5</MarketValue>
+	  <ComfyTemperatureMin>0</ComfyTemperatureMin>
+	  <ComfyTemperatureMax>40</ComfyTemperatureMax>
+	  <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">-0.5</ToxicEnvironmentResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0</VacuumResistance>
+	  <MaxFlightTime>100</MaxFlightTime>
+	  <FlightCooldown>10</FlightCooldown>
+	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
+	  <FilthRate>0</FilthRate>
+	  <Wildness>0</Wildness>
+	  <LeatherAmount>0</LeatherAmount>
+	</statBases>
+		<comps>
+			<li Class="BiomesCore.CompProperties_HarvestAnimalProduct">
+				<thingDef>BMT_Pollen</thingDef> <!-- Thing to be produced -->
+				<harvestIntervalDays>13</harvestIntervalDays> <!-- Number of days until the resource is produced. -->
+				<baseResourceAmount>10</baseResourceAmount> <!-- Base amount of the resource, will be scaled by animal body size. -->
+				<!-- LanguageData string to use for reporting resource growth to the user when the animal is selected. -->
+				<resourceGrowthReportString>Pollen</resourceGrowthReportString>
+			</li>
+		</comps>
+	<tools>
+	  		<li>
+				<label>swarm stingers</label>
+				<capacities>
+					<li>BMT_SuperiorToxicSting</li>
+				</capacities>
+				<power>3</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>BMT_StingerGroup</linkedBodyPartsGroup>
+			</li>
+
+	</tools>
+	<race>
+	  <hasGenders>false</hasGenders>
+	  <hasCorpse>false</hasCorpse>
+	  <canBePredatorPrey>false</canBePredatorPrey>
+	  <body>BMT_BeeSwarmBody</body>
+	  <baseBodySize>0.2</baseBodySize>
+	  <baseHungerRate>0.1</baseHungerRate>
+	  <baseHealthScale>0.3</baseHealthScale>
+	  <predator>false</predator>
+	  <useMeatFrom>Megaspider</useMeatFrom>
+	  <foodType>VegetarianRoughAnimal</foodType>
+	  <trainability>None</trainability>
+      <flightStartChanceOnJobStart>1</flightStartChanceOnJobStart>
+	  <!-- <thinkTreeMain>BMT_WildBee</thinkTreeMain> -->
+	  <!-- <mateMtbHours>8</mateMtbHours> -->
+	  <!-- <gestationPeriodDays>5.661</gestationPeriodDays> -->
+	  <headPosPerRotation>
+		<li>(0.0, 0, 0.07)</li>
+		<li>(0.19, 0, 0)</li>
+		<li>(0.0, 0, -0.07)</li>
+		<li>(-0.19, 0, 0)</li>
+	  </headPosPerRotation>
+	  <lifeExpectancy>4</lifeExpectancy>
+	  <lifeStageAges>
+		<li>
+		  <def>AnimalBaby</def>
+		  <minAge>0</minAge>
+		</li>
+		<li>
+		  <def>AnimalJuvenile</def>
+		  <minAge>0.1</minAge>
+		</li>
+		<li>
+		  <def>AnimalAdult</def>
+		  <minAge>0.2222</minAge>
+			<soundWounded>BMT_Bees_Wounded</soundWounded>
+			<soundDeath>BMT_Bees_Death</soundDeath>
+			<soundCall>BMT_Bees_Call</soundCall>
+			<soundAngry>BMT_Bees_Angry</soundAngry>
+		</li>
+	  </lifeStageAges>
+	  <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+	  <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+	  <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+	</race>
+	<uiIconScale>1</uiIconScale>
+	<comps>
+    <li Class="BiomesCore.CompProperties_PackDefense">
+        <baseChance>0.9</baseChance>
+        <attackerMaxDistance>30</attackerMaxDistance>
+        <joinDefenseRange>20</joinDefenseRange>
+        <joinMaxPain>0.3</joinMaxPain>
+        <maxNumMeleeAttacks>3</maxNumMeleeAttacks>
+        <expiryInterval>500</expiryInterval>
+        <attackDoorIfTargetLost>false</attackDoorIfTargetLost>
+        <canBashFences>false</canBashFences>
+        <predatorConfidencePenalty>100</predatorConfidencePenalty>
+    </li>
+	</comps>
+	<!-- <tradeTags> -->
+	  <!-- <li>BMT_PollutedAnimalUncommon</li> -->
+	  <!-- <li>BMT_PollutedAnimalFighter</li> -->
+	<!-- </tradeTags> -->
+		<modExtensions>
+			<li Class="BiomesCore.DefModExtensions.Biomes_AnimalControl" />
+		</modExtensions>
+  </ThingDef>
+  
+ 
+
+  <!--================================================ -->
+
+  <PawnKindDef ParentName="AnimalKindBase">
+	<defName>BMT_Bees</defName>
+	<label>bee swarm</label>
+	<race>BMT_Bees</race>
+	<combatPower>10</combatPower>
+    <startingHediffs>
+      <li>
+        <def>BMT_BeeSwarming</def>
+      </li>
+    </startingHediffs>
+	<combatPower>10</combatPower>
+			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
+			<flyingAnimationFrameCount>3</flyingAnimationFrameCount>
+			<flyingAnimationTicksPerFrame>20</flyingAnimationTicksPerFrame>
+			<flyingAnimationDrawSize>1.25</flyingAnimationDrawSize>
+			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
+			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
+	<lifeStages>
+	  <li>
+		<bodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
+		  <drawSize>1.5</drawSize>
+		</bodyGraphicData>
+		<dessicatedBodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
+		  <drawSize>1.5</drawSize>
+		</dessicatedBodyGraphicData>
+	  </li>
+	  <li>
+		<bodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
+		  <drawSize>1.5</drawSize>
+		</bodyGraphicData>
+		<dessicatedBodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
+		  <drawSize>1.5</drawSize>
+		</dessicatedBodyGraphicData>
+	  </li>
+	  <li>
+		<bodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
+		  <drawSize>1.5</drawSize>
+		  <shadowData>
+			<volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+		  </shadowData>
+		</bodyGraphicData>
+		<dessicatedBodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
+		  <drawSize>1.5</drawSize>
+		</dessicatedBodyGraphicData>
+	  </li>
+	</lifeStages>
+  </PawnKindDef>
+
+  <!--================================================ -->
+  
+    <ThingDef ParentName="BaseInsect">
+	<defName>BMT_ColonyBees</defName>
+	<!-- too long. out of name field -->
+	<!-- <label>pustule hornet queen</label> -->
+	<label>bee swarm</label>
+	<description>A swarm of bees. This species produces honeycomb in their hive that can be harvested and turned into wax and honey. It would be unwise to make the swarm angry as it's quite hard to kill a bunch of angry bees.</description>
+	<statBases>
+	  <MoveSpeed>3.0</MoveSpeed>
+	  <MarketValue>5</MarketValue>
+	  <ComfyTemperatureMin>0</ComfyTemperatureMin>
+	  <ComfyTemperatureMax>40</ComfyTemperatureMax>
+	  <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">-0.5</ToxicEnvironmentResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0</VacuumResistance>
+	  <MaxFlightTime>100</MaxFlightTime>
+	  <FlightCooldown>10</FlightCooldown>
+	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
+	  <FilthRate>0</FilthRate>
+	  <Wildness>0</Wildness>
+	  <LeatherAmount>0</LeatherAmount>
+	</statBases>
+		<comps>
+			<li Class="BiomesCore.CompProperties_HarvestAnimalProduct">
+				<thingDef>BMT_Pollen</thingDef> <!-- Thing to be produced -->
+				<harvestIntervalDays>5</harvestIntervalDays> <!-- Number of days until the resource is produced. -->
+				<baseResourceAmount>5</baseResourceAmount> <!-- Base amount of the resource, will be scaled by animal body size. -->
+				<!-- LanguageData string to use for reporting resource growth to the user when the animal is selected. -->
+				<resourceGrowthReportString>Pollen</resourceGrowthReportString>
+			</li>
+		</comps>
+	<tools>
+	  		<li>
+				<label>swarm stingers</label>
+				<capacities>
+					<li>BMT_SuperiorToxicSting</li>
+				</capacities>
+				<power>3</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>BMT_StingerGroup</linkedBodyPartsGroup>
+			</li>
+
+	</tools>
+	<race>
+	  <hasGenders>false</hasGenders>
+	  <hasCorpse>false</hasCorpse>
+	  <canBePredatorPrey>false</canBePredatorPrey>
+	  <body>BMT_BeeSwarmBody</body>
+	  <baseBodySize>0.2</baseBodySize>
+	  <baseHungerRate>0.1</baseHungerRate>
+	  <baseHealthScale>0.3</baseHealthScale>
+	  <predator>false</predator>
+	  <useMeatFrom>Megaspider</useMeatFrom>
+	  <foodType>VegetarianRoughAnimal</foodType>
+	  <trainability>None</trainability>
+	  <!-- <thinkTreeMain>BMT_WildBee</thinkTreeMain> -->
+	  <!-- <mateMtbHours>8</mateMtbHours> -->
+	  <!-- <gestationPeriodDays>5.661</gestationPeriodDays> -->
+	  <headPosPerRotation>
+		<li>(0.0, 0, 0.07)</li>
+		<li>(0.19, 0, 0)</li>
+		<li>(0.0, 0, -0.07)</li>
+		<li>(-0.19, 0, 0)</li>
+	  </headPosPerRotation>
+	  <lifeExpectancy>4</lifeExpectancy>
+	  <lifeStageAges>
+		<li>
+		  <def>AnimalBaby</def>
+		  <minAge>0</minAge>
+		</li>
+		<li>
+		  <def>AnimalJuvenile</def>
+		  <minAge>0.1</minAge>
+		</li>
+		<li>
+		  <def>AnimalAdult</def>
+		  <minAge>0.2222</minAge>
+			<soundWounded>BMT_Bees_Wounded</soundWounded>
+			<soundDeath>BMT_Bees_Death</soundDeath>
+			<soundCall>BMT_Bees_Call</soundCall>
+			<soundAngry>BMT_Bees_Angry</soundAngry>
+		</li>
+	  </lifeStageAges>
+	  <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+	  <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+	  <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+	</race>
+	<uiIconScale>1</uiIconScale>
+	<comps>
+    <li Class="BiomesCore.CompProperties_PackDefense">
+        <baseChance>0.9</baseChance>
+        <attackerMaxDistance>30</attackerMaxDistance>
+        <joinDefenseRange>20</joinDefenseRange>
+        <joinMaxPain>0.3</joinMaxPain>
+        <maxNumMeleeAttacks>3</maxNumMeleeAttacks>
+        <expiryInterval>500</expiryInterval>
+        <attackDoorIfTargetLost>false</attackDoorIfTargetLost>
+        <canBashFences>false</canBashFences>
+        <predatorConfidencePenalty>100</predatorConfidencePenalty>
+    </li>
+	</comps>
+	<!-- <tradeTags> -->
+	  <!-- <li>BMT_PollutedAnimalUncommon</li> -->
+	  <!-- <li>BMT_PollutedAnimalFighter</li> -->
+	<!-- </tradeTags> -->
+		<modExtensions>
+			<li Class="BiomesCore.DefModExtensions.Biomes_AnimalControl" />
+		</modExtensions>
+  </ThingDef>
+  
+ 
+
+  <!--================================================ -->
+
+  <PawnKindDef ParentName="AnimalKindBase">
+	<defName>BMT_ColonyBees</defName>
+	<label>bee swarm</label>
+	<race>BMT_Bees</race>
+	<combatPower>10</combatPower>
+    <startingHediffs>
+      <li>
+        <def>BMT_BeeSwarming</def>
+      </li>
+    </startingHediffs>
+    <defaultFactionDef>PlayerColony</defaultFactionDef>
+			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
+			<flyingAnimationFrameCount>3</flyingAnimationFrameCount>
+			<flyingAnimationTicksPerFrame>20</flyingAnimationTicksPerFrame>
+			<flyingAnimationDrawSize>1.25</flyingAnimationDrawSize>
+			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
+			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
+	<lifeStages>
+	  <li>
+		<bodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
+		  <drawSize>1.5</drawSize>
+		</bodyGraphicData>
+		<dessicatedBodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
+		  <drawSize>1.5</drawSize>
+		</dessicatedBodyGraphicData>
+	  </li>
+	  <li>
+		<bodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
+		  <drawSize>1.5</drawSize>
+		</bodyGraphicData>
+		<dessicatedBodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
+		  <drawSize>1.5</drawSize>
+		</dessicatedBodyGraphicData>
+	  </li>
+	  <li>
+		<bodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
+		  <drawSize>1.5</drawSize>
+		  <shadowData>
+			<volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+		  </shadowData>
+		</bodyGraphicData>
+		<dessicatedBodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
+		  <drawSize>1.5</drawSize>
+		</dessicatedBodyGraphicData>
+	  </li>
+	</lifeStages>
+  </PawnKindDef>
+  
+      <ThingDef ParentName="BaseInsect">
+	<defName>BMT_AngryBees</defName>
+	<!-- too long. out of name field -->
+	<!-- <label>pustule hornet queen</label> -->
+	<label>bee swarm</label>
+	<description>A swarm of bees. This species produces honeycomb in their hive that can be harvested and turned into wax and honey. It would be unwise to make the swarm angry as it's quite hard to kill a bunch of angry bees.</description>
+	<statBases>
+	  <MoveSpeed>3.0</MoveSpeed>
+	  <MarketValue>5</MarketValue>
+	  <ComfyTemperatureMin>0</ComfyTemperatureMin>
+	  <ComfyTemperatureMax>40</ComfyTemperatureMax>
+	  <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">-0.5</ToxicEnvironmentResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0</VacuumResistance>
+	  <MaxFlightTime>100</MaxFlightTime>
+	  <FlightCooldown>10</FlightCooldown>
+	  <MeleeDodgeChance>0.90</MeleeDodgeChance>
+	  <FilthRate>0</FilthRate>
+	  <Wildness>0</Wildness>
+	  <LeatherAmount>0</LeatherAmount>
+	</statBases>
+		<comps>
+			<li Class="BiomesCore.CompProperties_HarvestAnimalProduct">
+				<thingDef>BMT_Pollen</thingDef> <!-- Thing to be produced -->
+				<harvestIntervalDays>5</harvestIntervalDays> <!-- Number of days until the resource is produced. -->
+				<baseResourceAmount>5</baseResourceAmount> <!-- Base amount of the resource, will be scaled by animal body size. -->
+				<!-- LanguageData string to use for reporting resource growth to the user when the animal is selected. -->
+				<resourceGrowthReportString>Pollen</resourceGrowthReportString>
+			</li>
+		</comps>
+	<tools>
+	  		<li>
+				<label>swarm stingers</label>
+				<capacities>
+					<li>BMT_SuperiorToxicSting</li>
+				</capacities>
+				<power>3</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>BMT_StingerGroup</linkedBodyPartsGroup>
+			</li>
+
+	</tools>
+	<race>
+	  <hasGenders>false</hasGenders>
+	  <hasCorpse>false</hasCorpse>
+	  <canBePredatorPrey>false</canBePredatorPrey>
+	  <body>BMT_BeeSwarmBody</body>
+	  <baseBodySize>0.2</baseBodySize>
+	  <baseHungerRate>0.1</baseHungerRate>
+	  <baseHealthScale>0.3</baseHealthScale>
+	  <predator>false</predator>
+	  <useMeatFrom>Megaspider</useMeatFrom>
+	  <foodType>VegetarianRoughAnimal</foodType>
+	  <trainability>None</trainability>
+	  <!-- <thinkTreeMain>BMT_WildBee</thinkTreeMain> -->
+	  <!-- <mateMtbHours>8</mateMtbHours> -->
+	  <!-- <gestationPeriodDays>5.661</gestationPeriodDays> -->
+	  <headPosPerRotation>
+		<li>(0.0, 0, 0.07)</li>
+		<li>(0.19, 0, 0)</li>
+		<li>(0.0, 0, -0.07)</li>
+		<li>(-0.19, 0, 0)</li>
+	  </headPosPerRotation>
+	  <lifeExpectancy>4</lifeExpectancy>
+	  <lifeStageAges>
+		<li>
+		  <def>AnimalBaby</def>
+		  <minAge>0</minAge>
+		</li>
+		<li>
+		  <def>AnimalJuvenile</def>
+		  <minAge>0.1</minAge>
+		</li>
+		<li>
+		  <def>AnimalAdult</def>
+		  <minAge>0.2222</minAge>
+			<soundWounded>BMT_Bees_Wounded</soundWounded>
+			<soundDeath>BMT_Bees_Death</soundDeath>
+			<soundCall>BMT_Bees_Call</soundCall>
+			<soundAngry>BMT_Bees_Angry</soundAngry>
+		</li>
+	  </lifeStageAges>
+	  <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+	  <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+	  <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+	</race>
+	<uiIconScale>1</uiIconScale>
+	<comps>
+    <li Class="BiomesCore.CompProperties_PackDefense">
+        <baseChance>0.9</baseChance>
+        <attackerMaxDistance>30</attackerMaxDistance>
+        <joinDefenseRange>20</joinDefenseRange>
+        <joinMaxPain>0.3</joinMaxPain>
+        <maxNumMeleeAttacks>3</maxNumMeleeAttacks>
+        <expiryInterval>500</expiryInterval>
+        <attackDoorIfTargetLost>false</attackDoorIfTargetLost>
+        <canBashFences>false</canBashFences>
+        <predatorConfidencePenalty>100</predatorConfidencePenalty>
+    </li>
+	</comps>
+	<!-- <tradeTags> -->
+	  <!-- <li>BMT_PollutedAnimalUncommon</li> -->
+	  <!-- <li>BMT_PollutedAnimalFighter</li> -->
+	<!-- </tradeTags> -->
+		<modExtensions>
+			<li Class="BiomesCore.DefModExtensions.Biomes_AnimalControl" />
+		</modExtensions>
+  </ThingDef>
+  
+ 
+
+  <!--================================================ -->
+
+  <PawnKindDef ParentName="AnimalKindBase">
+	<defName>BMT_AngryBees</defName>
+	<label>bee swarm</label>
+	<race>BMT_Bees</race>
+	<combatPower>10</combatPower>
+    <startingHediffs>
+      <li>
+        <def>BMT_BeeSwarming</def>
+      </li>
+    </startingHediffs>
+    <defaultFactionDef>BMT_AngryWildBees</defaultFactionDef>
+			<flyingAnimationFramePathPrefix>BMT_Bees/Things/Animal/Bees/BeeSwarm_flying_</flyingAnimationFramePathPrefix>
+			<flyingAnimationFrameCount>3</flyingAnimationFrameCount>
+			<flyingAnimationTicksPerFrame>20</flyingAnimationTicksPerFrame>
+			<flyingAnimationDrawSize>1.25</flyingAnimationDrawSize>
+			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
+			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
+	<lifeStages>
+	  <li>
+		<bodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
+		  <drawSize>1.5</drawSize>
+		</bodyGraphicData>
+		<dessicatedBodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
+		  <drawSize>1.5</drawSize>
+		</dessicatedBodyGraphicData>
+	  </li>
+	  <li>
+		<bodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
+		  <drawSize>1.5</drawSize>
+		</bodyGraphicData>
+		<dessicatedBodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
+		  <drawSize>1.5</drawSize>
+		</dessicatedBodyGraphicData>
+	  </li>
+	  <li>
+		<bodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/BeeSwarm</texPath>
+		  <drawSize>1.5</drawSize>
+		  <shadowData>
+			<volume>(0, 0, 0)</volume>
+			<offset>(0,0,0)</offset>
+		  </shadowData>
+		</bodyGraphicData>
+		<dessicatedBodyGraphicData>
+		  <texPath>BMT_Bees/Things/Animal/Bees/Dessicated_Bees</texPath>
+		  <drawSize>1.5</drawSize>
+		</dessicatedBodyGraphicData>
+	  </li>
+	</lifeStages>
+  </PawnKindDef>
+
+</Defs>

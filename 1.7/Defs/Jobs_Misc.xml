@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorkGiverDef>
+	<defName>BMT_HarvestHoneyFromHive</defName>
+	<label>harvest honey</label>
+	<giverClass>BiomesBees.WorkGiver_HarvestHoney</giverClass>
+	<workType>Handling</workType>
+	<verb>harvset</verb>
+	<gerund>harvesting</gerund>
+	<priorityInType>20</priorityInType>
+	<requiredCapacities>
+	  <li>Manipulation</li>
+	</requiredCapacities>
+  </WorkGiverDef>
+
+  <JobDef>
+	<defName>BMT_HarvestHoneyFromHive</defName>
+	<driverClass>BiomesBees.JobDriver_HarvestHoney</driverClass>
+	<reportString>harvesting honey.</reportString>
+	<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+	<defName>BMT_BeePollinate</defName>
+	<driverClass>BiomesBees.JobDriver_Pollinate</driverClass>
+	<reportString>pollinating TargetA.</reportString>
+	<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+	<defName>BMT_BeeDeSpawn</defName>
+	<driverClass>BiomesBees.JobDriver_DeSpawn</driverClass>
+	<reportString>returning to hive.</reportString>
+	<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <!--=============== Making Honey ==============-->
+  <!-- To-Do: Req rework. -->
+
+  <WorkGiverDef>
+	<defName>BMT_TakeMeadOutOfFermentingBarrel</defName>
+	<label>take honey out of mead barrels</label>
+	<giverClass>BiomesBees.WorkGiver_TakeHoneyWineOutOfFermentingBarrel</giverClass>
+	<workType>Hauling</workType>
+	<verb>take mead</verb>
+	<gerund>taking mead from</gerund>
+	<priorityInType>20</priorityInType>
+	<requiredCapacities>
+		<li>Manipulation</li>
+	</requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+	<defName>BMT_FillMeadFermentingBarrel</defName>
+	<label>fill mead barrels</label>
+	<giverClass>BiomesBees.WorkGiver_FillHoneyFermentingBarrel</giverClass>
+	<workType>Hauling</workType>
+	<verb>fill</verb>
+	<gerund>filling</gerund>
+	<priorityInType>19</priorityInType>
+	<requiredCapacities>
+		<li>Manipulation</li>
+	</requiredCapacities>
+  </WorkGiverDef>
+
+  <JobDef>
+	<defName>BMT_FillMeadBarrelJob</defName>
+	<driverClass>BiomesBees.JobDriver_FillHoneyFermentingBarrel</driverClass>
+	<reportString>filling TargetA.</reportString>
+	<suspendable>false</suspendable>
+	<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+	<defName>BMT_TakeMeadOutOfBarrelJob</defName>
+	<driverClass>BiomesBees.JobDriver_TakeHoneyWineOutOfFermentingBarrel</driverClass>
+	<reportString>taking mead out of TargetA.</reportString>
+	<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+</Defs>
